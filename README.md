@@ -1,5 +1,11 @@
 # Parcel2 Ontology
 
+## Ontologies
+- [Parcel 2](https://ontology.connectbuildnow.org/cmmp/)
+- [icontact](https://ontology.connectbuildnow.org/icontact/)
+- [Time](https://ontology.connectbuildnow.org/time/)
+
+
 ## Installation
 > Only Python 3.11 and lower are supported.
 ```bash
