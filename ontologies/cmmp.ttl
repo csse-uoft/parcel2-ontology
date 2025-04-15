@@ -1,0 +1,1108 @@
+@prefix : <https://cmmp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://cmmp/> .
+
+<https://csse.utoronto.ca/> rdf:type owl:Ontology ;
+                             owl:imports <http://ontology.eil.utoronto.ca/icontact.owl> ,
+                                         <http://www.w3.org/2006/time#2016> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://cmmp#has_brief_description
+<http://cmmp#has_brief_description> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_partner
+<http://cmmp#has_partner> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_partner_type
+<http://cmmp#has_partner_type> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_partnership_role_required
+<http://cmmp#has_partnership_role_required> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_project_type
+<http://cmmp#has_project_type> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_read
+<http://cmmp#has_read> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_site_address
+<http://cmmp#has_site_address> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_space_needs
+<http://cmmp#has_space_needs> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#has_username
+<http://cmmp#has_username> rdf:type owl:AnnotationProperty .
+
+
+###  http://cmmp#type
+<http://cmmp#type> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#datetimes
+xsd:datetimes rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://cmmp#activates_role
+<http://cmmp#activates_role> rdf:type owl:ObjectProperty ;
+                             rdfs:domain <http://cmmp#contribution_type> ;
+                             rdfs:range <http://cmmp#role> .
+
+
+###  http://cmmp#has_account
+<http://cmmp#has_account> rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain <http://cmmp#organization> ;
+                          rdfs:range <http://cmmp#account> .
+
+
+###  http://cmmp#has_address
+<http://cmmp#has_address> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_asset
+<http://cmmp#has_asset> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_available_role
+<http://cmmp#has_available_role> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_base_version
+<http://cmmp#has_base_version> rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cmmp#has_constraint
+<http://cmmp#has_constraint> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_contribution_type
+<http://cmmp#has_contribution_type> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://cmmp#contribution> ;
+                                    rdfs:range <http://cmmp#contribution_type> .
+
+
+###  http://cmmp#has_current_land_use
+<http://cmmp#has_current_land_use> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_derived_from
+<http://cmmp#has_derived_from> rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cmmp#has_designated_land_use
+<http://cmmp#has_designated_land_use> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_expertise
+<http://cmmp#has_expertise> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_individual
+<http://cmmp#has_individual> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cmmp#has_intended_opportunity
+<http://cmmp#has_intended_opportunity> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://cmmp#notification> ;
+                                       rdfs:range <http://cmmp#partnership_opportunity> .
+
+
+###  http://cmmp#has_latest_version
+<http://cmmp#has_latest_version> rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cmmp#has_legal_status
+<http://cmmp#has_legal_status> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_need
+<http://cmmp#has_need> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_notification
+<http://cmmp#has_notification> rdf:type owl:ObjectProperty ;
+                               rdfs:domain <http://cmmp#partnership_opportunity> ;
+                               rdfs:range <http://cmmp#notification> .
+
+
+###  http://cmmp#has_opportunity
+<http://cmmp#has_opportunity> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_organization
+<http://cmmp#has_organization> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_organization_type
+<http://cmmp#has_organization_type> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://cmmp#organization> ;
+                                    rdfs:range <http://cmmp#organization_type> .
+
+
+###  http://cmmp#has_participant
+<http://cmmp#has_participant> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_primary_contact
+<http://cmmp#has_primary_contact> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( <http://cmmp#account>
+                                                              <http://cmmp#partnership_participant>
+                                                            )
+                                              ] ;
+                                  rdfs:range <http://cmmp#primary_contact> .
+
+
+###  http://cmmp#has_proposed_land_use
+<http://cmmp#has_proposed_land_use> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_real_estate_property
+<http://cmmp#has_real_estate_property> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <http://cmmp#has_asset> .
+
+
+###  http://cmmp#has_recipient
+<http://cmmp#has_recipient> rdf:type owl:ObjectProperty ;
+                            rdfs:domain <http://cmmp#notification> ;
+                            rdfs:range <http://cmmp#account> .
+
+
+###  http://cmmp#has_role
+<http://cmmp#has_role> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_sender
+<http://cmmp#has_sender> rdf:type owl:ObjectProperty ;
+                         rdfs:domain <http://cmmp#notification> ;
+                         rdfs:range <http://cmmp#account> .
+
+
+###  http://cmmp#has_site_component
+<http://cmmp#has_site_component> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_space_offered
+<http://cmmp#has_space_offered> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_type
+<http://cmmp#has_type> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#has_version
+<http://cmmp#has_version> rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://cmmp#has_ward
+<http://cmmp#has_ward> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#is_account_of
+<http://cmmp#is_account_of> rdf:type owl:ObjectProperty ;
+                            rdfs:domain <http://cmmp#account> ;
+                            rdfs:range <http://cmmp#organization> .
+
+
+###  http://cmmp#makes_contribution
+<http://cmmp#makes_contribution> rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                 rdfs:domain <http://cmmp#partnership_participant> ;
+                                 rdfs:range <http://cmmp#contribution> .
+
+
+###  http://cmmp#owns
+<http://cmmp#owns> rdf:type owl:ObjectProperty .
+
+
+###  http://cmmp#provides
+<http://cmmp#provides> rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/governed_by
+:governed_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Zone ;
+             rdfs:range <http://cmmp#organization> ;
+             rdfs:label "governed_by"@en .
+
+
+###  https://csse.utoronto.ca/has_end_date
+:has_end_date rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/has_proposed_zoning
+:has_proposed_zoning rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://csse.utoronto.ca/has_publish_date
+:has_publish_date rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/has_zoning
+:has_zoning rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/related_zoning
+:related_zoning rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Zone ;
+                rdfs:range :Zone ;
+                rdfs:label "related_zoning"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://cmmp#has_city
+<http://cmmp#has_city> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_city_name
+<http://cmmp#has_city_name> rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:string .
+
+
+###  http://cmmp#has_country
+<http://cmmp#has_country> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_country_name
+<http://cmmp#has_country_name> rdf:type owl:DatatypeProperty ;
+                               rdfs:range xsd:string .
+
+
+###  http://cmmp#has_created_at
+<http://cmmp#has_created_at> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_dob
+<http://cmmp#has_dob> rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://cmmp#has_email
+<http://cmmp#has_email> rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://cmmp#has_first_name
+<http://cmmp#has_first_name> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_individual_prefix
+<http://cmmp#has_individual_prefix> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_last_modified_at
+<http://cmmp#has_last_modified_at> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_last_name
+<http://cmmp#has_last_name> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_name
+<http://cmmp#has_name> rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string .
+
+
+###  http://cmmp#has_position
+<http://cmmp#has_position> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_postal_code
+<http://cmmp#has_postal_code> rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:string .
+
+
+###  http://cmmp#has_province
+<http://cmmp#has_province> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_province_name
+<http://cmmp#has_province_name> rdf:type owl:DatatypeProperty ;
+                                rdfs:range xsd:string .
+
+
+###  http://cmmp#has_resource
+<http://cmmp#has_resource> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_salt
+<http://cmmp#has_salt> rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string .
+
+
+###  http://cmmp#has_site_area
+<http://cmmp#has_site_area> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_street_name
+<http://cmmp#has_street_name> rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:string .
+
+
+###  http://cmmp#has_street_number
+<http://cmmp#has_street_number> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_telephone
+<http://cmmp#has_telephone> rdf:type owl:DatatypeProperty .
+
+
+###  http://cmmp#has_telephone_ext
+<http://cmmp#has_telephone_ext> rdf:type owl:DatatypeProperty .
+
+
+###  https://csse.utoronto.ca/has_acronym
+:has_acronym rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range xsd:string ;
+             rdfs:label "has_acronym"@en .
+
+
+###  https://csse.utoronto.ca/has_description
+:has_description rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has_description"@en .
+
+
+###  https://csse.utoronto.ca/has_identifier
+:has_identifier rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:range xsd:string ;
+                rdfs:label "has_identifier"@en .
+
+
+###  https://csse.utoronto.ca/has_improvements
+:has_improvements rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has_improvements"@en .
+
+
+###  https://csse.utoronto.ca/has_status
+:has_status rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:range xsd:string ;
+            rdfs:label "has_status"@en .
+
+
+###  https://csse.utoronto.ca/has_surface_area_in_hectares
+:has_surface_area_in_hectares rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "has_surface_area_in_hectares"@en .
+
+
+###  https://csse.utoronto.ca/is_vacant
+:is_vacant rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:range xsd:string ;
+           rdfs:label "is_vacant"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://cmmp#account
+<http://cmmp#account> rdf:type owl:Class .
+
+
+###  http://cmmp#address
+<http://cmmp#address> rdf:type owl:Class ;
+                      owl:equivalentClass <http://ontology.eil.utoronto.ca/icontact.owl#Address> .
+
+
+###  http://cmmp#address_component
+<http://cmmp#address_component> rdf:type owl:Class .
+
+
+###  http://cmmp#arts_and_culture_provisioning_expertise
+<http://cmmp#arts_and_culture_provisioning_expertise> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://cmmp#post_development_expertise> .
+
+
+###  http://cmmp#arts_organization_type
+<http://cmmp#arts_organization_type> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://cmmp#organization_activity_type> .
+
+
+###  http://cmmp#asset
+<http://cmmp#asset> rdf:type owl:Class .
+
+
+###  http://cmmp#asset_contribution
+<http://cmmp#asset_contribution> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#contribution_type> .
+
+
+###  http://cmmp#asset_need
+<http://cmmp#asset_need> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://cmmp#project_need> .
+
+
+###  http://cmmp#builder_role
+<http://cmmp#builder_role> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#building_developer
+<http://cmmp#building_developer> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#changed_history
+<http://cmmp#changed_history> rdf:type owl:Class .
+
+
+###  http://cmmp#charity
+<http://cmmp#charity> rdf:type owl:Class ;
+                      rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#city_name
+<http://cmmp#city_name> rdf:type owl:Class ;
+                        rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#civic_engagement_expertise
+<http://cmmp#civic_engagement_expertise> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://cmmp#post_development_expertise> .
+
+
+###  http://cmmp#community_liaising_expertise
+<http://cmmp#community_liaising_expertise> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://cmmp#expertise> .
+
+
+###  http://cmmp#community_liaison_role
+<http://cmmp#community_liaison_role> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#community_support_need
+<http://cmmp#community_support_need> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://cmmp#project_need> .
+
+
+###  http://cmmp#construction_contribution
+<http://cmmp#construction_contribution> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://cmmp#procurement_and_construction_contribution> .
+
+
+###  http://cmmp#construction_expertise
+<http://cmmp#construction_expertise> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://cmmp#expertise> .
+
+
+###  http://cmmp#contribution
+<http://cmmp#contribution> rdf:type owl:Class .
+
+
+###  http://cmmp#contribution_type
+<http://cmmp#contribution_type> rdf:type owl:Class .
+
+
+###  http://cmmp#corporation
+<http://cmmp#corporation> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#for_profit> .
+
+
+###  http://cmmp#country_name
+<http://cmmp#country_name> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#creative_mixed_use_partnership_partner
+<http://cmmp#creative_mixed_use_partnership_partner> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://cmmp#partnership_participant> .
+
+
+###  http://cmmp#design_and_engineering_contribution
+<http://cmmp#design_and_engineering_contribution> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://cmmp#expertise_based_labour_contribution> .
+
+
+###  http://cmmp#design_contribution
+<http://cmmp#design_contribution> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://cmmp#design_and_engineering_contribution> .
+
+
+###  http://cmmp#developer_role
+<http://cmmp#developer_role> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#engineering_contribution
+<http://cmmp#engineering_contribution> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#design_and_engineering_contribution> .
+
+
+###  http://cmmp#ethnic_group
+<http://cmmp#ethnic_group> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#not_for_profit> .
+
+
+###  http://cmmp#expertise
+<http://cmmp#expertise> rdf:type owl:Class .
+
+
+###  http://cmmp#expertise_based_labour_contribution
+<http://cmmp#expertise_based_labour_contribution> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://cmmp#labour_contribution> .
+
+
+###  http://cmmp#expertise_need
+<http://cmmp#expertise_need> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#project_need> .
+
+
+###  http://cmmp#faith-based_organization
+<http://cmmp#faith-based_organization> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#faith_based_group
+<http://cmmp#faith_based_group> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://cmmp#not_for_profit> .
+
+
+###  http://cmmp#financial_contribution
+<http://cmmp#financial_contribution> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://cmmp#contribution_type> .
+
+
+###  http://cmmp#financial_management_expertise
+<http://cmmp#financial_management_expertise> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://cmmp#expertise> .
+
+
+###  http://cmmp#financial_need
+<http://cmmp#financial_need> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#project_need> .
+
+
+###  http://cmmp#financial_organization_type
+<http://cmmp#financial_organization_type> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://cmmp#organization_activity_type> .
+
+
+###  http://cmmp#financier_role
+<http://cmmp#financier_role> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#financing_need
+<http://cmmp#financing_need> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#financial_need> .
+
+
+###  http://cmmp#for_profit
+<http://cmmp#for_profit> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://cmmp#organization_legal_status> .
+
+
+###  http://cmmp#foundation
+<http://cmmp#foundation> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#funder_role
+<http://cmmp#funder_role> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#funding_need
+<http://cmmp#funding_need> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#financial_need> .
+
+
+###  http://cmmp#indigenous_groups
+<http://cmmp#indigenous_groups> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#institution
+<http://cmmp#institution> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#investor_role
+<http://cmmp#investor_role> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#labour_contribution
+<http://cmmp#labour_contribution> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://cmmp#contribution_type> .
+
+
+###  http://cmmp#land_use
+<http://cmmp#land_use> rdf:type owl:Class .
+
+
+###  http://cmmp#legal_status
+<http://cmmp#legal_status> rdf:type owl:Class .
+
+
+###  http://cmmp#lender
+<http://cmmp#lender> rdf:type owl:Class ;
+                     rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#local_government
+<http://cmmp#local_government> rdf:type owl:Class ;
+                               rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#local_government_agency
+<http://cmmp#local_government_agency> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://cmmp#public_sector> .
+
+
+###  http://cmmp#mixed_residential_and_commercial
+<http://cmmp#mixed_residential_and_commercial> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://cmmp#partnership_type> .
+
+
+###  http://cmmp#mized_residential
+<http://cmmp#mized_residential> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://cmmp#partnership_type> .
+
+
+###  http://cmmp#municipality
+<http://cmmp#municipality> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#local_government> .
+
+
+###  http://cmmp#non-profit_housing_co-op
+<http://cmmp#non-profit_housing_co-op> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#not_for_profit
+<http://cmmp#not_for_profit> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://cmmp#organization_legal_status> .
+
+
+###  http://cmmp#notification
+<http://cmmp#notification> rdf:type owl:Class .
+
+
+###  http://cmmp#notification_of_interest
+<http://cmmp#notification_of_interest> rdf:type owl:Class .
+
+
+###  http://cmmp#notification_test
+<http://cmmp#notification_test> rdf:type owl:Class .
+
+
+###  http://cmmp#opportunity_listing
+<http://cmmp#opportunity_listing> rdf:type owl:Class .
+
+
+###  http://cmmp#organization
+<http://cmmp#organization> rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://cmmp#owns> ;
+                                             owl:someValuesFrom <http://cmmp#real_estate_property>
+                                           ] .
+
+
+###  http://cmmp#organization_activity_type
+<http://cmmp#organization_activity_type> rdf:type owl:Class .
+
+
+###  http://cmmp#organization_legal_status
+<http://cmmp#organization_legal_status> rdf:type owl:Class .
+
+
+###  http://cmmp#organization_role
+<http://cmmp#organization_role> rdf:type owl:Class .
+
+
+###  http://cmmp#organization_type
+<http://cmmp#organization_type> rdf:type owl:Class .
+
+
+###  http://cmmp#partner
+<http://cmmp#partner> rdf:type owl:Class .
+
+
+###  http://cmmp#partnership
+<http://cmmp#partnership> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#for_profit> .
+
+
+###  http://cmmp#partnership_constraint
+<http://cmmp#partnership_constraint> rdf:type owl:Class .
+
+
+###  http://cmmp#partnership_initiator
+<http://cmmp#partnership_initiator> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://cmmp#partnership_participant> .
+
+
+###  http://cmmp#partnership_opportunity
+<http://cmmp#partnership_opportunity> rdf:type owl:Class ;
+                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://cmmp#has_real_estate_property> ;
+                                                        owl:someValuesFrom <http://cmmp#real_estate_property>
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :has_end_date ;
+                                                        owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :has_publish_date ;
+                                                        owl:someValuesFrom <http://www.w3.org/2006/time#Instant>
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :has_status ;
+                                                        owl:someValuesFrom xsd:string
+                                                      ] .
+
+
+###  http://cmmp#partnership_participant
+<http://cmmp#partnership_participant> rdf:type owl:Class .
+
+
+###  http://cmmp#partnership_role
+<http://cmmp#partnership_role> rdf:type owl:Class .
+
+
+###  http://cmmp#partnership_type
+<http://cmmp#partnership_type> rdf:type owl:Class .
+
+
+###  http://cmmp#person
+<http://cmmp#person> rdf:type owl:Class .
+
+
+###  http://cmmp#planning_and_feasibility_study_contribution
+<http://cmmp#planning_and_feasibility_study_contribution> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://cmmp#expertise_based_labour_contribution> .
+
+
+###  http://cmmp#planning_expertise
+<http://cmmp#planning_expertise> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#expertise> .
+
+
+###  http://cmmp#post_development_beneficiary_role
+<http://cmmp#post_development_beneficiary_role> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://cmmp#role> .
+
+
+###  http://cmmp#post_development_contribution
+<http://cmmp#post_development_contribution> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://cmmp#contribution_type> .
+
+
+###  http://cmmp#post_development_expertise
+<http://cmmp#post_development_expertise> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://cmmp#expertise> .
+
+
+###  http://cmmp#postal_code
+<http://cmmp#postal_code> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#primary_contact
+<http://cmmp#primary_contact> rdf:type owl:Class ;
+                              rdfs:subClassOf <http://cmmp#person> .
+
+
+###  http://cmmp#primary_contact_test
+<http://cmmp#primary_contact_test> rdf:type owl:Class .
+
+
+###  http://cmmp#private_enterprise
+<http://cmmp#private_enterprise> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#procurement_and_construction_contribution
+<http://cmmp#procurement_and_construction_contribution> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://cmmp#expertise_based_labour_contribution> .
+
+
+###  http://cmmp#procurement_contribution
+<http://cmmp#procurement_contribution> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#procurement_and_construction_contribution> .
+
+
+###  http://cmmp#project_component_available
+<http://cmmp#project_component_available> rdf:type owl:Class ;
+                                          rdfs:comment "space (in the realized project) available for potential partners" .
+
+
+###  http://cmmp#project_need
+<http://cmmp#project_need> rdf:type owl:Class .
+
+
+###  http://cmmp#project_type
+<http://cmmp#project_type> rdf:type owl:Class .
+
+
+###  http://cmmp#province_name
+<http://cmmp#province_name> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#public_corporation
+<http://cmmp#public_corporation> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#public_sector> .
+
+
+###  http://cmmp#public_sector
+<http://cmmp#public_sector> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://cmmp#organization_legal_status> .
+
+
+###  http://cmmp#real_estate_contribution
+<http://cmmp#real_estate_contribution> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#asset_contribution> .
+
+
+###  http://cmmp#real_estate_developer_type
+<http://cmmp#real_estate_developer_type> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://cmmp#organization_activity_type> .
+
+
+###  http://cmmp#real_estate_property
+<http://cmmp#real_estate_property> rdf:type owl:Class ;
+                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_proposed_zoning ;
+                                                     owl:someValuesFrom :Zone
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_zoning ;
+                                                     owl:someValuesFrom :Zone
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_description ;
+                                                     owl:someValuesFrom xsd:string
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_identifier ;
+                                                     owl:someValuesFrom xsd:string
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_improvements ;
+                                                     owl:someValuesFrom xsd:string
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :has_surface_area_in_hectares ;
+                                                     owl:someValuesFrom xsd:string
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :is_vacant ;
+                                                     owl:someValuesFrom xsd:boolean
+                                                   ] .
+
+
+###  http://cmmp#registered_charity
+<http://cmmp#registered_charity> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://cmmp#organization_legal_status> .
+
+
+###  http://cmmp#resource
+<http://cmmp#resource> rdf:type owl:Class .
+
+
+###  http://cmmp#role
+<http://cmmp#role> rdf:type owl:Class .
+
+
+###  http://cmmp#site
+<http://cmmp#site> rdf:type owl:Class .
+
+
+###  http://cmmp#site_address
+<http://cmmp#site_address> rdf:type owl:Class .
+
+
+###  http://cmmp#social_and_cultural_service_provision
+<http://cmmp#social_and_cultural_service_provision> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://cmmp#project_need> .
+
+
+###  http://cmmp#social_group
+<http://cmmp#social_group> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://cmmp#not_for_profit> .
+
+
+###  http://cmmp#social_services_provider
+<http://cmmp#social_services_provider> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://cmmp#organization> .
+
+
+###  http://cmmp#social_services_provider_type
+<http://cmmp#social_services_provider_type> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://cmmp#organization_activity_type> .
+
+
+###  http://cmmp#social_services_provisioning_expertise
+<http://cmmp#social_services_provisioning_expertise> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://cmmp#post_development_expertise> .
+
+
+###  http://cmmp#sole_proprietorship
+<http://cmmp#sole_proprietorship> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://cmmp#for_profit> .
+
+
+###  http://cmmp#space_type
+<http://cmmp#space_type> rdf:type owl:Class .
+
+
+###  http://cmmp#start_up_ofr_occupancy_contribution
+<http://cmmp#start_up_ofr_occupancy_contribution> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://cmmp#expertise_based_labour_contribution> .
+
+
+###  http://cmmp#street_name
+<http://cmmp#street_name> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#street_number
+<http://cmmp#street_number> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://cmmp#address_component> .
+
+
+###  http://cmmp#user
+<http://cmmp#user> rdf:type owl:Class .
+
+
+###  http://cmmp#vcs
+<http://cmmp#vcs> rdf:type owl:Class .
+
+
+###  http://cmmp#version
+<http://cmmp#version> rdf:type owl:Class .
+
+
+###  http://cmmp#ward
+<http://cmmp#ward> rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/icontact.owl#Address
+
+###  https://csse.utoronto.ca/Or
+:Or rdf:type owl:Class ;
+    rdfs:label "Or"@en .
+
+
+###  https://csse.utoronto.ca/Proposal
+:Proposal rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://cmmp#has_organization> ;
+                            owl:someValuesFrom <http://cmmp#organization>
+                          ] ;
+          rdfs:label "Proposal"@en .
+
+
+###  https://csse.utoronto.ca/Submission
+:Submission rdf:type owl:Class ;
+            rdfs:label "Submission"@en .
+
+
+###  https://csse.utoronto.ca/Zone
+:Zone rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :governed_by ;
+                        owl:someValuesFrom <http://cmmp#organization>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :related_zoning ;
+                        owl:someValuesFrom :Zone
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://cmmp#has_name> ;
+                        owl:someValuesFrom xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_acronym ;
+                        owl:someValuesFrom xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_description ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:label "Zone"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://cmmp#account> rdfs:label "Account" .
+
+
+<http://cmmp#building_developer> rdfs:label "Building Developer" .
+
+
+<http://cmmp#charity> rdfs:label "Charity" .
+
+
+<http://cmmp#faith-based_organization> rdfs:label "Faith-Based Organization" .
+
+
+<http://cmmp#foundation> rdfs:label "Foundation" .
+
+
+<http://cmmp#indigenous_groups> rdfs:label "Indigenous Groups" .
+
+
+<http://cmmp#institution> rdfs:label "Institution" .
+
+
+<http://cmmp#non-profit_housing_co-oprdf> <http://cmmp#type> owl:NamedIndividual ,
+                                                             <http://cmmp#organization_type> .
+
+
+<http://cmmp#private_enterprise> rdfs:label "Private Enterprise" .
+
+
+<http://cmmp#social_services_provider> rdfs:label "Social Services Provider" .
+
+
+###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
