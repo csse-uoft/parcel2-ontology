@@ -25,7 +25,7 @@ jobs:
     
     - name: copy ontologies
       run: |
-        cp ./ontologies/ ./docs/
+        cp -r ./ontologies/ ./docs/
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
