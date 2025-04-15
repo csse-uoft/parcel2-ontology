@@ -3,7 +3,7 @@ import rdflib
 from ontospy.gendocs.viz.viz_html_multi import *
 
 
-def generate_docs(file, output_path, format=None, theme="cosmo", preview=False):
+def generate_docs(file, output_path, format=None, theme="cosmo", preview=False, title=None):
     """
     Generate documentation for the ontology using Ontospy and the HTML multi-page visualization.
     """
@@ -16,13 +16,13 @@ def generate_docs(file, output_path, format=None, theme="cosmo", preview=False):
         return
 
     # Load the ontology
-    model = ontospy.Ontospy(verbose=True)
+    model = ontospy.Ontospy(verbose=True)  # Instantiate the Ontospy object
     model.load_rdf(file, rdf_format=format)  # Load the ontology file
     model.build_all()
     print(model.stats())
 
     # Generate the HTML documentation
-    v = KompleteViz(model, theme=theme)  # Instantiate the visualization object
+    v = KompleteViz(model, theme=theme, title=title)  # Instantiate the visualization object
     v.build(output_path)
     if preview: v.preview()  # Open in browser
 
@@ -30,4 +30,4 @@ def generate_docs(file, output_path, format=None, theme="cosmo", preview=False):
 if __name__ == "__main__":
     generate_docs("./ontologies/icontact.ttl", "./docs/icontact")
     generate_docs("./ontologies/time.ttl", "./docs/time")
-    generate_docs("./ontologies/cmmp.ttl", "./docs/cmmp", format="turtle")
+    generate_docs("./ontologies/cmmp.ttl", "./docs/cmmp", format="turtle", title="Parcel Ontology")
