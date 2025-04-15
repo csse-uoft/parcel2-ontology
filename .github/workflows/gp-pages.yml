@@ -22,6 +22,11 @@ jobs:
     
     - name: Generate docs
       run: python generate.py
+
+    - name: Copy readme
+      run: |
+        cp -r ./README.md ./docs/index.md
+        cp -r ./README.md ./docs/README.md
     
     - name: copy ontologies
       run: |
