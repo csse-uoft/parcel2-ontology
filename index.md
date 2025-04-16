@@ -1,7 +1,7 @@
 # Parcel2 Ontology
 
 ## Ontologies
-- [Parcel 2](https://ontology.connectbuildnow.org/cmmp/)
+- [Parcel 2](https://ontology.connectbuildnow.org/bedeo/)
 - [icontact](https://ontology.connectbuildnow.org/icontact/)
 - [Time](https://ontology.connectbuildnow.org/time/)
 
