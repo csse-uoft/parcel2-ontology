@@ -37,5 +37,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
+        enable_jekyll: true
+        cname: ontology.connectbuildnow.org
       
 
