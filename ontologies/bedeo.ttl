@@ -93,7 +93,9 @@ bedeo:has_account rdf:type owl:ObjectProperty ;
 
 
 ###  https://csse.utoronto.ca/has_address
-bedeo:has_address rdf:type owl:ObjectProperty .
+bedeo:has_address rdf:type owl:ObjectProperty ;
+                  rdfs:range bedeo:address ;
+                  rdfs:label "Has address"@en .
 
 
 ###  https://csse.utoronto.ca/has_asset
@@ -199,6 +201,13 @@ bedeo:has_organization_type rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_participant
 bedeo:has_participant rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/has_primary_address
+bedeo:has_primary_address rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf bedeo:has_address ;
+                          rdfs:range bedeo:address ;
+                          rdfs:label "Has primary address"@en .
 
 
 ###  https://csse.utoronto.ca/has_primary_contact
@@ -392,6 +401,41 @@ bedeo:has_country_name rdf:type owl:DatatypeProperty ;
 bedeo:has_created_at rdf:type owl:DatatypeProperty .
 
 
+###  https://csse.utoronto.ca/has_current_full_first_name
+bedeo:has_current_full_first_name rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf bedeo:has_full_first_name ;
+                                  rdfs:range xsd:string ;
+                                  rdfs:label "Has current full first name"@en .
+
+
+###  https://csse.utoronto.ca/has_current_full_last_name
+bedeo:has_current_full_last_name rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf bedeo:has_full_last_name ;
+                                 rdfs:range xsd:string ;
+                                 rdfs:label "Has current full last name"@en .
+
+
+###  https://csse.utoronto.ca/has_current_full_middle_name
+bedeo:has_current_full_middle_name rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf bedeo:has_full_middle_name ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:label "Has current full middle name"@en .
+
+
+###  https://csse.utoronto.ca/has_current_full_name
+bedeo:has_current_full_name rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf bedeo:has_full_name ;
+                            rdfs:range xsd:string ;
+                            rdfs:label "Has current full name"@en .
+
+
+###  https://csse.utoronto.ca/has_current_legal_name
+bedeo:has_current_legal_name rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf bedeo:has_legal_name ;
+                             rdfs:range xsd:string ;
+                             rdfs:label "Has current legal name"@en .
+
+
 ###  https://csse.utoronto.ca/has_description
 bedeo:has_description rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
@@ -411,7 +455,38 @@ bedeo:has_email rdf:type owl:DatatypeProperty ;
 
 
 ###  https://csse.utoronto.ca/has_first_name
-bedeo:has_first_name rdf:type owl:DatatypeProperty .
+bedeo:has_first_name rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf bedeo:has_name ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "Has first name"@en .
+
+
+###  https://csse.utoronto.ca/has_full_first_name
+bedeo:has_full_first_name rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf bedeo:has_name ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "Has full first name"@en .
+
+
+###  https://csse.utoronto.ca/has_full_last_name
+bedeo:has_full_last_name rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf bedeo:has_name ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "Has full last name"@en .
+
+
+###  https://csse.utoronto.ca/has_full_middle_name
+bedeo:has_full_middle_name rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf bedeo:has_name ;
+                           rdfs:range xsd:string ;
+                           rdfs:label "Has full middle name"@en .
+
+
+###  https://csse.utoronto.ca/has_full_name
+bedeo:has_full_name rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf bedeo:has_name ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "Has full name"@en .
 
 
 ###  https://csse.utoronto.ca/has_geometry_format
@@ -456,7 +531,19 @@ bedeo:has_last_modified_at rdf:type owl:DatatypeProperty .
 
 
 ###  https://csse.utoronto.ca/has_last_name
-bedeo:has_last_name rdf:type owl:DatatypeProperty .
+bedeo:has_last_name rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf bedeo:has_name ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "Has last name"@en .
+
+
+###  https://csse.utoronto.ca/has_legal_name
+bedeo:has_legal_name rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf bedeo:has_name ;
+                     rdfs:domain bedeo:organization ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Provides the legal name of an entity"@en ;
+                     rdfs:label "Has legal name"@en .
 
 
 ###  https://csse.utoronto.ca/has_locality_name
@@ -1257,8 +1344,23 @@ bedeo:organization rdf:type owl:Class ;
                                      owl:someValuesFrom bedeo:real_estate_asset
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_primary_address ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass bedeo:address
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_name ;
                                      owl:someValuesFrom xsd:string
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_current_legal_name ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:string
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_legal_name ;
+                                     owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:string
                                    ] ;
                    rdfs:comment "A group of people who work together in an organized way for a shared purpose"@en ;
                    rdfs:label "Organization"@en .
@@ -1333,7 +1435,32 @@ bedeo:partnership_type rdf:type owl:Class .
 
 
 ###  https://csse.utoronto.ca/person
-bedeo:person rdf:type owl:Class .
+bedeo:person rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_primary_address ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass bedeo:address
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_name ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_first_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_last_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_middle_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] .
 
 
 ###  https://csse.utoronto.ca/planning_and_feasibility_study_contribution
