@@ -382,13 +382,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_143"><a   href="prop-cclicense.html">cc:license</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_144"><a   href="prop-dc1creator.html">dc1:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_144"><a   href="prop-dctermscreator.html">dcterms:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_145"><a   href="prop-dc1description.html">dc1:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_145"><a class="active"  href="prop-dctermsdescription.html">dcterms:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_146"><a class="active"  href="prop-dc1modified.html">dc1:modified</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_146"><a   href="prop-dctermsmodified.html">dcterms:modified</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_147"><a   href="prop-dc1title.html">dc1:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_147"><a   href="prop-dctermstitle.html">dcterms:title</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_175"><a   href="prop-icoperatingproperty.html">ic:OperatingProperty</a></li>
           
@@ -575,7 +575,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            dc1:modified
+            dcterms:description
         </li>
   </ol>
 
@@ -599,7 +599,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             <h1>
 
-                dc1:modified
+                dcterms:description
                 
                     <small class="label label-info label-xs ">leaf node</small>
                   
@@ -618,7 +618,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'modified'">dc1:modified</a>
+                            <li><a style="font-weight: bold;" title="'description'">dcterms:description</a>
 
                             
                               </li>
@@ -642,7 +642,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 <code>http://purl.org/dc/terms/modified</code>
+                 <code>http://purl.org/dc/terms/description</code>
              </div>
            </div>
             </div></div>
@@ -657,7 +657,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 modified
+                 description
              </div>
            </div>
             </div></div>
@@ -694,7 +694,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                    </td>
 
                     <td>
-                      dc1:modified
+                      dcterms:description
                     </td>
 
                     <td>
@@ -718,10 +718,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
                 
 
-                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dc1:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">dc1</span><span class="p">:</span><span class="nt">modified</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">AnnotationProperty</span> <span class="p">.</span>
+<span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">AnnotationProperty</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -760,7 +760,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Fri, 23 May 2025 17:37:40 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Fri, 30 May 2025 23:25:32 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
@@ -821,7 +821,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_146").offset().top - 100
+          scrollTop: $("#sd_145").offset().top - 100
       }, 100);
     });
 
