@@ -223,7 +223,7 @@ bedeo:has_primary_contact rdf:type owl:ObjectProperty ;
                                                       bedeo:PartnershipParticipant
                                                     )
                                       ] ;
-                          rdfs:range bedeo:primary_contact .
+                          rdfs:range bedeo:Contact .
 
 
 ###  https://csse.utoronto.ca/has_proposed_land_use
@@ -1269,6 +1269,19 @@ bedeo:Asset rdf:type owl:Class ;
             rdfs:label "Asset"@en .
 
 
+###  https://csse.utoronto.ca/Contact
+bedeo:Contact rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty bedeo:has_telephone ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty bedeo:has_email ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] .
+
+
 ###  https://csse.utoronto.ca/Contribution
 bedeo:Contribution rdf:type owl:Class .
 
@@ -2070,11 +2083,6 @@ bedeo:post_development_expertise rdf:type owl:Class ;
 ###  https://csse.utoronto.ca/postal_code
 bedeo:postal_code rdf:type owl:Class ;
                   rdfs:subClassOf bedeo:AddressComponent .
-
-
-###  https://csse.utoronto.ca/primary_contact
-bedeo:primary_contact rdf:type owl:Class ;
-                      rdfs:subClassOf bedeo:Person .
 
 
 ###  https://csse.utoronto.ca/private_enterprise
