@@ -72,8 +72,8 @@ xsd:datetimes rdf:type rdfs:Datatype .
 
 ###  https://csse.utoronto.ca/activates_role
 bedeo:activates_role rdf:type owl:ObjectProperty ;
-                     rdfs:domain bedeo:contribution_type ;
-                     rdfs:range bedeo:role .
+                     rdfs:domain bedeo:ContributionType ;
+                     rdfs:range bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/governed_by
@@ -89,12 +89,12 @@ bedeo:governed_by rdf:type owl:ObjectProperty ;
 bedeo:has_account rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain bedeo:organization ;
-                  rdfs:range bedeo:account .
+                  rdfs:range bedeo:Account .
 
 
 ###  https://csse.utoronto.ca/has_address
 bedeo:has_address rdf:type owl:ObjectProperty ;
-                  rdfs:range bedeo:address ;
+                  rdfs:range bedeo:Address ;
                   rdfs:label "Has address"@en .
 
 
@@ -118,8 +118,8 @@ bedeo:has_constraint rdf:type owl:ObjectProperty .
 
 ###  https://csse.utoronto.ca/has_contribution_type
 bedeo:has_contribution_type rdf:type owl:ObjectProperty ;
-                            rdfs:domain bedeo:contribution ;
-                            rdfs:range bedeo:contribution_type .
+                            rdfs:domain bedeo:Contribution ;
+                            rdfs:range bedeo:ContributionType .
 
 
 ###  https://csse.utoronto.ca/has_current_land_use
@@ -146,8 +146,8 @@ bedeo:has_individual rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_intended_opportunity
 bedeo:has_intended_opportunity rdf:type owl:ObjectProperty ;
-                               rdfs:domain bedeo:notification ;
-                               rdfs:range bedeo:partnership_opportunity .
+                               rdfs:domain bedeo:Notification ;
+                               rdfs:range bedeo:PpartnershipOpportunity .
 
 
 ###  https://csse.utoronto.ca/has_latest_version
@@ -162,7 +162,7 @@ bedeo:has_legal_status rdf:type owl:ObjectProperty .
 ###  https://csse.utoronto.ca/has_member
 bedeo:has_member rdf:type owl:ObjectProperty ;
                  rdfs:domain bedeo:organization ;
-                 rdfs:range bedeo:agent ;
+                 rdfs:range bedeo:Agent ;
                  rdfs:comment "Indicates the members who are part of an organization" ;
                  rdfs:label "Has member" .
 
@@ -173,8 +173,8 @@ bedeo:has_need rdf:type owl:ObjectProperty .
 
 ###  https://csse.utoronto.ca/has_notification
 bedeo:has_notification rdf:type owl:ObjectProperty ;
-                       rdfs:domain bedeo:partnership_opportunity ;
-                       rdfs:range bedeo:notification .
+                       rdfs:domain bedeo:PpartnershipOpportunity ;
+                       rdfs:range bedeo:Notification .
 
 
 ###  https://csse.utoronto.ca/has_opportunity
@@ -188,21 +188,21 @@ bedeo:has_organization rdf:type owl:ObjectProperty .
 ###  https://csse.utoronto.ca/has_organization_legal_name
 bedeo:has_organization_legal_name rdf:type owl:ObjectProperty ;
                                   rdfs:domain bedeo:organization ;
-                                  rdfs:range bedeo:Organization_legal_name ;
+                                  rdfs:range bedeo:OrganizationLegalName ;
                                   rdfs:label "Has organization legal name"@en .
 
 
 ###  https://csse.utoronto.ca/has_organization_trade_name
 bedeo:has_organization_trade_name rdf:type owl:ObjectProperty ;
                                   rdfs:domain bedeo:organization ;
-                                  rdfs:range bedeo:Organization_trade_name ;
+                                  rdfs:range bedeo:OrganizationTradeName ;
                                   rdfs:label "Has organization trade name"@en .
 
 
 ###  https://csse.utoronto.ca/has_organization_type
 bedeo:has_organization_type rdf:type owl:ObjectProperty ;
                             rdfs:domain bedeo:organization ;
-                            rdfs:range bedeo:organization_type .
+                            rdfs:range bedeo:OrganizationType .
 
 
 ###  https://csse.utoronto.ca/has_participant
@@ -212,18 +212,18 @@ bedeo:has_participant rdf:type owl:ObjectProperty .
 ###  https://csse.utoronto.ca/has_primary_address
 bedeo:has_primary_address rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf bedeo:has_address ;
-                          rdfs:range bedeo:address ;
+                          rdfs:range bedeo:Address ;
                           rdfs:label "Has primary address"@en .
 
 
 ###  https://csse.utoronto.ca/has_primary_contact
 bedeo:has_primary_contact rdf:type owl:ObjectProperty ;
                           rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( bedeo:account
-                                                      bedeo:partnership_participant
+                                        owl:unionOf ( bedeo:Account
+                                                      bedeo:PartnershipParticipant
                                                     )
                                       ] ;
-                          rdfs:range bedeo:primary_contact .
+                          rdfs:range bedeo:Contact .
 
 
 ###  https://csse.utoronto.ca/has_proposed_land_use
@@ -242,7 +242,7 @@ bedeo:has_proposed_zoning rdf:type owl:ObjectProperty ;
 ###  https://csse.utoronto.ca/has_real_estate_asset
 bedeo:has_real_estate_asset rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf bedeo:has_asset ;
-                            rdfs:domain bedeo:partnership_opportunity ;
+                            rdfs:domain bedeo:PpartnershipOpportunity ;
                             rdfs:range bedeo:real_estate_asset ;
                             rdfs:comment "Indicates the real estate asset of the partnership opportunity"@en ;
                             rdfs:label "Has real estate asset"@en .
@@ -250,8 +250,8 @@ bedeo:has_real_estate_asset rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_recipient
 bedeo:has_recipient rdf:type owl:ObjectProperty ;
-                    rdfs:domain bedeo:notification ;
-                    rdfs:range bedeo:account .
+                    rdfs:domain bedeo:Notification ;
+                    rdfs:range bedeo:Account .
 
 
 ###  https://csse.utoronto.ca/has_role
@@ -260,8 +260,8 @@ bedeo:has_role rdf:type owl:ObjectProperty .
 
 ###  https://csse.utoronto.ca/has_sender
 bedeo:has_sender rdf:type owl:ObjectProperty ;
-                 rdfs:domain bedeo:notification ;
-                 rdfs:range bedeo:account .
+                 rdfs:domain bedeo:Notification ;
+                 rdfs:range bedeo:Account .
 
 
 ###  https://csse.utoronto.ca/has_site_component
@@ -274,15 +274,15 @@ bedeo:has_space_offered rdf:type owl:ObjectProperty .
 
 ###  https://csse.utoronto.ca/has_spatial_geometry
 bedeo:has_spatial_geometry rdf:type owl:ObjectProperty ;
-                           rdfs:domain bedeo:spatial_representation ;
-                           rdfs:range bedeo:spatial_geometry ;
+                           rdfs:domain bedeo:SpatialRepresentation ;
+                           rdfs:range bedeo:SpatialGeometry ;
                            rdfs:comment "Links a geospatial representation of an entity to a spatial geometry"@en ;
                            rdfs:label "Has spatial geometry"@en .
 
 
 ###  https://csse.utoronto.ca/has_spatial_representation
 bedeo:has_spatial_representation rdf:type owl:ObjectProperty ;
-                                 rdfs:range bedeo:spatial_representation ;
+                                 rdfs:range bedeo:SpatialRepresentation ;
                                  rdfs:comment "Links an entity to a geospatial representation of the entity"@en ;
                                  rdfs:label "Has spatial representation"@en .
 
@@ -310,13 +310,13 @@ bedeo:has_zoning rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/is_account_of
 bedeo:is_account_of rdf:type owl:ObjectProperty ;
-                    rdfs:domain bedeo:account ;
+                    rdfs:domain bedeo:Account ;
                     rdfs:range bedeo:organization .
 
 
 ###  https://csse.utoronto.ca/is_member_of
 bedeo:is_member_of rdf:type owl:ObjectProperty ;
-                   rdfs:domain bedeo:agent ;
+                   rdfs:domain bedeo:Agent ;
                    rdfs:range bedeo:organization ;
                    rdfs:comment "Indicates the organization that the member is part of" ;
                    rdfs:label "Is member of" .
@@ -325,8 +325,8 @@ bedeo:is_member_of rdf:type owl:ObjectProperty ;
 ###  https://csse.utoronto.ca/makes_contribution
 bedeo:makes_contribution rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
-                         rdfs:domain bedeo:partnership_participant ;
-                         rdfs:range bedeo:contribution .
+                         rdfs:domain bedeo:PartnershipParticipant ;
+                         rdfs:range bedeo:Contribution .
 
 
 ###  https://csse.utoronto.ca/owns
@@ -378,7 +378,7 @@ bedeo:has_city_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_concession_information
 bedeo:has_concession_information rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain bedeo:address ;
+                                 rdfs:domain bedeo:Address ;
                                  rdfs:range xsd:string ;
                                  rdfs:comment "A concession is a row of lots within a township, typically running parallel to each other and separated by road allowances (e.g. Concession 9)"@en ;
                                  rdfs:label "Has concession information"@en .
@@ -390,7 +390,7 @@ bedeo:has_country rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_country_code
 bedeo:has_country_code rdf:type owl:DatatypeProperty ;
-                       rdfs:domain bedeo:address ;
+                       rdfs:domain bedeo:Address ;
                        rdfs:range xsd:string ;
                        rdfs:comment "The 2 letter code of the country (e.g. CA)"@en ;
                        rdfs:label "Has country code"@en .
@@ -398,7 +398,7 @@ bedeo:has_country_code rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_country_name
 bedeo:has_country_name rdf:type owl:DatatypeProperty ;
-                       rdfs:domain bedeo:address ;
+                       rdfs:domain bedeo:Address ;
                        rdfs:range xsd:string ;
                        rdfs:comment "The name of the country (e.g. Canada)"@en ;
                        rdfs:label "Has country name"@en .
@@ -504,7 +504,7 @@ bedeo:has_full_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_geometry_format
 bedeo:has_geometry_format rdf:type owl:DatatypeProperty ;
-                          rdfs:domain bedeo:spatial_geometry ;
+                          rdfs:domain bedeo:SpatialGeometry ;
                           rdfs:range xsd:string ;
                           rdfs:comment "Provides the geometry format used for the spatial geometry (e.g. WKT, GeoJSON, etc.)"@en ;
                           rdfs:label "Has geometry format"@en .
@@ -512,7 +512,7 @@ bedeo:has_geometry_format rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_geometry_value
 bedeo:has_geometry_value rdf:type owl:DatatypeProperty ;
-                         rdfs:domain bedeo:spatial_geometry ;
+                         rdfs:domain bedeo:SpatialGeometry ;
                          rdfs:range xsd:string ;
                          rdfs:comment "Provides the geometry format used for the spatial geometry (e.g. WKT, GeoJSON, etc.)"@en ;
                          rdfs:label "Has geometry value"@en .
@@ -561,7 +561,7 @@ bedeo:has_legal_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_locality_name
 bedeo:has_locality_name rdf:type owl:DatatypeProperty ;
-                        rdfs:domain bedeo:address ;
+                        rdfs:domain bedeo:Address ;
                         rdfs:range xsd:string ;
                         rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en ;
                         rdfs:label "Has locality name"@en .
@@ -569,7 +569,7 @@ bedeo:has_locality_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_location_description
 bedeo:has_location_description rdf:type owl:DatatypeProperty ;
-                               rdfs:domain bedeo:address ;
+                               rdfs:domain bedeo:Address ;
                                rdfs:range xsd:string ;
                                rdfs:comment "A textual description of a location"@en ;
                                rdfs:label "Has location description"@en .
@@ -577,7 +577,7 @@ bedeo:has_location_description rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_lot_information
 bedeo:has_lot_information rdf:type owl:DatatypeProperty ;
-                          rdfs:domain bedeo:address ;
+                          rdfs:domain bedeo:Address ;
                           rdfs:range xsd:string ;
                           rdfs:comment "A lot is a rectangular parcel of land within a concession, designated by a number (e.g. Lot 7)"@en ;
                           rdfs:label "Has lot information"@en .
@@ -882,7 +882,7 @@ bedeo:has_organization_years_of_experience_with_affordable_housing rdf:type owl:
 
 ###  https://csse.utoronto.ca/has_part_lot_information
 bedeo:has_part_lot_information rdf:type owl:DatatypeProperty ;
-                               rdfs:domain bedeo:address ;
+                               rdfs:domain bedeo:Address ;
                                rdfs:range xsd:string ;
                                rdfs:comment "A part lot indicates that a portion of a lot has been further divided or separated, possibly for a specific purpose or development. (e.g. Part Lot 7)"@en ;
                                rdfs:label "Has part lot information"@en .
@@ -894,7 +894,7 @@ bedeo:has_position rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_postal_box_identifier
 bedeo:has_postal_box_identifier rdf:type owl:DatatypeProperty ;
-                                rdfs:domain bedeo:address ;
+                                rdfs:domain bedeo:Address ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "The identifier of a letter box at the post office where mail is collected (e.g. 4001)"@en ;
                                 rdfs:label "Has postal box identifier"@en ;
@@ -903,7 +903,7 @@ bedeo:has_postal_box_identifier rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_postal_code
 bedeo:has_postal_code rdf:type owl:DatatypeProperty ;
-                      rdfs:domain bedeo:address ;
+                      rdfs:domain bedeo:Address ;
                       rdfs:range xsd:string ;
                       rdfs:label "A series of letters/digits used for mailing purposes (e.g. V8X 3X4)"@en ,
                                  "Has postal code"@en .
@@ -911,7 +911,7 @@ bedeo:has_postal_code rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_postal_station_information
 bedeo:has_postal_station_information rdf:type owl:DatatypeProperty ;
-                                     rdfs:domain bedeo:address ;
+                                     rdfs:domain bedeo:Address ;
                                      rdfs:range xsd:string ;
                                      rdfs:comment "Information about the postal station where mail is delivered to (e.g. STN A)"@en ;
                                      rdfs:label "Has postal station information"@en .
@@ -919,7 +919,7 @@ bedeo:has_postal_station_information rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_property_identification_number
 bedeo:has_property_identification_number rdf:type owl:DatatypeProperty ;
-                                         rdfs:domain bedeo:address ;
+                                         rdfs:domain bedeo:Address ;
                                          rdfs:range xsd:string ;
                                          rdfs:comment "A unique identifier assigned to each property (e.g. 10126 - 0418(LT))"@en ;
                                          rdfs:label "Has property identification number"@en ;
@@ -933,7 +933,7 @@ bedeo:has_province rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_province_code
 bedeo:has_province_code rdf:type owl:DatatypeProperty ;
-                        rdfs:domain bedeo:address ;
+                        rdfs:domain bedeo:Address ;
                         rdfs:range xsd:string ;
                         rdfs:comment "The 2 letter code of the state, province, etc. (e.g. ON)"@en ;
                         rdfs:label "Has province code"@en ;
@@ -943,7 +943,7 @@ bedeo:has_province_code rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_province_name
 bedeo:has_province_name rdf:type owl:DatatypeProperty ;
-                        rdfs:domain bedeo:address ;
+                        rdfs:domain bedeo:Address ;
                         rdfs:range xsd:string ;
                         rdfs:comment "The name of the state, province, etc. (e.g. Ontario)"@en ;
                         rdfs:label "Has province name"@en ;
@@ -964,7 +964,7 @@ bedeo:has_resource rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_rural_route_identifier
 bedeo:has_rural_route_identifier rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain bedeo:address ;
+                                 rdfs:domain bedeo:Address ;
                                  rdfs:range xsd:string ;
                                  rdfs:comment "An identifier for the mail delivery route used in rural areas that may not have traditional civic addresses (e.g. RR 4)"@en ;
                                  rdfs:label "Has rural route identifier"@en .
@@ -981,7 +981,7 @@ bedeo:has_site_area rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_site_name
 bedeo:has_site_name rdf:type owl:DatatypeProperty ;
-                    rdfs:domain bedeo:address ;
+                    rdfs:domain bedeo:Address ;
                     rdfs:range xsd:string ;
                     rdfs:comment "A string containing the name of the building, facility, or institution, etc."@en ;
                     rdfs:label "Has site name"@en .
@@ -989,7 +989,7 @@ bedeo:has_site_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_spatial_reference_system
 bedeo:has_spatial_reference_system rdf:type owl:DatatypeProperty ;
-                                   rdfs:domain bedeo:spatial_geometry ;
+                                   rdfs:domain bedeo:SpatialGeometry ;
                                    rdfs:range xsd:string ;
                                    rdfs:comment "Provides the spatial reference system used for the spatial geometry (e.g. WGS84, NAD83, etc.)"@en ;
                                    rdfs:label "Has spatial reference system"@en .
@@ -1004,7 +1004,7 @@ bedeo:has_start_date rdf:type owl:DatatypeProperty ;
 ###  https://csse.utoronto.ca/has_status
 bedeo:has_status rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain bedeo:partnership_opportunity ;
+                 rdfs:domain bedeo:PpartnershipOpportunity ;
                  rdfs:range xsd:string ;
                  rdfs:comment "Indicates the status of the partnership opportunity (e.g. active, concluded, etc.)"@en ;
                  rdfs:label "Has status"@en .
@@ -1012,7 +1012,7 @@ bedeo:has_status rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_street_direction
 bedeo:has_street_direction rdf:type owl:DatatypeProperty ;
-                           rdfs:domain bedeo:address ;
+                           rdfs:domain bedeo:Address ;
                            rdfs:range xsd:string ;
                            rdfs:comment "The compass direction of a street (e.g. N, NE, S, W)"@en ;
                            rdfs:label "Has street direction"@en .
@@ -1020,7 +1020,7 @@ bedeo:has_street_direction rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_street_name
 bedeo:has_street_name rdf:type owl:DatatypeProperty ;
-                      rdfs:domain bedeo:address ;
+                      rdfs:domain bedeo:Address ;
                       rdfs:range xsd:string ;
                       rdfs:comment "Official name of the street recognized by a municipality (e.g. Douglas from Douglas Street)"@en ;
                       rdfs:label "Has street name"@en .
@@ -1028,7 +1028,7 @@ bedeo:has_street_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_street_number
 bedeo:has_street_number rdf:type owl:DatatypeProperty ;
-                        rdfs:domain bedeo:address ;
+                        rdfs:domain bedeo:Address ;
                         rdfs:range xsd:string ;
                         rdfs:comment "Official street number assigned by a municipality (e.g. 1175)"@en ;
                         rdfs:label "Has street number"@en .
@@ -1036,7 +1036,7 @@ bedeo:has_street_number rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_street_type
 bedeo:has_street_type rdf:type owl:DatatypeProperty ;
-                      rdfs:domain bedeo:address ;
+                      rdfs:domain bedeo:Address ;
                       rdfs:range xsd:string ;
                       rdfs:comment "The type of street as assigned by a municipality (e.g. Street from Douglas Street)"@en ;
                       rdfs:label "Has street type"@en .
@@ -1044,7 +1044,7 @@ bedeo:has_street_type rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_string_representation
 bedeo:has_string_representation rdf:type owl:DatatypeProperty ;
-                                rdfs:domain bedeo:address ;
+                                rdfs:domain bedeo:Address ;
                                 rdfs:range xsd:string ;
                                 rdfs:comment "The full address as a single string"@en ;
                                 rdfs:label "Has string representation"@en .
@@ -1069,7 +1069,7 @@ bedeo:has_telephone_ext rdf:type owl:DatatypeProperty .
 
 ###  https://csse.utoronto.ca/has_unit_designator
 bedeo:has_unit_designator rdf:type owl:DatatypeProperty ;
-                          rdfs:domain bedeo:address ;
+                          rdfs:domain bedeo:Address ;
                           rdfs:range xsd:string ;
                           rdfs:comment "The type of unit (e.g., APT, SUITE, and UNIT)"@en ;
                           rdfs:label "Has unit designator"@en .
@@ -1077,7 +1077,7 @@ bedeo:has_unit_designator rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_unit_identifier
 bedeo:has_unit_identifier rdf:type owl:DatatypeProperty ;
-                          rdfs:domain bedeo:address ;
+                          rdfs:domain bedeo:Address ;
                           rdfs:range xsd:string ;
                           rdfs:comment "The identifier of the unit, suite, or apartment within a house or building. (e.g. 1A)"@en ;
                           rdfs:label "Has unit identifier"@en .
@@ -1091,7 +1091,7 @@ bedeo:is_current rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/is_liquid
 bedeo:is_liquid rdf:type owl:DatatypeProperty ;
-                rdfs:domain bedeo:asset ;
+                rdfs:domain bedeo:Asset ;
                 rdfs:range xsd:boolean ;
                 rdfs:comment "Indicates whether an asset can be easily converted to cash or cash equivalents"@en ;
                 rdfs:label "Is liquid"@en .
@@ -1099,7 +1099,7 @@ bedeo:is_liquid rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/is_operating
 bedeo:is_operating rdf:type owl:DatatypeProperty ;
-                   rdfs:domain bedeo:asset ;
+                   rdfs:domain bedeo:Asset ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "Indicates whether an asset is used for an organization’s daily operations"@en ;
                    rdfs:label "Is operating"@en .
@@ -1107,7 +1107,7 @@ bedeo:is_operating rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/is_tangible
 bedeo:is_tangible rdf:type owl:DatatypeProperty ;
-                  rdfs:domain bedeo:asset ;
+                  rdfs:domain bedeo:Asset ;
                   rdfs:range xsd:boolean ;
                   rdfs:comment "Indicates whether an asset has a physical existence"@en ;
                   rdfs:label "Is tangible"@en .
@@ -1126,109 +1126,13 @@ bedeo:is_vacant rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  https://csse.utoronto.ca/Or
-bedeo:Or rdf:type owl:Class ;
-         rdfs:label "Or"@en .
-
-
-###  https://csse.utoronto.ca/Organization_legal_name
-bedeo:Organization_legal_name rdf:type owl:Class ;
-                              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_end_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_name ;
-                                                owl:someValuesFrom xsd:string
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_registering_authority ;
-                                                owl:someValuesFrom xsd:string
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_start_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:is_current ;
-                                                owl:someValuesFrom xsd:boolean
-                                              ] ;
-                              rdfs:comment "The officially registered name of the organization as recognized by government authorities (e.g., corporations registry, charities registry)."@en ;
-                              rdfs:label "Organization legal name"@en .
-
-
-###  https://csse.utoronto.ca/Organization_trade_name
-bedeo:Organization_trade_name rdf:type owl:Class ;
-                              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_end_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_name ;
-                                                owl:someValuesFrom xsd:string
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_registering_authority ;
-                                                owl:someValuesFrom xsd:string
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_start_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:is_current ;
-                                                owl:someValuesFrom xsd:boolean
-                                              ] ;
-                              rdfs:comment "The name an organization uses for public-facing activities such as branding, marketing, and general day-to-day business operations. In some jurisdictions (e.g., the province of Ontario, Canada), the use of an informal or trade name requires registration with the relevant authorities."@en ;
-                              rdfs:label "Organization trade name"@en .
-
-
-###  https://csse.utoronto.ca/Proposal
-bedeo:Proposal rdf:type owl:Class ;
-               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                 owl:onProperty bedeo:has_organization ;
-                                 owl:someValuesFrom bedeo:organization
-                               ] ;
-               rdfs:label "Proposal"@en .
-
-
-###  https://csse.utoronto.ca/Submission
-bedeo:Submission rdf:type owl:Class ;
-                 rdfs:label "Submission"@en .
-
-
-###  https://csse.utoronto.ca/Zone
-bedeo:Zone rdf:type owl:Class ;
-           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                             owl:onProperty bedeo:governed_by ;
-                             owl:someValuesFrom bedeo:organization
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty bedeo:related_zoning ;
-                             owl:someValuesFrom bedeo:Zone
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty bedeo:has_acronym ;
-                             owl:someValuesFrom xsd:string
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty bedeo:has_description ;
-                             owl:someValuesFrom xsd:string
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty bedeo:has_name ;
-                             owl:someValuesFrom xsd:string
-                           ] ;
-           rdfs:label "Zone"@en .
-
-
-###  https://csse.utoronto.ca/account
-bedeo:account rdf:type owl:Class ;
+###  https://csse.utoronto.ca/Account
+bedeo:Account rdf:type owl:Class ;
               rdfs:label "Account" .
 
 
-###  https://csse.utoronto.ca/address
-bedeo:address rdf:type owl:Class ;
+###  https://csse.utoronto.ca/Address
+bedeo:Address rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
                                 owl:onProperty bedeo:has_concession_information ;
                                 owl:someValuesFrom xsd:string
@@ -1321,12 +1225,12 @@ bedeo:address rdf:type owl:Class ;
               rdfs:label "Address"@en .
 
 
-###  https://csse.utoronto.ca/address_component
-bedeo:address_component rdf:type owl:Class .
+###  https://csse.utoronto.ca/AddressComponent
+bedeo:AddressComponent rdf:type owl:Class .
 
 
-###  https://csse.utoronto.ca/agent
-bedeo:agent rdf:type owl:Class ;
+###  https://csse.utoronto.ca/Agent
+bedeo:Agent rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty bedeo:is_member_of ;
                               owl:someValuesFrom bedeo:organization
@@ -1339,18 +1243,8 @@ bedeo:agent rdf:type owl:Class ;
             rdfs:label "Agent"@en .
 
 
-###  https://csse.utoronto.ca/arts_and_culture_provisioning_expertise
-bedeo:arts_and_culture_provisioning_expertise rdf:type owl:Class ;
-                                              rdfs:subClassOf bedeo:post_development_expertise .
-
-
-###  https://csse.utoronto.ca/arts_organization_type
-bedeo:arts_organization_type rdf:type owl:Class ;
-                             rdfs:subClassOf bedeo:organization_activity_type .
-
-
-###  https://csse.utoronto.ca/asset
-bedeo:asset rdf:type owl:Class ;
+###  https://csse.utoronto.ca/Asset
+bedeo:Asset rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty bedeo:has_description ;
                               owl:someValuesFrom xsd:string
@@ -1375,29 +1269,332 @@ bedeo:asset rdf:type owl:Class ;
             rdfs:label "Asset"@en .
 
 
+###  https://csse.utoronto.ca/Contact
+bedeo:Contact rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty bedeo:has_telephone ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty bedeo:has_email ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] .
+
+
+###  https://csse.utoronto.ca/Contribution
+bedeo:Contribution rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/ContributionType
+bedeo:ContributionType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Expertise
+bedeo:Expertise rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/LandUse
+bedeo:LandUse rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/LegalStatus
+bedeo:LegalStatus rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Notification
+bedeo:Notification rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/NotificationOfInterest
+bedeo:NotificationOfInterest rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/OpportunityListing
+bedeo:OpportunityListing rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Or
+bedeo:Or rdf:type owl:Class ;
+         rdfs:label "Or"@en .
+
+
+###  https://csse.utoronto.ca/OrganizationActivityType
+bedeo:OrganizationActivityType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/OrganizationLegalName
+bedeo:OrganizationLegalName rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_end_date ;
+                                              owl:someValuesFrom xsd:date
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_name ;
+                                              owl:someValuesFrom xsd:string
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_registering_authority ;
+                                              owl:someValuesFrom xsd:string
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_start_date ;
+                                              owl:someValuesFrom xsd:date
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:is_current ;
+                                              owl:someValuesFrom xsd:boolean
+                                            ] ;
+                            rdfs:comment "The officially registered name of the organization as recognized by government authorities (e.g., corporations registry, charities registry)."@en ;
+                            rdfs:label "Organization legal name"@en .
+
+
+###  https://csse.utoronto.ca/OrganizationLegalStatus
+bedeo:OrganizationLegalStatus rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/OrganizationRole
+bedeo:OrganizationRole rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/OrganizationTradeName
+bedeo:OrganizationTradeName rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_end_date ;
+                                              owl:someValuesFrom xsd:date
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_name ;
+                                              owl:someValuesFrom xsd:string
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_registering_authority ;
+                                              owl:someValuesFrom xsd:string
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_start_date ;
+                                              owl:someValuesFrom xsd:date
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:is_current ;
+                                              owl:someValuesFrom xsd:boolean
+                                            ] ;
+                            rdfs:comment "The name an organization uses for public-facing activities such as branding, marketing, and general day-to-day business operations. In some jurisdictions (e.g., the province of Ontario, Canada), the use of an informal or trade name requires registration with the relevant authorities."@en ;
+                            rdfs:label "Organization trade name"@en .
+
+
+###  https://csse.utoronto.ca/OrganizationType
+bedeo:OrganizationType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Partner
+bedeo:Partner rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/PartnershipConstraint
+bedeo:PartnershipConstraint rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/PartnershipParticipant
+bedeo:PartnershipParticipant rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/PartnershipRole
+bedeo:PartnershipRole rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/PartnershipType
+bedeo:PartnershipType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Person
+bedeo:Person rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_primary_address ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass bedeo:Address
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_name ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_first_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_last_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_current_full_middle_name ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] .
+
+
+###  https://csse.utoronto.ca/PpartnershipOpportunity
+bedeo:PpartnershipOpportunity rdf:type owl:Class ;
+                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty bedeo:has_real_estate_asset ;
+                                                owl:someValuesFrom bedeo:real_estate_asset
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty bedeo:has_end_date ;
+                                                owl:someValuesFrom xsd:date
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty bedeo:has_start_date ;
+                                                owl:someValuesFrom xsd:date
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty bedeo:has_status ;
+                                                owl:someValuesFrom xsd:string
+                                              ] ;
+                              rdfs:comment "An opportunity to form a business agreement and operation between two or more individuals and organizations who share the management and profits of a project."@en ;
+                              rdfs:label "Partnership opportunity"@en .
+
+
+###  https://csse.utoronto.ca/ProjectComponentAvailable
+bedeo:ProjectComponentAvailable rdf:type owl:Class ;
+                                rdfs:comment "space (in the realized project) available for potential partners" .
+
+
+###  https://csse.utoronto.ca/ProjectNeed
+bedeo:ProjectNeed rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/ProjectType
+bedeo:ProjectType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Proposal
+bedeo:Proposal rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty bedeo:has_organization ;
+                                 owl:someValuesFrom bedeo:organization
+                               ] ;
+               rdfs:label "Proposal"@en .
+
+
+###  https://csse.utoronto.ca/Resource
+bedeo:Resource rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Role
+bedeo:Role rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Site
+bedeo:Site rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/SiteAddress
+bedeo:SiteAddress rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/SpaceType
+bedeo:SpaceType rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/SpatialGeometry
+bedeo:SpatialGeometry rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty bedeo:has_geometry_format ;
+                                        owl:someValuesFrom xsd:string
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty bedeo:has_geometry_value ;
+                                        owl:someValuesFrom xsd:string
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty bedeo:has_spatial_reference_system ;
+                                        owl:someValuesFrom xsd:string
+                                      ] ;
+                      rdfs:comment "A geometry object that is used to describe the geospatial representation of an entity"@en ;
+                      rdfs:label "Spatial geometry"@en .
+
+
+###  https://csse.utoronto.ca/SpatialRepresentation
+bedeo:SpatialRepresentation rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty bedeo:has_spatial_geometry ;
+                                              owl:someValuesFrom bedeo:SpatialGeometry
+                                            ] ;
+                            rdfs:comment "A geospatial representation of an entity."@en ;
+                            rdfs:label "Spatial representation"@en .
+
+
+###  https://csse.utoronto.ca/Submission
+bedeo:Submission rdf:type owl:Class ;
+                 rdfs:label "Submission"@en .
+
+
+###  https://csse.utoronto.ca/User
+bedeo:User rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Ward
+bedeo:Ward rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Zone
+bedeo:Zone rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty bedeo:governed_by ;
+                             owl:someValuesFrom bedeo:organization
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bedeo:related_zoning ;
+                             owl:someValuesFrom bedeo:Zone
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bedeo:has_acronym ;
+                             owl:someValuesFrom xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bedeo:has_description ;
+                             owl:someValuesFrom xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty bedeo:has_name ;
+                             owl:someValuesFrom xsd:string
+                           ] ;
+           rdfs:label "Zone"@en .
+
+
+###  https://csse.utoronto.ca/arts_and_culture_provisioning_expertise
+bedeo:arts_and_culture_provisioning_expertise rdf:type owl:Class ;
+                                              rdfs:subClassOf bedeo:post_development_expertise .
+
+
+###  https://csse.utoronto.ca/arts_organization_type
+bedeo:arts_organization_type rdf:type owl:Class ;
+                             rdfs:subClassOf bedeo:OrganizationActivityType .
+
+
 ###  https://csse.utoronto.ca/asset_contribution
 bedeo:asset_contribution rdf:type owl:Class ;
-                         rdfs:subClassOf bedeo:contribution_type .
+                         rdfs:subClassOf bedeo:ContributionType .
 
 
 ###  https://csse.utoronto.ca/asset_need
 bedeo:asset_need rdf:type owl:Class ;
-                 rdfs:subClassOf bedeo:project_need .
+                 rdfs:subClassOf bedeo:ProjectNeed .
 
 
 ###  https://csse.utoronto.ca/builder_role
 bedeo:builder_role rdf:type owl:Class ;
-                   rdfs:subClassOf bedeo:role .
+                   rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/building_developer
 bedeo:building_developer rdf:type owl:Class ;
                          rdfs:subClassOf bedeo:organization ;
                          rdfs:label "Building Developer" .
-
-
-###  https://csse.utoronto.ca/changed_history
-bedeo:changed_history rdf:type owl:Class .
 
 
 ###  https://csse.utoronto.ca/charity
@@ -1408,7 +1605,7 @@ bedeo:charity rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/city_name
 bedeo:city_name rdf:type owl:Class ;
-                rdfs:subClassOf bedeo:address_component .
+                rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/civic_engagement_expertise
@@ -1418,17 +1615,17 @@ bedeo:civic_engagement_expertise rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/community_liaising_expertise
 bedeo:community_liaising_expertise rdf:type owl:Class ;
-                                   rdfs:subClassOf bedeo:expertise .
+                                   rdfs:subClassOf bedeo:Expertise .
 
 
 ###  https://csse.utoronto.ca/community_liaison_role
 bedeo:community_liaison_role rdf:type owl:Class ;
-                             rdfs:subClassOf bedeo:role .
+                             rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/community_support_need
 bedeo:community_support_need rdf:type owl:Class ;
-                             rdfs:subClassOf bedeo:project_need .
+                             rdfs:subClassOf bedeo:ProjectNeed .
 
 
 ###  https://csse.utoronto.ca/construction_contribution
@@ -1438,15 +1635,7 @@ bedeo:construction_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/construction_expertise
 bedeo:construction_expertise rdf:type owl:Class ;
-                             rdfs:subClassOf bedeo:expertise .
-
-
-###  https://csse.utoronto.ca/contribution
-bedeo:contribution rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/contribution_type
-bedeo:contribution_type rdf:type owl:Class .
+                             rdfs:subClassOf bedeo:Expertise .
 
 
 ###  https://csse.utoronto.ca/corporation
@@ -1456,17 +1645,17 @@ bedeo:corporation rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/country_name
 bedeo:country_name rdf:type owl:Class ;
-                   rdfs:subClassOf bedeo:address_component .
+                   rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/creative_mixed_use_partnership_partner
 bedeo:creative_mixed_use_partnership_partner rdf:type owl:Class ;
-                                             rdfs:subClassOf bedeo:partnership_participant .
+                                             rdfs:subClassOf bedeo:PartnershipParticipant .
 
 
 ###  https://csse.utoronto.ca/current_asset
 bedeo:current_asset rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:asset ,
+                    rdfs:subClassOf bedeo:Asset ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty bedeo:is_liquid ;
                                       owl:hasValue "true"^^xsd:boolean
@@ -1487,7 +1676,7 @@ bedeo:design_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/developer_role
 bedeo:developer_role rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:role .
+                     rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/engineering_contribution
@@ -1500,10 +1689,6 @@ bedeo:ethnic_group rdf:type owl:Class ;
                    rdfs:subClassOf bedeo:not_for_profit .
 
 
-###  https://csse.utoronto.ca/expertise
-bedeo:expertise rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/expertise_based_labour_contribution
 bedeo:expertise_based_labour_contribution rdf:type owl:Class ;
                                           rdfs:subClassOf bedeo:labour_contribution .
@@ -1511,7 +1696,7 @@ bedeo:expertise_based_labour_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/expertise_need
 bedeo:expertise_need rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:project_need .
+                     rdfs:subClassOf bedeo:ProjectNeed .
 
 
 ###  https://csse.utoronto.ca/faith-based_organization
@@ -1527,27 +1712,27 @@ bedeo:faith_based_group rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/financial_contribution
 bedeo:financial_contribution rdf:type owl:Class ;
-                             rdfs:subClassOf bedeo:contribution_type .
+                             rdfs:subClassOf bedeo:ContributionType .
 
 
 ###  https://csse.utoronto.ca/financial_management_expertise
 bedeo:financial_management_expertise rdf:type owl:Class ;
-                                     rdfs:subClassOf bedeo:expertise .
+                                     rdfs:subClassOf bedeo:Expertise .
 
 
 ###  https://csse.utoronto.ca/financial_need
 bedeo:financial_need rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:project_need .
+                     rdfs:subClassOf bedeo:ProjectNeed .
 
 
 ###  https://csse.utoronto.ca/financial_organization_type
 bedeo:financial_organization_type rdf:type owl:Class ;
-                                  rdfs:subClassOf bedeo:organization_activity_type .
+                                  rdfs:subClassOf bedeo:OrganizationActivityType .
 
 
 ###  https://csse.utoronto.ca/financier_role
 bedeo:financier_role rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:role .
+                     rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/financing_need
@@ -1557,7 +1742,7 @@ bedeo:financing_need rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/fixed_asset
 bedeo:fixed_asset rdf:type owl:Class ;
-                  rdfs:subClassOf bedeo:asset ,
+                  rdfs:subClassOf bedeo:Asset ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty bedeo:is_liquid ;
                                     owl:hasValue "false"^^xsd:boolean
@@ -1568,7 +1753,7 @@ bedeo:fixed_asset rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/for_profit
 bedeo:for_profit rdf:type owl:Class ;
-                 rdfs:subClassOf bedeo:organization_legal_status .
+                 rdfs:subClassOf bedeo:OrganizationLegalStatus .
 
 
 ###  https://csse.utoronto.ca/foundation
@@ -1579,7 +1764,7 @@ bedeo:foundation rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/funder_role
 bedeo:funder_role rdf:type owl:Class ;
-                  rdfs:subClassOf bedeo:role .
+                  rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/funding_need
@@ -1601,7 +1786,7 @@ bedeo:institution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/intangible_asset
 bedeo:intangible_asset rdf:type owl:Class ;
-                       rdfs:subClassOf bedeo:asset ,
+                       rdfs:subClassOf bedeo:Asset ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty bedeo:is_tangible ;
                                          owl:hasValue "false"^^xsd:boolean
@@ -1612,20 +1797,12 @@ bedeo:intangible_asset rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/investor_role
 bedeo:investor_role rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:role .
+                    rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/labour_contribution
 bedeo:labour_contribution rdf:type owl:Class ;
-                          rdfs:subClassOf bedeo:contribution_type .
-
-
-###  https://csse.utoronto.ca/land_use
-bedeo:land_use rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/legal_status
-bedeo:legal_status rdf:type owl:Class .
+                          rdfs:subClassOf bedeo:ContributionType .
 
 
 ###  https://csse.utoronto.ca/lender
@@ -1645,12 +1822,12 @@ bedeo:local_government_agency rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/mixed_residential_and_commercial
 bedeo:mixed_residential_and_commercial rdf:type owl:Class ;
-                                       rdfs:subClassOf bedeo:partnership_type .
+                                       rdfs:subClassOf bedeo:PartnershipType .
 
 
 ###  https://csse.utoronto.ca/mized_residential
 bedeo:mized_residential rdf:type owl:Class ;
-                        rdfs:subClassOf bedeo:partnership_type .
+                        rdfs:subClassOf bedeo:PartnershipType .
 
 
 ###  https://csse.utoronto.ca/municipality
@@ -1665,7 +1842,7 @@ bedeo:non-profit_housing_co-op rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/nonoperating_asset
 bedeo:nonoperating_asset rdf:type owl:Class ;
-                         rdfs:subClassOf bedeo:asset ,
+                         rdfs:subClassOf bedeo:Asset ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty bedeo:is_operating ;
                                            owl:hasValue "false"^^xsd:boolean
@@ -1676,24 +1853,12 @@ bedeo:nonoperating_asset rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/not_for_profit
 bedeo:not_for_profit rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:organization_legal_status .
-
-
-###  https://csse.utoronto.ca/notification
-bedeo:notification rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/notification_of_interest
-bedeo:notification_of_interest rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/notification_test
-bedeo:notification_test rdf:type owl:Class .
+                     rdfs:subClassOf bedeo:OrganizationLegalStatus .
 
 
 ###  https://csse.utoronto.ca/operating_asset
 bedeo:operating_asset rdf:type owl:Class ;
-                      rdfs:subClassOf bedeo:asset ,
+                      rdfs:subClassOf bedeo:Asset ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty bedeo:is_operating ;
                                         owl:hasValue "true"^^xsd:boolean
@@ -1702,24 +1867,20 @@ bedeo:operating_asset rdf:type owl:Class ;
                       rdfs:label "Operating asset"@en .
 
 
-###  https://csse.utoronto.ca/opportunity_listing
-bedeo:opportunity_listing rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/organization
 bedeo:organization rdf:type owl:Class ;
-                   rdfs:subClassOf bedeo:agent ,
+                   rdfs:subClassOf bedeo:Agent ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_member ;
-                                     owl:someValuesFrom bedeo:agent
+                                     owl:someValuesFrom bedeo:Agent
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_legal_name ;
-                                     owl:someValuesFrom bedeo:Organization_legal_name
+                                     owl:someValuesFrom bedeo:OrganizationLegalName
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_trade_name ;
-                                     owl:someValuesFrom bedeo:Organization_trade_name
+                                     owl:someValuesFrom bedeo:OrganizationTradeName
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:owns ;
@@ -1728,7 +1889,7 @@ bedeo:organization rdf:type owl:Class ;
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_primary_address ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass bedeo:address
+                                     owl:onClass bedeo:Address
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_name ;
@@ -1884,101 +2045,14 @@ bedeo:organization rdf:type owl:Class ;
                    rdfs:label "Organization"@en .
 
 
-###  https://csse.utoronto.ca/organization_activity_type
-bedeo:organization_activity_type rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/organization_legal_status
-bedeo:organization_legal_status rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/organization_role
-bedeo:organization_role rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/organization_type
-bedeo:organization_type rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/partner
-bedeo:partner rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/partnership
 bedeo:partnership rdf:type owl:Class ;
                   rdfs:subClassOf bedeo:for_profit .
 
 
-###  https://csse.utoronto.ca/partnership_constraint
-bedeo:partnership_constraint rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/partnership_initiator
 bedeo:partnership_initiator rdf:type owl:Class ;
-                            rdfs:subClassOf bedeo:partnership_participant .
-
-
-###  https://csse.utoronto.ca/partnership_opportunity
-bedeo:partnership_opportunity rdf:type owl:Class ;
-                              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_real_estate_asset ;
-                                                owl:someValuesFrom bedeo:real_estate_asset
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_end_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_start_date ;
-                                                owl:someValuesFrom xsd:date
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty bedeo:has_status ;
-                                                owl:someValuesFrom xsd:string
-                                              ] ;
-                              rdfs:comment "An opportunity to form a business agreement and operation between two or more individuals and organizations who share the management and profits of a project."@en ;
-                              rdfs:label "Partnership opportunity"@en .
-
-
-###  https://csse.utoronto.ca/partnership_participant
-bedeo:partnership_participant rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/partnership_role
-bedeo:partnership_role rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/partnership_type
-bedeo:partnership_type rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/person
-bedeo:person rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_primary_address ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass bedeo:address
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_name ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_first_name ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_last_name ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_middle_name ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
-                             ] .
+                            rdfs:subClassOf bedeo:PartnershipParticipant .
 
 
 ###  https://csse.utoronto.ca/planning_and_feasibility_study_contribution
@@ -1988,36 +2062,27 @@ bedeo:planning_and_feasibility_study_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/planning_expertise
 bedeo:planning_expertise rdf:type owl:Class ;
-                         rdfs:subClassOf bedeo:expertise .
+                         rdfs:subClassOf bedeo:Expertise .
 
 
 ###  https://csse.utoronto.ca/post_development_beneficiary_role
 bedeo:post_development_beneficiary_role rdf:type owl:Class ;
-                                        rdfs:subClassOf bedeo:role .
+                                        rdfs:subClassOf bedeo:Role .
 
 
 ###  https://csse.utoronto.ca/post_development_contribution
 bedeo:post_development_contribution rdf:type owl:Class ;
-                                    rdfs:subClassOf bedeo:contribution_type .
+                                    rdfs:subClassOf bedeo:ContributionType .
 
 
 ###  https://csse.utoronto.ca/post_development_expertise
 bedeo:post_development_expertise rdf:type owl:Class ;
-                                 rdfs:subClassOf bedeo:expertise .
+                                 rdfs:subClassOf bedeo:Expertise .
 
 
 ###  https://csse.utoronto.ca/postal_code
 bedeo:postal_code rdf:type owl:Class ;
-                  rdfs:subClassOf bedeo:address_component .
-
-
-###  https://csse.utoronto.ca/primary_contact
-bedeo:primary_contact rdf:type owl:Class ;
-                      rdfs:subClassOf bedeo:person .
-
-
-###  https://csse.utoronto.ca/primary_contact_test
-bedeo:primary_contact_test rdf:type owl:Class .
+                  rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/private_enterprise
@@ -2036,22 +2101,9 @@ bedeo:procurement_contribution rdf:type owl:Class ;
                                rdfs:subClassOf bedeo:procurement_and_construction_contribution .
 
 
-###  https://csse.utoronto.ca/project_component_available
-bedeo:project_component_available rdf:type owl:Class ;
-                                  rdfs:comment "space (in the realized project) available for potential partners" .
-
-
-###  https://csse.utoronto.ca/project_need
-bedeo:project_need rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/project_type
-bedeo:project_type rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/province_name
 bedeo:province_name rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:address_component .
+                    rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/public_corporation
@@ -2061,12 +2113,12 @@ bedeo:public_corporation rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/public_sector
 bedeo:public_sector rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:organization_legal_status .
+                    rdfs:subClassOf bedeo:OrganizationLegalStatus .
 
 
 ###  https://csse.utoronto.ca/real_estate_asset
 bedeo:real_estate_asset rdf:type owl:Class ;
-                        rdfs:subClassOf bedeo:asset ,
+                        rdfs:subClassOf bedeo:Asset ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty bedeo:has_proposed_zoning ;
                                           owl:someValuesFrom bedeo:Zone
@@ -2098,33 +2150,17 @@ bedeo:real_estate_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/real_estate_developer_type
 bedeo:real_estate_developer_type rdf:type owl:Class ;
-                                 rdfs:subClassOf bedeo:organization_activity_type .
+                                 rdfs:subClassOf bedeo:OrganizationActivityType .
 
 
 ###  https://csse.utoronto.ca/registered_charity
 bedeo:registered_charity rdf:type owl:Class ;
-                         rdfs:subClassOf bedeo:organization_legal_status .
-
-
-###  https://csse.utoronto.ca/resource
-bedeo:resource rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/role
-bedeo:role rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/site
-bedeo:site rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/site_address
-bedeo:site_address rdf:type owl:Class .
+                         rdfs:subClassOf bedeo:OrganizationLegalStatus .
 
 
 ###  https://csse.utoronto.ca/social_and_cultural_service_provision
 bedeo:social_and_cultural_service_provision rdf:type owl:Class ;
-                                            rdfs:subClassOf bedeo:project_need .
+                                            rdfs:subClassOf bedeo:ProjectNeed .
 
 
 ###  https://csse.utoronto.ca/social_group
@@ -2140,7 +2176,7 @@ bedeo:social_services_provider rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/social_services_provider_type
 bedeo:social_services_provider_type rdf:type owl:Class ;
-                                    rdfs:subClassOf bedeo:organization_activity_type .
+                                    rdfs:subClassOf bedeo:OrganizationActivityType .
 
 
 ###  https://csse.utoronto.ca/social_services_provisioning_expertise
@@ -2153,38 +2189,6 @@ bedeo:sole_proprietorship rdf:type owl:Class ;
                           rdfs:subClassOf bedeo:for_profit .
 
 
-###  https://csse.utoronto.ca/space_type
-bedeo:space_type rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/spatial_geometry
-bedeo:spatial_geometry rdf:type owl:Class ;
-                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:has_geometry_format ;
-                                         owl:someValuesFrom xsd:string
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:has_geometry_value ;
-                                         owl:someValuesFrom xsd:string
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:has_spatial_reference_system ;
-                                         owl:someValuesFrom xsd:string
-                                       ] ;
-                       rdfs:comment "A geometry object that is used to describe the geospatial representation of an entity"@en ;
-                       rdfs:label "Spatial geometry"@en .
-
-
-###  https://csse.utoronto.ca/spatial_representation
-bedeo:spatial_representation rdf:type owl:Class ;
-                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                               owl:onProperty bedeo:has_spatial_geometry ;
-                                               owl:someValuesFrom bedeo:spatial_geometry
-                                             ] ;
-                             rdfs:comment "A geospatial representation of an entity."@en ;
-                             rdfs:label "Spatial representation"@en .
-
-
 ###  https://csse.utoronto.ca/start_up_ofr_occupancy_contribution
 bedeo:start_up_ofr_occupancy_contribution rdf:type owl:Class ;
                                           rdfs:subClassOf bedeo:expertise_based_labour_contribution .
@@ -2192,39 +2196,23 @@ bedeo:start_up_ofr_occupancy_contribution rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/street_name
 bedeo:street_name rdf:type owl:Class ;
-                  rdfs:subClassOf bedeo:address_component .
+                  rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/street_number
 bedeo:street_number rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:address_component .
+                    rdfs:subClassOf bedeo:AddressComponent .
 
 
 ###  https://csse.utoronto.ca/tangible_asset
 bedeo:tangible_asset rdf:type owl:Class ;
-                     rdfs:subClassOf bedeo:asset ,
+                     rdfs:subClassOf bedeo:Asset ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty bedeo:is_tangible ;
                                        owl:hasValue "true"^^xsd:boolean
                                      ] ;
                      rdfs:comment "Tangible assets are assets with physical existence (we can touch, feel, and see them)"@en ;
                      rdfs:label "Tangible asset"@en .
-
-
-###  https://csse.utoronto.ca/user
-bedeo:user rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/vcs
-bedeo:vcs rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/version
-bedeo:version rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/ward
-bedeo:ward rdf:type owl:Class .
 
 
 #################################################################
@@ -2235,4 +2223,4 @@ bedeo:non-profit_housing_co-oprdf bedeo:type owl:NamedIndividual ,
                                              bedeo:organization_type .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
