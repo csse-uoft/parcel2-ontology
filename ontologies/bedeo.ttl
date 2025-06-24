@@ -1269,10 +1269,6 @@ bedeo:Asset rdf:type owl:Class ;
             rdfs:label "Asset"@en .
 
 
-###  https://csse.utoronto.ca/ChangedHistory
-bedeo:ChangedHistory rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/Contribution
 bedeo:Contribution rdf:type owl:Class .
 
@@ -1526,10 +1522,6 @@ bedeo:Submission rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/User
 bedeo:User rdf:type owl:Class .
-
-
-###  https://csse.utoronto.ca/Version
-bedeo:Version rdf:type owl:Class .
 
 
 ###  https://csse.utoronto.ca/Ward
@@ -1851,10 +1843,6 @@ bedeo:not_for_profit rdf:type owl:Class ;
                      rdfs:subClassOf bedeo:OrganizationLegalStatus .
 
 
-###  https://csse.utoronto.ca/notification_test
-bedeo:notification_test rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/operating_asset
 bedeo:operating_asset rdf:type owl:Class ;
                       rdfs:subClassOf bedeo:Asset ,
@@ -2089,10 +2077,6 @@ bedeo:primary_contact rdf:type owl:Class ;
                       rdfs:subClassOf bedeo:Person .
 
 
-###  https://csse.utoronto.ca/primary_contact_test
-bedeo:primary_contact_test rdf:type owl:Class .
-
-
 ###  https://csse.utoronto.ca/private_enterprise
 bedeo:private_enterprise rdf:type owl:Class ;
                          rdfs:subClassOf bedeo:organization ;
@@ -2221,10 +2205,6 @@ bedeo:tangible_asset rdf:type owl:Class ;
                                      ] ;
                      rdfs:comment "Tangible assets are assets with physical existence (we can touch, feel, and see them)"@en ;
                      rdfs:label "Tangible asset"@en .
-
-
-###  https://csse.utoronto.ca/vcs
-bedeo:vcs rdf:type owl:Class .
 
 
 #################################################################
