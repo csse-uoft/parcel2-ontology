@@ -520,8 +520,33 @@ bedeo:has_files rdf:type owl:DatatypeProperty ;
 ###  https://csse.utoronto.ca/has_first_name
 bedeo:has_first_name rdf:type owl:DatatypeProperty ;
                      rdfs:subPropertyOf bedeo:has_name ;
+                     rdfs:domain bedeo:Person ;
                      rdfs:range xsd:string ;
                      rdfs:label "Has first name"@en .
+
+
+###  https://csse.utoronto.ca/has_formal_first_name
+bedeo:has_formal_first_name rdf:type owl:DatatypeProperty ;
+                            rdfs:domain bedeo:Person ;
+                            rdfs:range xsd:string .
+
+
+###  https://csse.utoronto.ca/has_formal_full_name
+bedeo:has_formal_full_name rdf:type owl:DatatypeProperty ;
+                           rdfs:domain bedeo:Person ;
+                           rdfs:range xsd:string .
+
+
+###  https://csse.utoronto.ca/has_formal_last_name
+bedeo:has_formal_last_name rdf:type owl:DatatypeProperty ;
+                           rdfs:domain bedeo:Person ;
+                           rdfs:range xsd:string .
+
+
+###  https://csse.utoronto.ca/has_formal_middle_name
+bedeo:has_formal_middle_name rdf:type owl:DatatypeProperty ;
+                             rdfs:domain bedeo:Person ;
+                             rdfs:range xsd:string .
 
 
 ###  https://csse.utoronto.ca/has_full_first_name
@@ -548,6 +573,7 @@ bedeo:has_full_middle_name rdf:type owl:DatatypeProperty ;
 ###  https://csse.utoronto.ca/has_full_name
 bedeo:has_full_name rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf bedeo:has_name ;
+                    rdfs:domain bedeo:Person ;
                     rdfs:range xsd:string ;
                     rdfs:label "Has full name"@en .
 
@@ -602,6 +628,7 @@ bedeo:has_last_modified_at rdf:type owl:DatatypeProperty .
 ###  https://csse.utoronto.ca/has_last_name
 bedeo:has_last_name rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf bedeo:has_name ;
+                    rdfs:domain bedeo:Person ;
                     rdfs:range xsd:string ;
                     rdfs:label "Has last name"@en .
 
@@ -637,6 +664,12 @@ bedeo:has_lot_information rdf:type owl:DatatypeProperty ;
                           rdfs:range xsd:string ;
                           rdfs:comment "A lot is a rectangular parcel of land within a concession, designated by a number (e.g. Lot 7)"@en ;
                           rdfs:label "Has lot information"@en .
+
+
+###  https://csse.utoronto.ca/has_middle_name
+bedeo:has_middle_name rdf:type owl:DatatypeProperty ;
+                      rdfs:domain bedeo:Person ;
+                      rdfs:range xsd:string .
 
 
 ###  https://csse.utoronto.ca/has_name
@@ -1767,26 +1800,52 @@ bedeo:PartnershipType rdf:type owl:Class .
 bedeo:Person rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty bedeo:has_primary_address ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
                                owl:onClass bedeo:Address
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_name ;
+                               owl:onProperty bedeo:has_primary_address ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass bedeo:Address
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_formal_first_name ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_formal_full_name ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_formal_last_name ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_formal_middle_name ;
+                               owl:allValuesFrom xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_middle_name ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:string
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty bedeo:has_first_name ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_first_name ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onProperty bedeo:has_full_name ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_last_name ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onProperty bedeo:has_last_name ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_current_full_middle_name ;
+                               owl:onProperty bedeo:has_middle_name ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onDataRange xsd:string
                              ] .
