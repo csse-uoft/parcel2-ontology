@@ -22,20 +22,12 @@
 bedeo:has_brief_description rdf:type owl:AnnotationProperty .
 
 
-###  https://csse.utoronto.ca/has_partner
-bedeo:has_partner rdf:type owl:AnnotationProperty .
-
-
 ###  https://csse.utoronto.ca/has_partner_type
 bedeo:has_partner_type rdf:type owl:AnnotationProperty .
 
 
 ###  https://csse.utoronto.ca/has_partnership_role_required
 bedeo:has_partnership_role_required rdf:type owl:AnnotationProperty .
-
-
-###  https://csse.utoronto.ca/has_project_type
-bedeo:has_project_type rdf:type owl:AnnotationProperty .
 
 
 ###  https://csse.utoronto.ca/has_read
@@ -90,6 +82,12 @@ bedeo:has_account rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
                   rdfs:domain bedeo:Organization ;
                   rdfs:range bedeo:Account .
+
+
+###  https://csse.utoronto.ca/has_additional_info
+bedeo:has_additional_info rdf:type owl:ObjectProperty ;
+                          rdfs:domain bedeo:Opportunity ;
+                          rdfs:range bedeo:OpportunityAdditionalInfo .
 
 
 ###  https://csse.utoronto.ca/has_address
@@ -148,6 +146,12 @@ bedeo:has_individual rdf:type owl:ObjectProperty ;
 bedeo:has_intended_opportunity rdf:type owl:ObjectProperty ;
                                rdfs:domain bedeo:Notification ;
                                rdfs:range bedeo:PpartnershipOpportunity .
+
+
+###  https://csse.utoronto.ca/has_land
+bedeo:has_land rdf:type owl:ObjectProperty ;
+               rdfs:domain bedeo:Opportunity ;
+               rdfs:range bedeo:Land .
 
 
 ###  https://csse.utoronto.ca/has_latest_version
@@ -209,6 +213,12 @@ bedeo:has_organization_type rdf:type owl:ObjectProperty ;
 bedeo:has_participant rdf:type owl:ObjectProperty .
 
 
+###  https://csse.utoronto.ca/has_partner
+bedeo:has_partner rdf:type owl:ObjectProperty ;
+                  rdfs:domain bedeo:Opportunity ;
+                  rdfs:range bedeo:Partner .
+
+
 ###  https://csse.utoronto.ca/has_primary_address
 bedeo:has_primary_address rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf bedeo:has_address ;
@@ -220,10 +230,22 @@ bedeo:has_primary_address rdf:type owl:ObjectProperty ;
 bedeo:has_primary_contact rdf:type owl:ObjectProperty ;
                           rdfs:domain [ rdf:type owl:Class ;
                                         owl:unionOf ( bedeo:Account
+                                                      bedeo:Opportunity
                                                       bedeo:PartnershipParticipant
                                                     )
                                       ] ;
                           rdfs:range bedeo:Contact .
+
+
+###  https://csse.utoronto.ca/has_project_stage
+bedeo:has_project_stage rdf:type owl:ObjectProperty ;
+                        rdfs:domain bedeo:Opportunity ;
+                        rdfs:range bedeo:ProjectStage .
+
+
+###  https://csse.utoronto.ca/has_project_type
+bedeo:has_project_type rdf:type owl:ObjectProperty ;
+                       rdfs:domain bedeo:Opportunity .
 
 
 ###  https://csse.utoronto.ca/has_proposed_land_use
@@ -346,6 +368,12 @@ bedeo:related_zoning rdf:type owl:ObjectProperty ;
                      rdfs:label "Related zoning"@en .
 
 
+###  https://csse.utoronto.ca/requires_partnership_role
+bedeo:requires_partnership_role rdf:type owl:ObjectProperty ;
+                                rdfs:domain bedeo:Opportunity ;
+                                rdfs:range bedeo:Role .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -443,6 +471,18 @@ bedeo:has_current_legal_name rdf:type owl:DatatypeProperty ;
                              rdfs:label "Has current legal name"@en .
 
 
+###  https://csse.utoronto.ca/has_date_modified
+bedeo:has_date_modified rdf:type owl:DatatypeProperty ;
+                        rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                        rdfs:range xsd:dateTime .
+
+
+###  https://csse.utoronto.ca/has_date_posted
+bedeo:has_date_posted rdf:type owl:DatatypeProperty ;
+                      rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                      rdfs:range xsd:dateTime .
+
+
 ###  https://csse.utoronto.ca/has_description
 bedeo:has_description rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf owl:topDataProperty ;
@@ -465,6 +505,12 @@ bedeo:has_email rdf:type owl:DatatypeProperty ;
 bedeo:has_end_date rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:date ;
                    rdfs:label "Has end date"@en .
+
+
+###  https://csse.utoronto.ca/has_files
+bedeo:has_files rdf:type owl:DatatypeProperty ;
+                rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                rdfs:range xsd:string .
 
 
 ###  https://csse.utoronto.ca/has_first_name
@@ -524,6 +570,12 @@ bedeo:has_identifier rdf:type owl:DatatypeProperty ;
                      rdfs:range xsd:string ;
                      rdfs:comment "Provides an identifier (i.e. a string) for uniquely identifying an entity"@en ;
                      rdfs:label "Has identifier"@en .
+
+
+###  https://csse.utoronto.ca/has_images
+bedeo:has_images rdf:type owl:DatatypeProperty ;
+                 rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                 rdfs:range xsd:string .
 
 
 ###  https://csse.utoronto.ca/has_improvements
@@ -917,6 +969,12 @@ bedeo:has_postal_station_information rdf:type owl:DatatypeProperty ;
                                      rdfs:label "Has postal station information"@en .
 
 
+###  https://csse.utoronto.ca/has_primary_image
+bedeo:has_primary_image rdf:type owl:DatatypeProperty ;
+                        rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                        rdfs:range xsd:string .
+
+
 ###  https://csse.utoronto.ca/has_property_identification_number
 bedeo:has_property_identification_number rdf:type owl:DatatypeProperty ;
                                          rdfs:domain bedeo:Address ;
@@ -1103,6 +1161,18 @@ bedeo:is_operating rdf:type owl:DatatypeProperty ;
                    rdfs:range xsd:boolean ;
                    rdfs:comment "Indicates whether an asset is used for an organization’s daily operations"@en ;
                    rdfs:label "Is operating"@en .
+
+
+###  https://csse.utoronto.ca/is_posted
+bedeo:is_posted rdf:type owl:DatatypeProperty ;
+                rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                rdfs:range xsd:string .
+
+
+###  https://csse.utoronto.ca/is_searchable
+bedeo:is_searchable rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bedeo:OpportunityAdditionalInfo ;
+                    rdfs:range xsd:string .
 
 
 ###  https://csse.utoronto.ca/is_tangible
@@ -1294,6 +1364,10 @@ bedeo:ContributionType rdf:type owl:Class .
 bedeo:Expertise rdf:type owl:Class .
 
 
+###  https://csse.utoronto.ca/Land
+bedeo:Land rdf:type owl:Class .
+
+
 ###  https://csse.utoronto.ca/LandUse
 bedeo:LandUse rdf:type owl:Class .
 
@@ -1308,6 +1382,92 @@ bedeo:Notification rdf:type owl:Class .
 
 ###  https://csse.utoronto.ca/NotificationOfInterest
 bedeo:NotificationOfInterest rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Opportunity
+bedeo:Opportunity rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_partner ;
+                                    owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:Partner
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_additional_info ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:OpportunityAdditionalInfo
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_primary_contact ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:Contact
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_project_stage ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:ProjectStage
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_project_type ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:ProjectType
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:requires_partnership_role ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:Role
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_land ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass bedeo:Land
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_description ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_name ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:string
+                                  ] .
+
+
+###  https://csse.utoronto.ca/OpportunityAdditionalInfo
+bedeo:OpportunityAdditionalInfo rdf:type owl:Class ;
+                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:has_files ;
+                                                  owl:allValuesFrom xsd:string
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:has_images ;
+                                                  owl:allValuesFrom xsd:string
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:has_date_modified ;
+                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:dateTime
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:has_date_posted ;
+                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:dateTime
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:has_primary_image ;
+                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:string
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:is_posted ;
+                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:boolean
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty bedeo:is_searchable ;
+                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:boolean
+                                                ] .
 
 
 ###  https://csse.utoronto.ca/OpportunityListing
@@ -1642,6 +1802,10 @@ bedeo:ProjectComponentAvailable rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/ProjectNeed
 bedeo:ProjectNeed rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/ProjectStage
+bedeo:ProjectStage rdf:type owl:Class .
 
 
 ###  https://csse.utoronto.ca/ProjectType
