@@ -56,6 +56,11 @@ bedeo:activates_role rdf:type owl:ObjectProperty ;
                      rdfs:range bedeo:Role .
 
 
+###  https://csse.utoronto.ca/component_of
+bedeo:component_of rdf:type owl:ObjectProperty ;
+                   rdfs:label "Component of"@en .
+
+
 ###  https://csse.utoronto.ca/governed_by
 bedeo:governed_by rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -98,6 +103,11 @@ bedeo:has_base_version rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  https://csse.utoronto.ca/has_component
+bedeo:has_component rdf:type owl:ObjectProperty ;
+                    rdfs:label "Has component"@en .
+
+
 ###  https://csse.utoronto.ca/has_constraint
 bedeo:has_constraint rdf:type owl:ObjectProperty .
 
@@ -110,6 +120,12 @@ bedeo:has_contribution_type rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_current_land_use
 bedeo:has_current_land_use rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/has_current_lessee
+bedeo:has_current_lessee rdf:type owl:ObjectProperty ;
+                         rdfs:range bedeo:Agent ;
+                         rdfs:label "Has current lessee"@en .
 
 
 ###  https://csse.utoronto.ca/has_delivery_address
@@ -142,6 +158,13 @@ bedeo:has_intended_opportunity rdf:type owl:ObjectProperty ;
                                rdfs:range bedeo:PpartnershipOpportunity .
 
 
+###  https://csse.utoronto.ca/has_interest_in
+bedeo:has_interest_in rdf:type owl:ObjectProperty ;
+                      rdfs:domain bedeo:Agent ;
+                      rdfs:range bedeo:Asset ;
+                      rdfs:label "Has interest in"@en .
+
+
 ###  https://csse.utoronto.ca/has_land
 bedeo:has_land rdf:type owl:ObjectProperty ;
                rdfs:domain bedeo:Opportunity ;
@@ -157,6 +180,12 @@ bedeo:has_latest_version rdf:type owl:ObjectProperty ;
 bedeo:has_legal_status rdf:type owl:ObjectProperty .
 
 
+###  https://csse.utoronto.ca/has_location
+bedeo:has_location rdf:type owl:ObjectProperty ;
+                   rdfs:range bedeo:Location ;
+                   rdfs:label "Has location"@en .
+
+
 ###  https://csse.utoronto.ca/has_mailing_address
 bedeo:has_mailing_address rdf:type owl:ObjectProperty ;
                           rdfs:domain bedeo:Organization ;
@@ -169,6 +198,18 @@ bedeo:has_member rdf:type owl:ObjectProperty ;
                  rdfs:range bedeo:Agent ;
                  rdfs:comment "Indicates the members who are part of an organization" ;
                  rdfs:label "Has member" .
+
+
+###  https://csse.utoronto.ca/has_monetary_value
+bedeo:has_monetary_value rdf:type owl:ObjectProperty ;
+                         rdfs:range bedeo:Value ;
+                         rdfs:label "Has monetary value"@en .
+
+
+###  https://csse.utoronto.ca/has_municipal_service
+bedeo:has_municipal_service rdf:type owl:ObjectProperty ;
+                            rdfs:range bedeo:Value ;
+                            rdfs:label "Has municipal service"@en .
 
 
 ###  https://csse.utoronto.ca/has_need
@@ -217,6 +258,18 @@ bedeo:has_organization_trade_name rdf:type owl:ObjectProperty ;
 bedeo:has_organization_type rdf:type owl:ObjectProperty ;
                             rdfs:domain bedeo:Organization ;
                             rdfs:range bedeo:OrganizationType .
+
+
+###  https://csse.utoronto.ca/has_owner
+bedeo:has_owner rdf:type owl:ObjectProperty ;
+                rdfs:range bedeo:Agent ;
+                rdfs:label "Has owner"@en .
+
+
+###  https://csse.utoronto.ca/has_part
+bedeo:has_part rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:label "Has part"@en .
 
 
 ###  https://csse.utoronto.ca/has_participant
@@ -325,6 +378,12 @@ bedeo:has_spatial_representation rdf:type owl:ObjectProperty ;
                                  rdfs:label "Has spatial representation"@en .
 
 
+###  https://csse.utoronto.ca/has_total_surface_area
+bedeo:has_total_surface_area rdf:type owl:ObjectProperty ;
+                             rdfs:range bedeo:Value ;
+                             rdfs:label "Has total surface area"@en .
+
+
 ###  https://csse.utoronto.ca/has_type
 bedeo:has_type rdf:type owl:ObjectProperty .
 
@@ -352,6 +411,14 @@ bedeo:is_account_of rdf:type owl:ObjectProperty ;
                     rdfs:range bedeo:Organization .
 
 
+###  https://csse.utoronto.ca/is_beneficiary_of
+bedeo:is_beneficiary_of rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf bedeo:has_interest_in ;
+                        rdfs:domain bedeo:Agent ;
+                        rdfs:range bedeo:Asset ;
+                        rdfs:label "Is beneficiary of"@en .
+
+
 ###  https://csse.utoronto.ca/is_member_of
 bedeo:is_member_of rdf:type owl:ObjectProperty ;
                    rdfs:domain bedeo:Agent ;
@@ -369,6 +436,12 @@ bedeo:makes_contribution rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/owns
 bedeo:owns rdf:type owl:ObjectProperty .
+
+
+###  https://csse.utoronto.ca/part_of
+bedeo:part_of rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
+              rdfs:label "Part of"@en .
 
 
 ###  https://csse.utoronto.ca/provides
@@ -393,6 +466,11 @@ bedeo:requires_partnership_role rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://csse.utoronto.ca/for_private_use
+bedeo:for_private_use rdf:type owl:DatatypeProperty ;
+                      rdfs:label "For private use"@en .
+
 
 ###  https://csse.utoronto.ca/has_acronym
 bedeo:has_acronym rdf:type owl:DatatypeProperty ;
@@ -699,6 +777,11 @@ bedeo:has_lot_information rdf:type owl:DatatypeProperty ;
 bedeo:has_middle_name rdf:type owl:DatatypeProperty ;
                       rdfs:domain bedeo:Person ;
                       rdfs:range xsd:string .
+
+
+###  https://csse.utoronto.ca/has_municipal_service_description
+bedeo:has_municipal_service_description rdf:type owl:DatatypeProperty ;
+                                        rdfs:label "Has municipal service description"@en .
 
 
 ###  https://csse.utoronto.ca/has_name
@@ -1207,6 +1290,17 @@ bedeo:has_unit_identifier rdf:type owl:DatatypeProperty ;
                           rdfs:label "Has unit identifier"@en .
 
 
+###  https://csse.utoronto.ca/is_commercial_character
+bedeo:is_commercial_character rdf:type owl:DatatypeProperty ;
+                              rdfs:label "Is commercial character"@en .
+
+
+###  https://csse.utoronto.ca/is_controlled
+bedeo:is_controlled rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "Is controlled"@en .
+
+
 ###  https://csse.utoronto.ca/has_value
 bedeo:has_value rdf:type owl:DatatypeProperty ;
                 rdfs:domain bedeo:OrganizationRegistrationNumber ;
@@ -1219,6 +1313,12 @@ bedeo:is_current rdf:type owl:DatatypeProperty ;
                  rdfs:label "Is current"@en .
 
 
+###  https://csse.utoronto.ca/is_depreciable
+bedeo:is_depreciable rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:label "Is depreciable"@en .
+
+
 ###  https://csse.utoronto.ca/is_liquid
 bedeo:is_liquid rdf:type owl:DatatypeProperty ;
                 rdfs:domain bedeo:Asset ;
@@ -1227,12 +1327,10 @@ bedeo:is_liquid rdf:type owl:DatatypeProperty ;
                 rdfs:label "Is liquid"@en .
 
 
-###  https://csse.utoronto.ca/is_operating
-bedeo:is_operating rdf:type owl:DatatypeProperty ;
-                   rdfs:domain bedeo:Asset ;
-                   rdfs:range xsd:boolean ;
-                   rdfs:comment "Indicates whether an asset is used for an organization’s daily operations"@en ;
-                   rdfs:label "Is operating"@en .
+###  https://csse.utoronto.ca/is_movable
+bedeo:is_movable rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "Is movable"@en .
 
 
 ###  https://csse.utoronto.ca/is_posted
@@ -1374,6 +1472,14 @@ bedeo:AddressComponent rdf:type owl:Class .
 ###  https://csse.utoronto.ca/Agent
 bedeo:Agent rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:has_interest_in ;
+                              owl:someValuesFrom bedeo:Asset
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:is_beneficiary_of ;
+                              owl:someValuesFrom bedeo:Asset
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty bedeo:is_member_of ;
                               owl:someValuesFrom bedeo:Organization
                             ] ,
@@ -1388,6 +1494,14 @@ bedeo:Agent rdf:type owl:Class ;
 ###  https://csse.utoronto.ca/Asset
 bedeo:Asset rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:has_monetary_value ;
+                              owl:someValuesFrom bedeo:Value
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:has_owner ;
+                              owl:someValuesFrom bedeo:Agent
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty bedeo:has_description ;
                               owl:someValuesFrom xsd:string
                             ] ,
@@ -1396,11 +1510,19 @@ bedeo:Asset rdf:type owl:Class ;
                               owl:someValuesFrom xsd:string
                             ] ,
                             [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:is_controlled ;
+                              owl:someValuesFrom xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty bedeo:is_depreciable ;
+                              owl:someValuesFrom xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
                               owl:onProperty bedeo:is_liquid ;
                               owl:someValuesFrom xsd:boolean
                             ] ,
                             [ rdf:type owl:Restriction ;
-                              owl:onProperty bedeo:is_operating ;
+                              owl:onProperty bedeo:is_movable ;
                               owl:someValuesFrom xsd:boolean
                             ] ,
                             [ rdf:type owl:Restriction ;
@@ -1437,6 +1559,51 @@ bedeo:Contribution rdf:type owl:Class .
 bedeo:ContributionType rdf:type owl:Class .
 
 
+###  https://csse.utoronto.ca/ControlledAsset
+bedeo:ControlledAsset rdf:type owl:Class ;
+                      rdfs:subClassOf bedeo:Asset ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty bedeo:is_controlled ;
+                                        owl:hasValue "true"^^xsd:boolean
+                                      ] .
+
+
+###  https://csse.utoronto.ca/DeclarableAsset
+bedeo:DeclarableAsset rdf:type owl:Class ;
+                      rdfs:subClassOf bedeo:Asset ,
+                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bedeo:for_private_use ;
+                                                               owl:hasValue "false"^^xsd:boolean
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bedeo:is_commercial_character ;
+                                                               owl:hasValue "true"^^xsd:boolean
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty bedeo:is_controlled ;
+                                                               owl:hasValue "false"^^xsd:boolean
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
+
+
+###  https://csse.utoronto.ca/ExemptAsset
+bedeo:ExemptAsset rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:Asset ,
+                                  [ rdf:type owl:Class ;
+                                    owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty bedeo:for_private_use ;
+                                                    owl:hasValue "true"^^xsd:boolean
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty bedeo:is_commercial_character ;
+                                                    owl:hasValue "false"^^xsd:boolean
+                                                  ]
+                                                )
+                                  ] .
+
+
 ###  https://csse.utoronto.ca/Expertise
 bedeo:Expertise rdf:type owl:Class .
 
@@ -1451,6 +1618,11 @@ bedeo:LandUse rdf:type owl:Class .
 
 ###  https://csse.utoronto.ca/LegalStatus
 bedeo:LegalStatus rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Location
+bedeo:Location rdf:type owl:Class ;
+               rdfs:label "Location"@en .
 
 
 ###  https://csse.utoronto.ca/Notification
@@ -1871,6 +2043,28 @@ bedeo:OrganizationTradeName rdf:type owl:Class ;
 bedeo:OrganizationType rdf:type owl:Class .
 
 
+###  https://csse.utoronto.ca/ParcelOfLand
+bedeo:ParcelOfLand rdf:type owl:Class ;
+                   rdfs:subClassOf bedeo:RealProperty ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:component_of ;
+                                     owl:someValuesFrom bedeo:RealProperty
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_component ;
+                                     owl:someValuesFrom bedeo:ParcelOfLand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_part ;
+                                     owl:someValuesFrom bedeo:ParcelOfLand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:part_of ;
+                                     owl:someValuesFrom bedeo:RealProperty
+                                   ] ;
+                   rdfs:label "Parcel of Land"@en .
+
+
 ###  https://csse.utoronto.ca/Partner
 bedeo:Partner rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -1956,6 +2150,20 @@ bedeo:Person rdf:type owl:Class ;
                              ] .
 
 
+###  https://csse.utoronto.ca/PersonalProperty
+bedeo:PersonalProperty rdf:type owl:Class ;
+                       rdfs:subClassOf bedeo:Asset ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty bedeo:has_component ;
+                                         owl:someValuesFrom bedeo:PersonalProperty
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty bedeo:has_part ;
+                                         owl:someValuesFrom bedeo:PersonalProperty
+                                       ] ;
+                       rdfs:label "Personal Property"@en .
+
+
 ###  https://csse.utoronto.ca/PpartnershipOpportunity
 bedeo:PpartnershipOpportunity rdf:type owl:Class ;
                               rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -2004,6 +2212,44 @@ bedeo:Proposal rdf:type owl:Class ;
                rdfs:label "Proposal"@en .
 
 
+###  https://csse.utoronto.ca/RealProperty
+bedeo:RealProperty rdf:type owl:Class ;
+                   rdfs:subClassOf bedeo:Asset ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_component ;
+                                     owl:someValuesFrom bedeo:ParcelOfLand
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_current_lessee ;
+                                     owl:someValuesFrom bedeo:Agent
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_municipal_service ;
+                                     owl:someValuesFrom bedeo:Service
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_part ;
+                                     owl:someValuesFrom bedeo:RealProperty
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_spatial_representation ;
+                                     owl:someValuesFrom bedeo:SpatialRepresentation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_total_surface_area ;
+                                     owl:someValuesFrom bedeo:Value
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_zoning ;
+                                     owl:someValuesFrom bedeo:Zone
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_municipal_service_description ;
+                                     owl:someValuesFrom xsd:string
+                                   ] ;
+                   rdfs:label "Real Property"@en .
+
+
 ###  https://csse.utoronto.ca/Resource
 bedeo:Resource rdf:type owl:Class .
 
@@ -2044,6 +2290,11 @@ bedeo:RoleType rdf:type owl:Class ;
                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
                                ] .
+
+
+###  https://csse.utoronto.ca/Service
+bedeo:Service rdf:type owl:Class ;
+              rdfs:label "Service"@en .
 
 
 ###  https://csse.utoronto.ca/Site
@@ -2093,6 +2344,11 @@ bedeo:Submission rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/User
 bedeo:User rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/Value
+bedeo:Value rdf:type owl:Class ;
+            rdfs:label "Value"@en .
 
 
 ###  https://csse.utoronto.ca/Ward
@@ -2400,11 +2656,7 @@ bedeo:non-profit_housing_co-op rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/nonoperating_asset
 bedeo:nonoperating_asset rdf:type owl:Class ;
-                         rdfs:subClassOf bedeo:Asset ,
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty bedeo:is_operating ;
-                                           owl:hasValue "false"^^xsd:boolean
-                                         ] ;
+                         rdfs:subClassOf bedeo:Asset ;
                          rdfs:comment "Non-operating assets are assets that are not required for daily business operations"@en ;
                          rdfs:label "Non-operating assets"@en .
 
@@ -2416,11 +2668,7 @@ bedeo:not_for_profit rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/operating_asset
 bedeo:operating_asset rdf:type owl:Class ;
-                      rdfs:subClassOf bedeo:Asset ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty bedeo:is_operating ;
-                                        owl:hasValue "true"^^xsd:boolean
-                                      ] ;
+                      rdfs:subClassOf bedeo:Asset ;
                       rdfs:comment "Operating assets are assets that are required in the daily operation of a business."@en ;
                       rdfs:label "Operating asset"@en .
 
@@ -2603,4 +2851,4 @@ bedeo:non-profit_housing_co-oprdf bedeo:type owl:NamedIndividual ,
                                              bedeo:organization_type .
 
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
