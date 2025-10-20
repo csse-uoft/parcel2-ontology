@@ -1,0 +1,1299 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="static/custom/favicon.ico">
+
+	
+		<title>Ontospy > http://qudt.org/3.1.5/qudt-all</title>
+	
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="static/libs/bootstrap-3_3_7-dist/css/bootstrap.min.css" rel="stylesheet">  -->
+    <!-- Bootswatch:  -->
+    <!-- cerulean  | cyborg |  flatly |  lumen |  sandstone |   spacelab  |  yeti | cosmo |  darkly |  paper | simplex | superhero |  journal | readable  |   slate |  united -->
+    <link href="static/libs/bootswatch3_2/cosmo/bootstrap.min.css" rel="stylesheet">
+    <link href="static/custom/css/simple-sidebar.css" rel="stylesheet">
+    <link href="static/custom/css/familytree.css" rel="stylesheet">
+    <link href="static/custom/css/tabletree.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="static/libs/bootstrap-3_3_7-dist/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/custom/css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+  .lead-plus {font-size: 26.5px;}
+  .label-xs {font-size: 10px;}
+  .label-dark {background: #2c3e50; color: white; padding: 1px;}
+  .margin50 {margin-top: 50px; margin-bottom: 50px;}
+
+  .namespaces {background: #ced2d6; width: 100%;}
+
+
+  /*so that the d3plus tooltip panel doesnt cover the top banner*/
+  .navbar {z-index: 3000;}
+
+
+  .panel-body dt {margin-top: 5px;}
+  .page-header  {margin-top: 30px;}
+  #wrapper {margin-top: 50px;}
+
+  .implementation-panel {
+    overflow: auto;
+    /*max-height: 500px;*/
+  }
+
+  tr.table-classproperties {
+      /*background: #f5f5f5;*/
+  }
+  tr.table-classproperties th {
+      font-size: 80%;
+      font-weight: normal;
+  }
+
+
+  tr.table-inheritanceinfo {
+      /*background: #f5f5f5;*/
+      text-align: left;
+  }
+
+  tr.table-inheritanceinfo th {
+      font-size: 90%;
+      font-weight: normal;
+  }
+
+
+  .breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .breadcrumb a {
+      text-transform: capitalize;
+  }
+  .breadcrumb li {
+      text-transform: none;
+      /*so to catch the uri @todo improve*/
+  }
+
+
+  .fromclass_link {
+    /*color: white;
+    text-decoration: underline;*/
+    /*background: #1c1e52;*/
+    color: inherit;
+    /*padding: 1px;*/
+  }
+
+		.mythumbnail {
+			display: block;
+			padding: 13px;
+			margin-bottom: 30px;
+			line-height: 13.428571;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 30px;
+		}
+
+		.mythumbnail:hover {
+			background: lightyellow;
+			text-decoration: none;
+		}
+
+
+		.img-container{
+		    height:100%;
+			overflow: hidden;
+		    max-height:200px;
+			padding: 10px;
+/*			margin: 20px 0px 20px 0px;*/
+			border: 1em #EAE5E5 solid;
+		}
+
+		.img-container:hover {
+			border: 1px grey solid;
+		}
+
+		img{
+/*		    height:100% !important;*/
+		}
+
+
+		.icon-xxs {
+			font-size: 15px;
+		}
+
+
+    /* dropdown open on hover */
+
+    @media (min-width: 979px) {
+      ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+      }
+    }
+
+
+
+/*pygments css*/
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #F00 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #04D } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #00F; font-weight: bold } /* Name.Class */
+.highlight .no { color: #800 } /* Name.Constant */
+.highlight .nd { color: #A2F } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00F } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #00F; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #BBB } /* Text.Whitespace */
+.highlight .mb { color: #666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666 } /* Literal.Number.Float */
+.highlight .mh { color: #666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #00F } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666 } /* Literal.Number.Integer.Long */
+
+/*overloading this class from pygments*/
+.highlight {
+  overflow: auto;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+
+
+
+    
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" id="menu-toggle" title="Toggle sidebar">
+        
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html"><code style="font-size: 115%;">http://qudt.org/3.1.5/qudt-all</code></a></li>
+
+        <li  ><a href="entities-az.html">Entities A-Z</a></li>
+        
+        <li ><a href="entities-tree-classes.html">Classes</a></li>
+        
+        
+        <li ><a href="entities-tree-properties.html">Properties</a></li>
+        
+        
+        
+        <li ><a href="entities-tree-shapes.html">Shapes</a></li>
+        
+        
+        <li  ><a href="statistics.html">Statistics</a></li>
+
+
+
+
+
+      </ul>
+      
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<div id="wrapper" class="toggled">
+
+
+    
+
+    
+        
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+
+        <li>
+          <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
+        </li>
+
+        
+          <li class="-second-level" id="sd_classes"><a href="entities-tree-classes.html">Classes (100)</a>
+          </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_218"><a  href="class-dtypeenumeratedvalue.html">dtype:EnumeratedValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_219"><a  href="class-dtypeenumeration.html">dtype:Enumeration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_220"><a  href="class-dtypenumericunion.html">dtype:numericUnion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_121"><a  href="class-qudtabstractquantitykind.html">qudt:AbstractQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_122"><a  href="class-qudtangleunit.html">qudt:AngleUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_123"><a  href="class-qudtaspect.html">qudt:Aspect</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_124"><a  href="class-qudtaspectclass.html">qudt:AspectClass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_125"><a  href="class-qudtbasedimensionmagnitude.html">qudt:BaseDimensionMagnitude</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_126"><a  href="class-qudtbinaryprefix.html">qudt:BinaryPrefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_127"><a  href="class-qudtbitencodingtype.html">qudt:BitEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_128"><a  href="class-qudtbitfield.html">qudt:BitField</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_129"><a  href="class-qudtbitfield01.html">qudt:BitField01</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_130"><a  href="class-qudtbitfield02.html">qudt:BitField02</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_131"><a  href="class-qudtbitfield03.html">qudt:BitField03</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_132"><a  href="class-qudtbitfield04.html">qudt:BitField04</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_133"><a  href="class-qudtbitfield05.html">qudt:BitField05</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_134"><a  href="class-qudtbitfield06.html">qudt:BitField06</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_135"><a  href="class-qudtbitfield07.html">qudt:BitField07</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_136"><a  href="class-qudtbitfield08.html">qudt:BitField08</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_137"><a  href="class-qudtbitfield09.html">qudt:BitField09</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_138"><a  href="class-qudtbitfield10.html">qudt:BitField10</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_139"><a  href="class-qudtbitfield11.html">qudt:BitField11</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_140"><a  href="class-qudtbitfield12.html">qudt:BitField12</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_141"><a  href="class-qudtbooleanencodingtype.html">qudt:BooleanEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_142"><a  href="class-qudtbyteencodingtype.html">qudt:ByteEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_143"><a  href="class-qudtcardinalitytype.html">qudt:CardinalityType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_144"><a  href="class-qudtcharencodingtype.html">qudt:CharEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_145"><a  href="class-qudtcitation.html">qudt:Citation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_146"><a  href="class-qudtcomment.html">qudt:Comment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_147"><a  href="class-qudtconcept.html">qudt:Concept</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_148"><a  href="class-qudtconstantvalue.html">qudt:ConstantValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_149"><a  href="class-qudtcontextualunit.html">qudt:ContextualUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_150"><a  href="class-qudtcountingunit.html">qudt:CountingUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_151"><a  href="class-qudtcurrencyunit.html">qudt:CurrencyUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_152"><a  href="class-qudtdataencoding.html">qudt:DataEncoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_153"><a  href="class-qudtdataitem.html">qudt:DataItem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_154"><a  href="class-qudtdatatype.html">qudt:Datatype</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_155"><a  href="class-qudtdatetimestringencodingtype.html">qudt:DateTimeStringEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_156"><a  href="class-qudtdecimalprefix.html">qudt:DecimalPrefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_157"><a  href="class-qudtderivedunit.html">qudt:DerivedUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_158"><a  href="class-qudtdimensionlessunit.html">qudt:DimensionlessUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_159"><a  href="class-qudtdiscipline.html">qudt:Discipline</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_160"><a  href="class-qudtencoding.html">qudt:Encoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_161"><a  href="class-qudtendiantype.html">qudt:EndianType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_162"><a  href="class-qudtenumeratedquantity.html">qudt:EnumeratedQuantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_163"><a  href="class-qudtenumeratedvalue.html">qudt:EnumeratedValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_164"><a  href="class-qudtenumeration.html">qudt:Enumeration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_165"><a  href="class-qudtenumerationscale.html">qudt:EnumerationScale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_166"><a  href="class-qudtfigure.html">qudt:Figure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_167"><a  href="class-qudtfloatingpointencodingtype.html">qudt:FloatingPointEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_168"><a  href="class-qudtintegerencodingtype.html">qudt:IntegerEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_169"><a  href="class-qudtintervalscale.html">qudt:IntervalScale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_170"><a  href="class-qudtlatexstring.html">qudt:LatexString</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_171"><a  href="class-qudtlogarithmicunit.html">qudt:LogarithmicUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_172"><a  href="class-qudtmathsfunctiontype.html">qudt:MathsFunctionType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_173"><a  href="class-qudtnist_sp811_comment.html">qudt:NIST_SP811_Comment</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_174"><a  href="class-qudtnominalscale.html">qudt:NominalScale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_175"><a  href="class-qudtnumericunion.html">qudt:NumericUnion</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_176"><a  href="class-qudtorderedtype.html">qudt:OrderedType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_177"><a  href="class-qudtordinalscale.html">qudt:OrdinalScale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_178"><a  href="class-qudtorganization.html">qudt:Organization</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_179"><a  href="class-qudtphysicalconstant.html">qudt:PhysicalConstant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_180"><a  href="class-qudtplaneangleunit.html">qudt:PlaneAngleUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_181"><a  href="class-qudtprefix.html">qudt:Prefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_182"><a  href="class-qudtquantifiable.html">qudt:Quantifiable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_183"><a  href="class-qudtquantity.html">qudt:Quantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_184"><a  href="class-qudtquantitykind.html">qudt:QuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_185"><a  href="class-qudtquantitykinddimensionvector.html">qudt:QuantityKindDimensionVector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_186"><a  href="class-qudtquantitykinddimensionvector_cgs.html">qudt:QuantityKindDimensionVector_CGS</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_187"><a  href="class-qudtquantitykinddimensionvector_cgs-emu.html">qudt:QuantityKindDimensionVector_CGS-EMU</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_188"><a  href="class-qudtquantitykinddimensionvector_cgs-esu.html">qudt:QuantityKindDimensionVector_CGS-ESU</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_189"><a  href="class-qudtquantitykinddimensionvector_cgs-gauss.html">qudt:QuantityKindDimensionVector_CGS-GAUSS</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_190"><a  href="class-qudtquantitykinddimensionvector_cgs-lh.html">qudt:QuantityKindDimensionVector_CGS-LH</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_191"><a  href="class-qudtquantitykinddimensionvector_iso.html">qudt:QuantityKindDimensionVector_ISO</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_192"><a  href="class-qudtquantitykinddimensionvector_imperial.html">qudt:QuantityKindDimensionVector_Imperial</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_193"><a  href="class-qudtquantitykinddimensionvector_si.html">qudt:QuantityKindDimensionVector_SI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_194"><a  href="class-qudtquantitytype.html">qudt:QuantityType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_195"><a  href="class-qudtquantityvalue.html">qudt:QuantityValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_196"><a  href="class-qudtratioscale.html">qudt:RatioScale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_197"><a  href="class-qudtrule.html">qudt:Rule</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_198"><a  href="class-qudtruletype.html">qudt:RuleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_199"><a  href="class-qudtscalardatatype.html">qudt:ScalarDatatype</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_200"><a  href="class-qudtscale.html">qudt:Scale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_201"><a  href="class-qudtscaletype.html">qudt:ScaleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_202"><a  href="class-qudtsolidangleunit.html">qudt:SolidAngleUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_203"><a  href="class-qudtstatement.html">qudt:Statement</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_204"><a  href="class-qudtstringencodingtype.html">qudt:StringEncodingType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_205"><a  href="class-qudtsymbol.html">qudt:Symbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_206"><a  href="class-qudtsystemofquantitykinds.html">qudt:SystemOfQuantityKinds</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_207"><a  href="class-qudtsystemofunits.html">qudt:SystemOfUnits</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_208"><a  href="class-qudttransformtype.html">qudt:TransformType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_209"><a  href="class-qudtucumcs.html">qudt:UCUMcs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_210"><a  href="class-qudtucumcs-term.html">qudt:UCUMcs-term</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_211"><a  href="class-qudtutc-daytime.html">qudt:UTC-DayTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_212"><a  href="class-qudtunit.html">qudt:Unit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_213"><a  href="class-qudtuserquantitykind.html">qudt:UserQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_214"><a  href="class-qudtverifiable.html">qudt:Verifiable</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_215"><a  href="class-qudtinteger1to12.html">qudt:integer1to12</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_216"><a  href="class-qudtinteger1to31.html">qudt:integer1to31</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_217"><a  href="class-qudtvalueunion.html">qudt:valueUnion</a></li>
+          
+        
+
+        
+            <li class="-second-level" id="sd_properties"><a  href="entities-tree-properties.html">Properties (193)</a>
+            </li>
+
+            
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_236"><a   href="prop-dctermsabstract.html">dcterms:abstract</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_222"><a   href="prop-dctermscontributor.html">dcterms:contributor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_223"><a   href="prop-dctermscreated.html">dcterms:created</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_237"><a   href="prop-dctermscreator.html">dcterms:creator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_238"><a   href="prop-dctermsdescription.html">dcterms:description</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_335"><a   href="prop-dctermsisreplacedby.html">dcterms:isReplacedBy</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_224"><a   href="prop-dctermsmodified.html">dcterms:modified</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_239"><a   href="prop-dctermsrights.html">dcterms:rights</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_240"><a   href="prop-dctermssource.html">dcterms:source</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_241"><a   href="prop-dctermssubject.html">dcterms:subject</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_242"><a   href="prop-dctermstitle.html">dcterms:title</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_328"><a   href="prop-dtypeliteral.html">dtype:literal</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_235"><a   href="prop-provwasderivedfrom.html">prov:wasDerivedFrom</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_248"><a   href="prop-qudtabbreviation.html">qudt:abbreviation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_249"><a   href="prop-qudtacronym.html">qudt:acronym</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_250"><a   href="prop-qudtallowedpattern.html">qudt:allowedPattern</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_251"><a   href="prop-qudtaltsymbol.html">qudt:altSymbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_225"><a   href="prop-qudtansisqlname.html">qudt:ansiSQLName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_336"><a   href="prop-qudtapplicablecgsunit.html">qudt:applicableCGSUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_337"><a   href="prop-qudtapplicableisounit.html">qudt:applicableISOUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_338"><a   href="prop-qudtapplicableimperialunit.html">qudt:applicableImperialUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_339"><a   href="prop-qudtapplicablephysicalconstant.html">qudt:applicablePhysicalConstant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_340"><a   href="prop-qudtapplicableplanckunit.html">qudt:applicablePlanckUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_341"><a   href="prop-qudtapplicablesiunit.html">qudt:applicableSIUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_342"><a   href="prop-qudtapplicablesystem.html">qudt:applicableSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_343"><a   href="prop-qudtapplicableuscustomaryunit.html">qudt:applicableUSCustomaryUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_344"><a   href="prop-qudtapplicableunit.html">qudt:applicableUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_329"><a   href="prop-qudtbasedimensionenumeration.html">qudt:baseDimensionEnumeration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_345"><a   href="prop-qudtbaseunitofsystem.html">qudt:baseUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_346"><a   href="prop-qudtbasis.html">qudt:basis</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_347"><a   href="prop-qudtbelongstosystemofquantities.html">qudt:belongsToSystemOfQuantities</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_348"><a   href="prop-qudtbitorder.html">qudt:bitOrder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_226"><a   href="prop-qudtbits.html">qudt:bits</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_252"><a   href="prop-qudtbounded.html">qudt:bounded</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_349"><a   href="prop-qudtbyteorder.html">qudt:byteOrder</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_227"><a   href="prop-qudtbytes.html">qudt:bytes</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_228"><a   href="prop-qudtcname.html">qudt:cName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_350"><a   href="prop-qudtcardinality.html">qudt:cardinality</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_351"><a   href="prop-qudtcategorizedas.html">qudt:categorizedAs</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_330"><a   href="prop-qudtcoherentunitsystem.html">qudt:coherentUnitSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_253"><a   href="prop-qudtconversionmultiplier.html">qudt:conversionMultiplier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_254"><a   href="prop-qudtconversionmultipliersn.html">qudt:conversionMultiplierSN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_255"><a   href="prop-qudtconversionoffset.html">qudt:conversionOffset</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_256"><a   href="prop-qudtconversionoffsetsn.html">qudt:conversionOffsetSN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_257"><a   href="prop-qudtcurrencycode.html">qudt:currencyCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_258"><a   href="prop-qudtcurrencyexponent.html">qudt:currencyExponent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_259"><a   href="prop-qudtcurrencynumber.html">qudt:currencyNumber</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_352"><a   href="prop-qudtdataencoding.html">qudt:dataEncoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_260"><a   href="prop-qudtdatastructure.html">qudt:dataStructure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_353"><a   href="prop-qudtdatatype.html">qudt:datatype</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_243"><a   href="prop-qudtdbpediamatch.html">qudt:dbpediaMatch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_354"><a   href="prop-qudtdefault.html">qudt:default</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_355"><a   href="prop-qudtdefinedunitofsystem.html">qudt:definedUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_356"><a   href="prop-qudtdenominatordimensionvector.html">qudt:denominatorDimensionVector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_261"><a   href="prop-qudtdeprecated.html">qudt:deprecated</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_357"><a   href="prop-qudtderivedcoherentunitofsystem.html">qudt:derivedCoherentUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_358"><a   href="prop-qudtderivednoncoherentunitofsystem.html">qudt:derivedNonCoherentUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_359"><a   href="prop-qudtderivedunitofsystem.html">qudt:derivedUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_262"><a   href="prop-qudtdimensionexponent.html">qudt:dimensionExponent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_263"><a   href="prop-qudtdimensionexponentforamountofsubstance.html">qudt:dimensionExponentForAmountOfSubstance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_264"><a   href="prop-qudtdimensionexponentforelectriccurrent.html">qudt:dimensionExponentForElectricCurrent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_265"><a   href="prop-qudtdimensionexponentforlength.html">qudt:dimensionExponentForLength</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_266"><a   href="prop-qudtdimensionexponentforluminousintensity.html">qudt:dimensionExponentForLuminousIntensity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_267"><a   href="prop-qudtdimensionexponentformass.html">qudt:dimensionExponentForMass</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_268"><a   href="prop-qudtdimensionexponentforthermodynamictemperature.html">qudt:dimensionExponentForThermodynamicTemperature</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_269"><a   href="prop-qudtdimensionexponentfortime.html">qudt:dimensionExponentForTime</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_331"><a   href="prop-qudtdimensioninverse.html">qudt:dimensionInverse</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_360"><a   href="prop-qudtdimensionvectorforsi.html">qudt:dimensionVectorForSI</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_270"><a   href="prop-qudtdimensionlessexponent.html">qudt:dimensionlessExponent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_361"><a   href="prop-qudtelement.html">qudt:element</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_362"><a   href="prop-qudtelementkind.html">qudt:elementKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_363"><a   href="prop-qudtencoding.html">qudt:encoding</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_364"><a   href="prop-qudtenumeratedvalue.html">qudt:enumeratedValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_365"><a   href="prop-qudtenumeration.html">qudt:enumeration</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_271"><a   href="prop-qudtexactconstant.html">qudt:exactConstant</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_221"><a   href="prop-qudtexactmatch.html">qudt:exactMatch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_244"><a   href="prop-qudtexample.html">qudt:example</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_366"><a   href="prop-qudtexponent.html">qudt:exponent</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_245"><a   href="prop-qudtexpression.html">qudt:expression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_272"><a   href="prop-qudtfactorunitscalar.html">qudt:factorUnitScalar</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_273"><a   href="prop-qudtfieldcode.html">qudt:fieldCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_367"><a   href="prop-qudtfigure.html">qudt:figure</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_274"><a   href="prop-qudtfigurecaption.html">qudt:figureCaption</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_275"><a   href="prop-qudtfigurelabel.html">qudt:figureLabel</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_276"><a   href="prop-qudtguidance.html">qudt:guidance</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_368"><a   href="prop-qudthasallowedunit.html">qudt:hasAllowedUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_332"><a   href="prop-qudthasbasequantitykind.html">qudt:hasBaseQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_369"><a   href="prop-qudthasbaseunit.html">qudt:hasBaseUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_277"><a   href="prop-qudthascitation.html">qudt:hasCitation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_370"><a   href="prop-qudthascoherentunit.html">qudt:hasCoherentUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_371"><a   href="prop-qudthasdefinedunit.html">qudt:hasDefinedUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_372"><a   href="prop-qudthasdenominatorpart.html">qudt:hasDenominatorPart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_373"><a   href="prop-qudthasderivedcoherentunit.html">qudt:hasDerivedCoherentUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_374"><a   href="prop-qudthasderivednoncoherentunit.html">qudt:hasDerivedNonCoherentUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_375"><a   href="prop-qudthasderivedunit.html">qudt:hasDerivedUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_376"><a   href="prop-qudthasdimension.html">qudt:hasDimension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_377"><a   href="prop-qudthasdimensionexpression.html">qudt:hasDimensionExpression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_378"><a   href="prop-qudthasdimensionvector.html">qudt:hasDimensionVector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_379"><a   href="prop-qudthasfactorunit.html">qudt:hasFactorUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_380"><a   href="prop-qudthasnumeratorpart.html">qudt:hasNumeratorPart</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_381"><a   href="prop-qudthasprefixunit.html">qudt:hasPrefixUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_382"><a   href="prop-qudthasquantity.html">qudt:hasQuantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_383"><a   href="prop-qudthasquantitykind.html">qudt:hasQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_384"><a   href="prop-qudthasreciprocalunit.html">qudt:hasReciprocalUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_385"><a   href="prop-qudthasreferencequantitykind.html">qudt:hasReferenceQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_386"><a   href="prop-qudthasrule.html">qudt:hasRule</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_387"><a   href="prop-qudthasunit.html">qudt:hasUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_333"><a   href="prop-qudthasunitsystem.html">qudt:hasUnitSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_388"><a   href="prop-qudthasvocabulary.html">qudt:hasVocabulary</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_278"><a   href="prop-qudtheight.html">qudt:height</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_279"><a   href="prop-qudtid.html">qudt:id</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_280"><a   href="prop-qudtiec61360code.html">qudt:iec61360Code</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_281"><a   href="prop-qudtimage.html">qudt:image</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_282"><a   href="prop-qudtimagelocation.html">qudt:imageLocation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_246"><a   href="prop-qudtinformativereference.html">qudt:informativeReference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_283"><a   href="prop-qudtisdeltaquantity.html">qudt:isDeltaQuantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_389"><a   href="prop-qudtisdimensioninsystem.html">qudt:isDimensionInSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_284"><a   href="prop-qudtismetricunit.html">qudt:isMetricUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_390"><a   href="prop-qudtisunitofsystem.html">qudt:isUnitOfSystem</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_285"><a   href="prop-qudtisonormativereference.html">qudt:isoNormativeReference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_286"><a   href="prop-qudtjavaname.html">qudt:javaName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_287"><a   href="prop-qudtjsname.html">qudt:jsName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_288"><a   href="prop-qudtlandscape.html">qudt:landscape</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_289"><a   href="prop-qudtlatexdefinition.html">qudt:latexDefinition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_290"><a   href="prop-qudtlatexsymbol.html">qudt:latexSymbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_229"><a   href="prop-qudtlength.html">qudt:length</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_291"><a   href="prop-qudtlowerbound.html">qudt:lowerBound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_292"><a   href="prop-qudtmathdefinition.html">qudt:mathDefinition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_293"><a   href="prop-qudtmathmldefinition.html">qudt:mathMLdefinition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_294"><a   href="prop-qudtmatlabname.html">qudt:matlabName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_295"><a   href="prop-qudtmaxexclusive.html">qudt:maxExclusive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_296"><a   href="prop-qudtmaxinclusive.html">qudt:maxInclusive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_297"><a   href="prop-qudtmicrosoftsqlservername.html">qudt:microsoftSQLServerName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_230"><a   href="prop-qudtminexclusive.html">qudt:minExclusive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_298"><a   href="prop-qudtmininclusive.html">qudt:minInclusive</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_299"><a   href="prop-qudtmysqlname.html">qudt:mySQLName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_300"><a   href="prop-qudtnegativedeltalimit.html">qudt:negativeDeltaLimit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_301"><a   href="prop-qudtnormativereference.html">qudt:normativeReference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_391"><a   href="prop-qudtnumeratordimensionvector.html">qudt:numeratorDimensionVector</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_302"><a   href="prop-qudtnumericvalue.html">qudt:numericValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_303"><a   href="prop-qudtodbcname.html">qudt:odbcName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_304"><a   href="prop-qudtoledbname.html">qudt:oleDBName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_392"><a   href="prop-qudtomunit.html">qudt:omUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_305"><a   href="prop-qudtonlinereference.html">qudt:onlineReference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_231"><a   href="prop-qudtoraclesqlname.html">qudt:oracleSQLName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_306"><a   href="prop-qudtorder.html">qudt:order</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_393"><a   href="prop-qudtorderedtype.html">qudt:orderedType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_307"><a   href="prop-qudtoutofscope.html">qudt:outOfScope</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_394"><a   href="prop-qudtpermissiblemaths.html">qudt:permissibleMaths</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_395"><a   href="prop-qudtpermissibletransformation.html">qudt:permissibleTransformation</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_308"><a   href="prop-qudtplaintextdescription.html">qudt:plainTextDescription</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_309"><a   href="prop-qudtpositivedeltalimit.html">qudt:positiveDeltaLimit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_396"><a   href="prop-qudtprefix.html">qudt:prefix</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_310"><a   href="prop-qudtprefixmultiplier.html">qudt:prefixMultiplier</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_311"><a   href="prop-qudtprefixmultipliersn.html">qudt:prefixMultiplierSN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_232"><a   href="prop-qudtprotocolbuffersname.html">qudt:protocolBuffersName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_233"><a   href="prop-qudtpythonname.html">qudt:pythonName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_397"><a   href="prop-qudtqkdvdenominator.html">qudt:qkdvDenominator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_398"><a   href="prop-qudtqkdvnumerator.html">qudt:qkdvNumerator</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_399"><a   href="prop-qudtquantity.html">qudt:quantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_400"><a   href="prop-qudtquantityvalue.html">qudt:quantityValue</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_312"><a   href="prop-qudtrationale.html">qudt:rationale</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_313"><a   href="prop-qudtrdfsdatatype.html">qudt:rdfsDatatype</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_401"><a   href="prop-qudtreference.html">qudt:reference</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_334"><a   href="prop-qudtreferenceunit.html">qudt:referenceUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_314"><a   href="prop-qudtrelativestandarduncertainty.html">qudt:relativeStandardUncertainty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_402"><a   href="prop-qudtrelevantquantitykind.html">qudt:relevantQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_403"><a   href="prop-qudtrelevantunit.html">qudt:relevantUnit</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_404"><a   href="prop-qudtruletype.html">qudt:ruleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_405"><a   href="prop-qudtscaletype.html">qudt:scaleType</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_406"><a   href="prop-qudtscalingof.html">qudt:scalingOf</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_407"><a   href="prop-qudtsiexactmatch.html">qudt:siExactMatch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_315"><a   href="prop-qudtsiunitsexpression.html">qudt:siUnitsExpression</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_316"><a   href="prop-qudtstandarduncertainty.html">qudt:standardUncertainty</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_317"><a   href="prop-qudtstandarduncertaintysn.html">qudt:standardUncertaintySN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_318"><a   href="prop-qudtsymbol.html">qudt:symbol</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_408"><a   href="prop-qudtsystemdefinition.html">qudt:systemDefinition</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_409"><a   href="prop-qudtsystemderivedquantitykind.html">qudt:systemDerivedQuantityKind</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_410"><a   href="prop-qudtsystemdimension.html">qudt:systemDimension</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_319"><a   href="prop-qudtucumcode.html">qudt:ucumCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_320"><a   href="prop-qudtudunitscode.html">qudt:udunitsCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_321"><a   href="prop-qudtunececommoncode.html">qudt:uneceCommonCode</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_411"><a   href="prop-qudtunitfor.html">qudt:unitFor</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_322"><a   href="prop-qudtupperbound.html">qudt:upperBound</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_323"><a   href="prop-qudturl.html">qudt:url</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_324"><a   href="prop-qudtvalue.html">qudt:value</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_412"><a class="active"  href="prop-qudtvaluequantity.html">qudt:valueQuantity</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_325"><a   href="prop-qudtvaluesn.html">qudt:valueSN</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_234"><a   href="prop-qudtvbname.html">qudt:vbName</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_326"><a   href="prop-qudtvectormagnitude.html">qudt:vectorMagnitude</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_327"><a   href="prop-qudtwidth.html">qudt:width</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_247"><a   href="prop-qudtwikidatamatch.html">qudt:wikidataMatch</a></li>
+          
+              <li class="second-level" style="line-height: 20px;" id="sd_413"><a   href="prop-voagsupersededby.html">voag:supersededBy</a></li>
+          
+
+        
+
+        
+
+
+        
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </ul>
+
+</div>
+
+
+<!-- /#sidebar-wrapper -->
+    
+
+
+
+
+    <!-- Begin page content -->
+    <div class="container" id="page-content-wrapper">
+
+      
+
+	
+
+
+
+
+        
+
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+          <a href="entities-az.html">Entities</a>
+    </li>
+    <li>
+          <a href="entities-tree-properties.html">Properties</a>
+    </li>
+      <li class="active">
+            qudt:valueQuantity
+        </li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+            <h1>
+
+                qudt:valueQuantity
+                
+                    <small class="label label-info label-xs ">leaf node</small>
+                  
+
+            </h1>
+
+            <hr>
+
+
+
+            <div class="tree-container">
+            <div class="tree">
+                <ul>
+                    
+
+                        <li><a href="entities-tree-properties.html">rdf:Property</a>
+
+                          <ul>
+                            <li><a style="font-weight: bold;" title="'value for quantity'">qudt:valueQuantity</a>
+
+                            
+                              </li>
+
+                          </ul>
+
+                        </li>
+                    
+
+                </ul>
+            </div>
+            </div>
+
+
+
+
+            <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">URI</h3>
+             </div>
+             <div class="panel-body">
+
+                 <code>http://qudt.org/schema/qudt/valueQuantity</code>
+             </div>
+           </div>
+            </div></div>
+
+
+
+            
+             <div class="row"><div class="col-md-12">
+               <div class="panel panel-default">
+             <div class="panel-heading">
+               <h3 class="panel-title">Label</h3>
+             </div>
+             <div class="panel-body">
+
+                 value for quantity
+             </div>
+           </div>
+            </div></div>
+            
+
+
+            
+
+
+
+            
+
+
+
+            
+
+
+            <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usage</h3>
+            </div>
+
+            <table class="table table-bordered" style="overflow: auto;">
+
+               <tr class="table-classproperties">
+                   <th>DOMAIN</th><th>PROPERTY</th><th>RANGE</th>
+               </tr>
+               <tr>
+                   <td>
+                     
+                         <a>owl:Thing</a> (inferred)
+                     
+                   </td>
+
+                    <td>
+                      qudt:valueQuantity
+                    </td>
+
+                    <td>
+                      
+                          <a>owl:Thing</a> (inferred)
+                      
+                    </td>
+            </table>
+
+          </div>
+           </div></div>
+
+
+
+           <div class="row"><div class="col-md-12">
+              <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Implementation</h3>
+            </div>
+            <div class="panel-body implementation-panel">
+
+                
+
+                    <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">qudt:</span><span class="w"> </span><span class="nv">&lt;http://qudt.org/schema/qudt/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">qudt</span><span class="p">:</span><span class="nt">valueQuantity</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;value for quantity&quot;</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">isDefinedBy</span> <span class="nv">&lt;http://qudt.org/3.1.5/schema/qudt&gt;</span> <span class="p">;</span>
+    <span class="nn">owl</span><span class="p">:</span><span class="nt">inverseOf</span> <span class="nn">qudt</span><span class="p">:</span><span class="nt">quantityValue</span> <span class="p">.</span>
+</pre></div>
+
+
+                
+            </div>
+          </div>
+           </div></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+	</div><!-- /#page-content-wrapper -->
+
+
+  
+
+
+
+  
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+    
+      <p class="text-muted">Documentation automatically generated on Mon, 20 Oct 2025 22:59:23 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+
+    
+    </div>
+  </footer>
+
+
+</div><!-- /#wrapper -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="static/libs/jquery/1_12_4/jquery.min.js"></script>
+<script src="static/libs/bootstrap-3_3_7-dist/js/bootstrap.min.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="static/libs/bootstrap-3_3_7-dist/js/ie10-viewport-bug-workaround.js"></script>
+
+<script src="static/libs/chartjs-2_4_0/chart.bundle.js"></script>
+
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$('#search-input-sidebar').keyup(function() {
+
+  var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+  // var $rows = $(this).next(".entities-list").find("div");
+  var $rows = $(this).parent().parent().find("li.second-level");
+
+  $rows.show().filter(function() {
+      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+      return !~text.indexOf(val);
+  }).hide();
+});
+
+</script>
+
+
+
+
+  <!-- Scroll Sidebar Script -->
+
+  
+  
+
+  <script type="text/javascript">
+
+    $(document).ready(function (){
+      $('#sidebar-wrapper').animate({
+          scrollTop: $("#sd_412").offset().top - 100
+      }, 100);
+    });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
