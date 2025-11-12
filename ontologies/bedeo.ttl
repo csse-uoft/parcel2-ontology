@@ -149,8 +149,10 @@ bedeo:has_asset rdf:type owl:ObjectProperty ;
                 rdfs:label "Has asset"@en .
 
 
-###  https://csse.utoronto.ca/has_available_role
-bedeo:has_available_role rdf:type owl:ObjectProperty .
+###  https://csse.utoronto.ca/has_available_role_type
+bedeo:has_available_role_type rdf:type owl:ObjectProperty ;
+                              rdfs:range bedeo:RoleType ;
+                              rdfs:label "Has available role type"@en .
 
 
 ###  https://csse.utoronto.ca/has_base_version
@@ -293,9 +295,10 @@ bedeo:has_municipal_service rdf:type owl:ObjectProperty ;
                             rdfs:label "Has municipal service"@en .
 
 
-###  https://csse.utoronto.ca/has_need
-bedeo:has_need rdf:type owl:ObjectProperty ;
-               rdfs:label "Has need"@en .
+###  https://csse.utoronto.ca/has_need_type
+bedeo:has_need_type rdf:type owl:ObjectProperty ;
+                    rdfs:range bedeo:PartnershipOpportunityNeedType ;
+                    rdfs:label "Has need"@en .
 
 
 ###  https://csse.utoronto.ca/has_non_quantity_kind
@@ -303,13 +306,6 @@ bedeo:has_non_quantity_kind rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf bedeo:has_characteristic_kind ;
                             rdfs:range bedeo:NonQuantityCharacteristicKind ;
                             rdfs:label "Has non quantity kind"@en .
-
-
-###  https://csse.utoronto.ca/has_non_quantity_value
-bedeo:has_non_quantity_value rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf bedeo:has_value ;
-                             rdfs:range bedeo:NonQuantityValue ;
-                             rdfs:label "Has non quantity value"@en .
 
 
 ###  https://csse.utoronto.ca/has_notification
@@ -476,7 +472,10 @@ bedeo:has_recipient rdf:type owl:ObjectProperty ;
 
 
 ###  https://csse.utoronto.ca/has_role
-bedeo:has_role rdf:type owl:ObjectProperty .
+bedeo:has_role rdf:type owl:ObjectProperty ;
+               rdfs:domain bedeo:Agent ;
+               rdfs:range bedeo:Role ;
+               rdfs:label "Has role"@en .
 
 
 ###  https://csse.utoronto.ca/has_role_type
@@ -522,7 +521,9 @@ bedeo:has_total_surface_area rdf:type owl:ObjectProperty ;
 
 
 ###  https://csse.utoronto.ca/has_type
-bedeo:has_type rdf:type owl:ObjectProperty .
+bedeo:has_type rdf:type owl:ObjectProperty ;
+               rdfs:range bedeo:Type ;
+               rdfs:label "Has type"@en .
 
 
 ###  https://csse.utoronto.ca/has_value
@@ -574,6 +575,18 @@ bedeo:makes_contribution rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          rdfs:domain bedeo:Agent ;
                          rdfs:range bedeo:Contribution .
+
+
+###  https://csse.utoronto.ca/non_numeric_value
+bedeo:non_numeric_value rdf:type owl:ObjectProperty ;
+                        rdfs:label "Non numeric value"@en .
+
+
+###  https://csse.utoronto.ca/non_quantity_value
+bedeo:non_quantity_value rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf bedeo:has_value ;
+                         rdfs:range bedeo:NonQuantityValue ;
+                         rdfs:label "Non quantity value"@en .
 
 
 ###  https://csse.utoronto.ca/owns
@@ -1944,7 +1957,7 @@ bedeo:NonQuantityCharacteristic rdf:type owl:Class ;
                                                   owl:someValuesFrom bedeo:NonQuantityCharacteristicKind
                                                 ] ,
                                                 [ rdf:type owl:Restriction ;
-                                                  owl:onProperty bedeo:has_non_quantity_value ;
+                                                  owl:onProperty bedeo:non_quantity_value ;
                                                   owl:someValuesFrom bedeo:NonQuantityValue
                                                 ] ;
                                 rdfs:label "Non Quantity Characteristic"@en .
@@ -2232,7 +2245,8 @@ bedeo:Organization rdf:type owl:Class ;
 
 
 ###  https://csse.utoronto.ca/OrganizationActivityType
-bedeo:OrganizationActivityType rdf:type owl:Class .
+bedeo:OrganizationActivityType rdf:type owl:Class ;
+                               rdfs:subClassOf bedeo:Type .
 
 
 ###  https://csse.utoronto.ca/OrganizationLegalName
@@ -2338,7 +2352,8 @@ bedeo:OrganizationTradeName rdf:type owl:Class ;
 
 
 ###  https://csse.utoronto.ca/OrganizationType
-bedeo:OrganizationType rdf:type owl:Class .
+bedeo:OrganizationType rdf:type owl:Class ;
+                       rdfs:subClassOf bedeo:Type .
 
 
 ###  https://csse.utoronto.ca/ParcelOfLand
@@ -2370,7 +2385,7 @@ bedeo:PartnershipOpportunity rdf:type owl:Class ;
                                                owl:someValuesFrom bedeo:ConstraintClause
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty bedeo:has_need ;
+                                               owl:onProperty bedeo:has_need_type ;
                                                owl:someValuesFrom bedeo:PartnershipOpportunityNeed
                                              ] ,
                                              [ rdf:type owl:Restriction ;
@@ -2445,9 +2460,16 @@ bedeo:PartnershipOpportunityNeed rdf:type owl:Class ;
                                  rdfs:label "Partnership opportunity need"@en .
 
 
+###  https://csse.utoronto.ca/PartnershipOpportunityNeedType
+bedeo:PartnershipOpportunityNeedType rdf:type owl:Class ;
+                                     rdfs:subClassOf bedeo:Type ;
+                                     rdfs:label "Partnership Opportunity Need Type"@en .
+
+
 ###  https://csse.utoronto.ca/PartnershipType
 bedeo:PartnershipType rdf:type owl:Class ;
-                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      rdfs:subClassOf bedeo:Type ,
+                                      [ rdf:type owl:Restriction ;
                                         owl:onProperty bedeo:has_description ;
                                         owl:someValuesFrom xsd:string
                                       ] ,
@@ -2567,7 +2589,8 @@ bedeo:ProjectStage rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/ProjectType
 bedeo:ProjectType rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                  rdfs:subClassOf bedeo:Type ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty bedeo:has_description ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                     owl:onDataRange xsd:string
@@ -2689,7 +2712,8 @@ bedeo:Role rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/RoleType
 bedeo:RoleType rdf:type owl:Class ;
-               rdfs:subClassOf [ rdf:type owl:Restriction ;
+               rdfs:subClassOf bedeo:Type ,
+                               [ rdf:type owl:Restriction ;
                                  owl:onProperty bedeo:has_description ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
@@ -2749,6 +2773,11 @@ bedeo:SpatialRepresentation rdf:type owl:Class ;
 ###  https://csse.utoronto.ca/Submission
 bedeo:Submission rdf:type owl:Class ;
                  rdfs:label "Submission"@en .
+
+
+###  https://csse.utoronto.ca/Type
+bedeo:Type rdf:type owl:Class ;
+           rdfs:label "Type"@en .
 
 
 ###  https://csse.utoronto.ca/User
@@ -3400,8 +3429,8 @@ bedeo:has_improvements rdfs:comment "Indicates the improvements (i.e. changes/ad
                        rdfs:label "Has improvements"@en .
 
 
-bedeo:has_locality_name rdfs:label "Has locality name"@en ;
-                        rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en .
+bedeo:has_locality_name rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en ;
+                        rdfs:label "Has locality name"@en .
 
 
 bedeo:has_location_description rdfs:comment "A textual description of a location"@en ;
@@ -3582,8 +3611,8 @@ bedeo:has_province_name rdfs:comment "The name of the state, province, etc. (e.g
 bedeo:has_registering_authority rdfs:label "Has registering authority"@en .
 
 
-bedeo:has_rural_route_identifier rdfs:label "Has rural route identifier"@en ;
-                                 rdfs:comment "An identifier for the mail delivery route used in rural areas that may not have traditional civic addresses (e.g. RR 4)"@en .
+bedeo:has_rural_route_identifier rdfs:comment "An identifier for the mail delivery route used in rural areas that may not have traditional civic addresses (e.g. RR 4)"@en ;
+                                 rdfs:label "Has rural route identifier"@en .
 
 
 bedeo:has_site_name rdfs:comment "A string containing the name of the building, facility, or institution, etc."@en ;
