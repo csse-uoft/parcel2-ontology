@@ -84,14 +84,14 @@ bedeo:designated_land_use rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/for_characteristic
 bedeo:for_characteristic rdf:type owl:ObjectProperty ;
-                         rdfs:domain bedeo:ConstraintClause ;
+                         rdfs:domain bedeo:CharacteristicConstraintClause ;
                          rdfs:range <http://qudt.org/schema/qudt/QuantityKind> ;
                          rdfs:label "For characteristic"@en .
 
 
 ###  https://csse.utoronto.ca/for_class
 bedeo:for_class rdf:type owl:ObjectProperty ;
-                rdfs:domain bedeo:ConstraintClause ;
+                rdfs:domain bedeo:CharacteristicConstraintClause ;
                 rdfs:range owl:Class ;
                 rdfs:label "For class"@en .
 
@@ -172,6 +172,13 @@ bedeo:has_characteristic_kind rdf:type owl:ObjectProperty ;
                               rdfs:label "Has characteristic kind"@en .
 
 
+###  https://csse.utoronto.ca/has_clause
+bedeo:has_clause rdf:type owl:ObjectProperty ;
+                 rdfs:domain bedeo:LogicalFormula ;
+                 rdfs:range bedeo:LogicalFormula ;
+                 rdfs:label "Has clause"@en .
+
+
 ###  https://csse.utoronto.ca/has_co-applicant
 bedeo:has_co-applicant rdf:type owl:ObjectProperty ;
                        rdfs:domain bedeo:Application ;
@@ -186,7 +193,7 @@ bedeo:has_component rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_constraint
 bedeo:has_constraint rdf:type owl:ObjectProperty ;
-                     rdfs:range bedeo:ConstraintClause ;
+                     rdfs:range bedeo:CharacteristicConstraintClause ;
                      rdfs:label "Has constraint"@en .
 
 
@@ -321,7 +328,7 @@ bedeo:has_object_value rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_operator
 bedeo:has_operator rdf:type owl:ObjectProperty ;
-                   rdfs:domain bedeo:ConstraintClause ;
+                   rdfs:domain bedeo:CharacteristicConstraintClause ;
                    rdfs:range bedeo:Operator ;
                    rdfs:label "Has operator"@en .
 
@@ -1733,6 +1740,23 @@ bedeo:Asset rdf:type owl:Class ;
             rdfs:label "Asset"@en .
 
 
+###  https://csse.utoronto.ca/AtomicClause
+bedeo:AtomicClause rdf:type owl:Class ;
+                   rdfs:subClassOf bedeo:LogicalFormula ;
+                   rdfs:label "Atomic Clause"@en .
+
+
+###  https://csse.utoronto.ca/CNFLogicalFormula
+bedeo:CNFLogicalFormula rdf:type owl:Class ;
+                        rdfs:subClassOf bedeo:LogicalFormula ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty bedeo:has_clause ;
+                                          owl:someValuesFrom bedeo:Conjunct
+                                        ] ;
+                        rdfs:comment "Conjunctive Normal Form Logical Formula"@en ;
+                        rdfs:label "CNF Logical Formula"@en .
+
+
 ###  https://csse.utoronto.ca/CallForProposals
 bedeo:CallForProposals rdf:type owl:Class ;
                        rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -1745,7 +1769,7 @@ bedeo:CallForProposals rdf:type owl:Class ;
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty bedeo:has_constraint ;
-                                         owl:someValuesFrom bedeo:ConstraintClause
+                                         owl:someValuesFrom bedeo:CharacteristicConstraintClause
                                        ] ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty bedeo:has_end_date ;
@@ -1764,30 +1788,41 @@ bedeo:Characteristic rdf:type owl:Class ;
                      rdfs:label "Characteristic"@en .
 
 
+###  https://csse.utoronto.ca/CharacteristicConstraintClause
+bedeo:CharacteristicConstraintClause rdf:type owl:Class ;
+                                     rdfs:subClassOf bedeo:AtomicClause ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bedeo:for_characteristic ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass bedeo:CharacteristicKind
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bedeo:for_class ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass owl:Class
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty bedeo:has_operator ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass bedeo:Operator
+                                                     ] ;
+                                     rdfs:comment "Captures constraints related to the value of a characteristic"@en ;
+                                     rdfs:label "Characteristic Constraint Clause"@en .
+
+
 ###  https://csse.utoronto.ca/CharacteristicKind
 bedeo:CharacteristicKind rdf:type owl:Class ;
                          rdfs:label "Characteristic Kind"@en .
 
 
-###  https://csse.utoronto.ca/ConstraintClause
-bedeo:ConstraintClause rdf:type owl:Class ;
-                       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:for_characteristic ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass bedeo:CharacteristicKind
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:for_class ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass owl:Class
-                                       ] ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty bedeo:has_operator ;
-                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass bedeo:Operator
-                                       ] ;
-                       rdfs:comment "Captures constraints related to the value of a characteristic"@en ;
-                       rdfs:label "Constraint Clause"@en .
+###  https://csse.utoronto.ca/Conjunct
+bedeo:Conjunct rdf:type owl:Class ;
+               rdfs:subClassOf bedeo:LogicalFormula ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty bedeo:has_clause ;
+                                 owl:someValuesFrom bedeo:AtomicClause
+                               ] ;
+               rdfs:label "Conjunct"@en .
 
 
 ###  https://csse.utoronto.ca/Contact
@@ -1825,6 +1860,17 @@ bedeo:ControlledAsset rdf:type owl:Class ;
                                       ] .
 
 
+###  https://csse.utoronto.ca/DNFLogicalFormula
+bedeo:DNFLogicalFormula rdf:type owl:Class ;
+                        rdfs:subClassOf bedeo:LogicalFormula ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty bedeo:has_clause ;
+                                          owl:someValuesFrom bedeo:Disjunct
+                                        ] ;
+                        rdfs:comment "Disjunctive Normal Form Logical Formula"@en ;
+                        rdfs:label "DNF Logical Formula"@en .
+
+
 ###  https://csse.utoronto.ca/DeclarableAsset
 bedeo:DeclarableAsset rdf:type owl:Class ;
                       rdfs:subClassOf bedeo:Asset ,
@@ -1843,6 +1889,16 @@ bedeo:DeclarableAsset rdf:type owl:Class ;
                                                            ) ;
                                         rdf:type owl:Class
                                       ] .
+
+
+###  https://csse.utoronto.ca/Disjunct
+bedeo:Disjunct rdf:type owl:Class ;
+               rdfs:subClassOf bedeo:LogicalFormula ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty bedeo:has_clause ;
+                                 owl:someValuesFrom bedeo:AtomicClause
+                               ] ;
+               rdfs:label "Disjunct"@en .
 
 
 ###  https://csse.utoronto.ca/ExemptAsset
@@ -1934,9 +1990,14 @@ bedeo:Location rdf:type owl:Class ;
                rdfs:label "Location"@en .
 
 
+###  https://csse.utoronto.ca/LogicalFormula
+bedeo:LogicalFormula rdf:type owl:Class ;
+                     rdfs:label "Logical Formula"@en .
+
+
 ###  https://csse.utoronto.ca/NonQuantitativeConstraintClause
 bedeo:NonQuantitativeConstraintClause rdf:type owl:Class ;
-                                      rdfs:subClassOf bedeo:ConstraintClause ,
+                                      rdfs:subClassOf bedeo:CharacteristicConstraintClause ,
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty bedeo:has_value ;
                                                         owl:someValuesFrom bedeo:NonQuantityValue
@@ -2382,7 +2443,7 @@ bedeo:ParcelOfLand rdf:type owl:Class ;
 bedeo:PartnershipOpportunity rdf:type owl:Class ;
                              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:has_constraint ;
-                                               owl:someValuesFrom bedeo:ConstraintClause
+                                               owl:someValuesFrom bedeo:CharacteristicConstraintClause
                                              ] ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:has_need_type ;
@@ -2631,7 +2692,7 @@ bedeo:Proposal rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/QuantitativeConstraintClause
 bedeo:QuantitativeConstraintClause rdf:type owl:Class ;
-                                   rdfs:subClassOf bedeo:ConstraintClause ,
+                                   rdfs:subClassOf bedeo:CharacteristicConstraintClause ,
                                                    [ rdf:type owl:Restriction ;
                                                      owl:onProperty <http://qudt.org/schema/qudt/quantityValue> ;
                                                      owl:someValuesFrom <http://qudt.org/schema/qudt/QuantityValue>
@@ -2680,6 +2741,12 @@ bedeo:RealProperty rdf:type owl:Class ;
                                      owl:someValuesFrom bedeo:Zone
                                    ] ;
                    rdfs:label "Real Property"@en .
+
+
+###  https://csse.utoronto.ca/Requirement
+bedeo:Requirement rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:CNFLogicalFormula ;
+                  rdfs:label "Requirement"@en .
 
 
 ###  https://csse.utoronto.ca/Resource
@@ -3429,8 +3496,8 @@ bedeo:has_improvements rdfs:comment "Indicates the improvements (i.e. changes/ad
                        rdfs:label "Has improvements"@en .
 
 
-bedeo:has_locality_name rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en ;
-                        rdfs:label "Has locality name"@en .
+bedeo:has_locality_name rdfs:label "Has locality name"@en ;
+                        rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en .
 
 
 bedeo:has_location_description rdfs:comment "A textual description of a location"@en ;
@@ -3504,8 +3571,8 @@ bedeo:has_organization_mission_statement rdfs:comment "The core purpose and guid
                                          rdfs:label "Has organization mission statement"@en .
 
 
-bedeo:has_organization_monitoring_capacity_score rdfs:comment "A rating of the organization's ability to oversee and evaluate project implementation and compliance."@en ;
-                                                 rdfs:label "Has organization monitoring capacity score"@en .
+bedeo:has_organization_monitoring_capacity_score rdfs:label "Has organization monitoring capacity score"@en ;
+                                                 rdfs:comment "A rating of the organization's ability to oversee and evaluate project implementation and compliance."@en .
 
 
 bedeo:has_organization_operational_approach rdfs:label "Has organization operational approach"@en ;
