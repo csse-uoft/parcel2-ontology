@@ -1,50 +1,32 @@
-Competency Questions 
-
- 
+# Competency Questions 
 
 We present in the following the main competency questions identified during our analysis. They help focus the scope of information that is needed to capture and describe the most important components of partnerships.  
 
-(Location-related) Where is the development site located?  
+## Location-related
+- Where is the development site located?  
+- What is the address of the site?  
+- What are the individual address components? (e.g., unit number, street name, street number, city name, etc.)  
+- What is the geospatial representation of the site/location? (e.g., the geospatial polygon)  
+- What are the zoning regulations in place for the site/location?  
 
-What is the address of the site?  
+## Resources  
+- Are there any additional resources pertaining to the project’s call for proposals (e.g., external websites, files) 
+- Are there any additional resources pertaining to the project’s proposals (e.g., external websites, files)
 
-What are the individual address components? (e.g., unit number, street name, street number, city name, etc.)  
+## Restrictions
+- What are the restrictions/limitations of the project?  
+- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic ?  
+ - Examples of characteristics: building size/height, number of units, housing unit rent price, number of accessible housing units, energy efficiency,  emissions, etc.  
+ - Examples of atomic clauses: 
+  - Minimum building size/height is 5 stories 
+  - Maximum building size/height 
+  - Minimum number of units is 210 
+  - Maximum rent price (e.g., for affordable housing) is 2000 
 
-What is the geospatial representation of the site/location? (e.g., the geospatial polygon)  
+- Minimum accessibility requirements 
 
-What are the zoning regulations in place for the site/location?  
-
-(Resources)  
-
-Are there any additional resources pertaining to the project’s call for proposals (e.g., external websites, files) 
-
-Are there any additional resources pertaining to the project’s proposals (e.g., external websites, files) 
-
-What are the restrictions/limitations of the project?  
-
-What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic ?  
-
-Examples of characteristics: building size/height, number of units, housing unit rent price, number of accessible housing units, energy efficiency,  emissions, etc.  
-
+- Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance) 
  
-
-Examples of atomic clauses: 
-
-Minimum building size/height is 5 stories 
-
-maximum building size/height 
-
-Minimum number of units is 210 
-
-Maximum rent price (e.g., for affordable housing) is 2000 
-
-Minimum accessibility requirements 
-
-Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance) 
-
- 
-
-What are the requirements for project participants? For example:  
 
 What are the requirements for project participants? For example: 
 
