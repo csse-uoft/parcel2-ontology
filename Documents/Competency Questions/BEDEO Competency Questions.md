@@ -1,5 +1,4 @@
 # Competency Questions 
-
 We present in the following the main competency questions identified during our analysis. They help focus the scope of information that is needed to capture and describe the most important components of partnerships.  
 
 ## Location-related
