@@ -7,8 +7,6 @@
 ## Request for Quotes 
 
 ### USE CASE RFQ Design-Build-Finance Bowmanville Redevelopment Project 
-https://www.merx.com/infrastructureontario/solicitations/RFQ-Design-Build-Finance-Bowmanville-Redevelopment-Project/0000275634?origin=0 
-
 Basic Information 
 Reference Number 0000275634 
 Issuing Organization Infrastructure Ontario 
@@ -40,6 +38,8 @@ contact person name: Neeharika Latchireddi
 Phone: 647-264-1927 
 email : neeharika.latchireddi@infrastructureontario.ca 
 
+### Mid-Rise Development Land Opportunity on Sheppard Avenue West
+https://www.collierscanada.com/en-ca/properties/approved-mid-rise-development-land-opportunity-on-sheppard-avenue-west/can-740-748-sheppard-avenue-w-toronto-ontario-m3h-2s8/can2015871  
 
 ## Request for Proposals 
 Documents related to examples of requests for proposals can be found here: https://drive.google.com/drive/folders/1p_LVsiEm1S5k_TZs5EGxTHqsX4V6e1N6?dmr=1&ec=wgc-drive-globalnav-goto 
@@ -51,14 +51,7 @@ Documents related to examples of requests for expression of interest can be foun
 Documents related to examples of requests for pre-qualifications can be found here: https://drive.google.com/drive/folders/12_xvjL_TTdG74K46Dq1V9E8BzCBXResK?dmr=1&ec=wgc-drive-globalnav-goto 
 
 ## Tenancy Opportunities 
-Documents related to examples of requests for pre-qualifications can be found here: https://drive.google.com/drive/folders/13Pl1c1OBkNGZZRG26x_40iPUmnPUnDLT?dmr=1&ec=wgc-drive-globalnav-goto  
-
-## Land Development Opportunities 
-- Infrastructure Ontario – Bowmanville Redevelopment Project RFQ: https://www.merx.com/infrastructureontario/solicitations/RFQ-Design-Build-Finance-Bowmanville-Redevelopment-Project/0000275634?origin=0  
-- Mid-Rise Development Land Opportunity on Sheppard Avenue West: https://www.collierscanada.com/en-ca/properties/approved-mid-rise-development-land-opportunity-on-sheppard-avenue-west/can-740-748-sheppard-avenue-w-toronto-ontario-m3h-2s8/can2015871  
-- Land Development Opportunity in Constance Bay: https://www.avisonyoung.ca/properties/1018-kilmaurs-side-road-woodlawn-on  
-- 664 Acres Lake Wales Master Planned Community: https://www.landbrokermls.com/property/1055753/664-acres-lake-wales-master-planned-community  
-- 1.3 Acre Development Site Squamish, BC: https://www.uniqueproperties.ca/properties/1-3-acre-development-site and https://www.uniqueproperties.ca/brochures/BRO_4046040468-Government-Road-V3.pdf and Tourist C3 Zoning https://tay.ca/media/rudawbv3/21-zbl-section-18.pdf 
+Documents related to examples of tenancy opportunities can be found here: https://drive.google.com/drive/folders/13Pl1c1OBkNGZZRG26x_40iPUmnPUnDLT?dmr=1&ec=wgc-drive-globalnav-goto  
 
 ## Partnership Opportunities 
 ### 40 Oaks / Christian Resource Centre 
