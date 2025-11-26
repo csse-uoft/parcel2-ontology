@@ -8,11 +8,17 @@
 
 ### USE CASE RFQ Design-Build-Finance Bowmanville Redevelopment Project 
 Basic Information 
+
 Reference Number 0000275634 
+
 Issuing Organization Infrastructure Ontario 
+
 Project Type: RFQ - Request for Qualifications (Formal) 
+
 Project Number 23-250 
+
 Title RFQ Design-Build-Finance Bowmanville Redevelopment Project 
+
 Source ID PP.CO.ON.591493.C111869 
 
 Details 
@@ -25,31 +31,120 @@ The Lakeridge Health Bowmanville Hospital was founded in 1913. In 1946 the Memor
 In keeping with Lakeridge Health’s vision, Lakeridge Health Bowmanville Hospital will continue to be a full-service community hospital while relying on its sister hospitals for higher-level tertiary care, inpatient mental health services and other regional programs. 
 
 Dates 
+
 Publication Date: 2024/08/01 01:30:19 PM EDT 
+
 Bid Intent Deadline: 2024/10/03 05:00:00 PM EDT 
+
 Closing Date: 2024/10/08 02:00:00 PM EDT 
+
 Question Acceptance Deadline: 2024/09/24 11:59:00 PM EDT 
 
 Bid Intent: Optional 
+
 Questions are submitted online: Yes 
 
 Contact Information 
+
 contact person name: Neeharika Latchireddi 
+
 Phone: 647-264-1927 
+
 email : neeharika.latchireddi@infrastructureontario.ca 
 
-### Mid-Rise Development Land Opportunity on Sheppard Avenue West
-https://www.collierscanada.com/en-ca/properties/approved-mid-rise-development-land-opportunity-on-sheppard-avenue-west/can-740-748-sheppard-avenue-w-toronto-ontario-m3h-2s8/can2015871  
-
 ## Request for Proposals 
-Documents related to examples of requests for proposals can be found here: https://drive.google.com/drive/folders/1p_LVsiEm1S5k_TZs5EGxTHqsX4V6e1N6?dmr=1&ec=wgc-drive-globalnav-goto 
+### Development Partner for Regent Park Revitalization
+Invitation to Proponents – Stage 2 of the Regent Park Procurement Process Toronto Community Housing Corporation (“TCHC”) is seeking a Development Partner and
+Construction Manager (referred to herein as the “Partner”) for the final two phases of the
+revitalization of Regent Park.
+“Deliverables”).
 
+The successful proponent will be required to act as Development and Construction Manager
+on behalf of TCHC for TCHC’s rental replacement buildings; market buildings; the
+construction of municipal roads and services; and any other requirements stipulated below:
+-  responsible for coordinating the development of each project, including, but not
+limited to, securing all necessary approvals to proceed with development;
+negotiating the subdivision agreement; and the lifting of the holding symbol or
+rezoning; and address Section 37 amendments.
+- demolition of 527 social housing units;
+- construction of 564 to approximately 650 rent-geared-to-income (RGI) units that
+represent TCHC replacement social housing units;
+
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/RFP%2019159%20Development%20Partner%20For%20Regent%20Park%20Revitalization%20Phases%204%20and%205.pdf)
+
+### CreateTO
+CreateTO, on behalf of the City, is inviting proposals from qualified firms (“Proponent”) with the
+proven skills, resources and relevant experience in public sector real estate to carry out:
+- An objective operational review and diagnostic of the City of Toronto's real estate asset
+management and critical data management practices (inclusive of activities/functions at
+CreateTO and the City's Real Estate Services, Energy and Environment, and Facilities
+Management Divisions);
+- The design of a future state real estate asset management practice, that includes specific
+recommendations on a centralized management approach, taking into account the City of
+Toronto's operational, governance, regulated and procedural realities. The future state
+must also respect and support broader Asset Management initiatives/plans currently
+underway including activities focused on compliance with Ontario Regulation 588/17;
+- The development of a clear plan with activity level detail for practical implementation of
+future state real asset management practice and required data inputs, outputs, and flows. 
+
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/RFP-2019-001-CTO-FINAL-Jan-28.pdf)
+
+### Request for Proposals Development Opportunities (United Church)
+UCC recognizes that there is significant potential value within its real estate assets. UCC anticipates
+that up to 1,000 of those sites may close or restructure ministerial activities in those locations in the
+near future. As a result, the church wishes to plan effectively for the future, and by definition, needs
+to be cognisant of the inherent value in the real estate and how that value may contribute to the ongoing mission of the church.
+
+The UCC has incorporated a wholly owned subsidiary, called the United Property Resource
+Corporation (UPRC) to assist the church in real estate matters and ensure optimal value is realized,
+site by site. In effect, the UPRC is meant to act as the flow through vehicle to expedite decision
+making and project flow, funnel future project opportunities, and add confidence with professional
+real estate staff. In this respect, this RFP document represents the first group of properties to be
+offered to the development industry by UPRC for market real estate development and, where
+possible, to contribute non-monetary enhancements to the mission of the church.
+
+Where feasible, the church would like to see affordable housing as a dominant objective site by
+site, recognizing that this is to be balanced against required market housing returns to ensure a
+financially feasible development partnership with the industry. In addition, UCC may request to
+continue to ensure an ownership position in the development of a project so that it might sustain
+on-going mission in some locations.
+
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf)
 ## Request for Expression of Interest 
-Documents related to examples of requests for expression of interest can be found here: https://drive.google.com/drive/folders/1uKWbMjASK2HksH8YvT0o01qMsU6YGoEZ?dmr=1&ec=wgc-drive-globalnav-goto  
+### To Develop Government-Assisted Rental Housing In Halton Region
+The purpose of this Request for Expressions of Interest (REOI) is for The Regional
+Municipality of Halton (the “Region” and/or “Halton Region”) to:
+- Gauge non-profit and private sector interest and readiness to develop governmentassisted rental housing in Halton Region;
+- Obtain information about (potential) projects through the attached Application
+- Provide applicants who are meeting REOI eligibility requirements with the option
+of joining the Region’s list of potential REOI partners, with the intent to initiate
+exploratory exchange of information about the application and its potential as
+government-assisted housing;
+- Identify applications with demonstrated potential to address government-assisted
+housing needs longer-term, in a way that is consistent with Regional key priorities
+and maximizes potential internal and external funding options in 2020 and 2021. 
 
+[Link to PDF]([https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Requests%20for%20Expressions%20of%20Interest%20(REOI)/REQUEST%20FOR%20EXPRESSIONS%20OF%20INTEREST%20%20TO%20DEVELOP%20GOVERNMENT-ASSISTED%20RENTAL%20HOUSING%20IN%20HALTON%20REGION.pdf))
 ## Request for Pre-Qualifications 
-Documents related to examples of requests for pre-qualifications can be found here: https://drive.google.com/drive/folders/12_xvjL_TTdG74K46Dq1V9E8BzCBXResK?dmr=1&ec=wgc-drive-globalnav-goto 
+### City of Guelph Baker District Mixed-Use Development
+The City of Guelph (“the City”) is seeking a qualified
+Development Team to work with the City on the planning,
+design and development of the Baker District in the
+heart of Guelph’s historic downtown. The purpose of
+this Request for Pre-Qualifications (RFPQ) is to identify
+interested teams with the experience, financial capability,
+master planning and design skills, and ambition to
+realize, in partnership with the City, a unique mixed-use
+development for the district. 
 
+The City’s objective is to transform the Baker Street
+municipal parking lot and adjacent properties fronting
+Upper Wyndham Street, downtown’s main commercial
+spine, into a compact district nestled in the city’s historic
+core and anchored by a new central library and public open
+space. 
+
+[Link to PDF]([https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Requests%20for%20Expressions%20of%20Interest%20(REOI)/REQUEST%20FOR%20EXPRESSIONS%20OF%20INTEREST%20%20TO%20DEVELOP%20GOVERNMENT-ASSISTED%20RENTAL%20HOUSING%20IN%20HALTON%20REGION.pdf))
 ## Tenancy Opportunities 
 Documents related to examples of tenancy opportunities can be found here: https://drive.google.com/drive/folders/13Pl1c1OBkNGZZRG26x_40iPUmnPUnDLT?dmr=1&ec=wgc-drive-globalnav-goto  
 
