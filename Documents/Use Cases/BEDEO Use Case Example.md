@@ -1,10 +1,11 @@
 # Use Case Examples 
-
 # Table of Contents
+- [Partnership Opportunities](#partnership-opportunities)
+- [Request for Pre-Qualifications](#request-for-pre-qualifications)
+- [Request for Proposals](#request-for-proposals)
+- [Request for Expression of Interest](#request-for-expression-of-interest)
+- [Tenancy Opportunity](#tenancy-opportunity)
 - [Request for Quotes](#request-for-quotes)
-- 2
-- 3
-
 ## Partnership Opportunities 
 ### 40 Oaks / Christian Resource Centre 
 https://www.buttcon.com/project/40-oak-street-affordable-housing/
@@ -20,6 +21,7 @@ https://www.toronto.ca/legdocs/mmis/2008/ah/bgrd/backgroundfile-12070.pdf
 - Partner gaps: Funders; community centre manager, affordable housing management
 - [Financing AND Funding needs met/Housing Finance] Funding contributions included Federal-Provincial Affordable Housing Program funding of $6 million; City of Toronto funds from the Mayor’s Homelessness Initiative Reserve Fund of $1.4 million; Toronto Christian Resource Center (CRC) equity and financing of approximately $4.8 million; TCHC equity of almost $1 million; Waived City of Toronto development charges and fees of approximate value of $600,000; Total cost for the building escalated to $23 million, with a large portion of the funding for the social component of the project contributed by the United Church;  
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-12070.pdf)
 ### Wychwood Barns (affordable housing FOR artists) 
 - Address: 601 Christie Street, Toronto, Ontario 
 - Existing land use: Industrial? Transit?   
@@ -34,6 +36,7 @@ https://www.toronto.ca/legdocs/mmis/2008/ah/bgrd/backgroundfile-12070.pdf
 - Partner to provide financial and legal responsibility for subleases and license agreements for all tenants, property management, and base building operations (maintenance and capital repairs) 
 - [Financing AND Funding needs met/Housing Finance] Operates under a 50-year lease at $1 a year on self-sustaining model; $500,000 from the Metcalf Foundation for the Stop's (non-profit organization) proposal to create a green barn to generate momentum and confidence in the project; City of Toronto contributed $1M in Section 37 funds and remediate the contaminated soil; Rent-geared-to-income housing component allowed project to access provincial and federal government funding; additional grants from Cultural Spaces Canada and the Federation of Canadian Municipalities  
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-24480.pdf)
 ### The Red Door Shelter 
 - Address: 875 & 887 Queen Street East, Toronto, Ontario 
 - Existing land use: Residential 
@@ -44,6 +47,7 @@ https://www.toronto.ca/legdocs/mmis/2008/ah/bgrd/backgroundfile-12070.pdf
 - Existing partners:  
 - Partner gaps: affordable housing non-profit 
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-78811.pdf)
 ### Green Phoenix Apartments 
 - Address: 171 Dunn Avenue and 1355 King Street West, Toronto, Ontario 
 - Existing land use:
@@ -55,6 +59,7 @@ https://www.toronto.ca/legdocs/mmis/2008/ah/bgrd/backgroundfile-12070.pdf
 - Existing partners: Parkdale United Church
 - Partner gaps: affordable housing management; funder 
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/hQX1ZQoHbF.pdf)
 ### Eva’s Phoenix/Waterworks 
 - Address: 60 Brant Street and 505 Richmond Street West, Toronto, Ontario 
 - Existing land use: Mixed-use Residential 
@@ -65,6 +70,7 @@ https://www.toronto.ca/legdocs/mmis/2008/ah/bgrd/backgroundfile-12070.pdf
 - Existing partners: Eva’s Phoenix, Build Toronto (now CreateTO), City of Toronto, MOD Developments, Woodcliffe Landmark Properties 
 - Partner gaps: Funders; community centre manager, affordable housing management 
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-100813.pdf)
 ### Federal Lands Initiative (Wateridge, Ottawa example) 
 https://www.cmhc-schl.gc.ca/professionals/project-funding-and-mortgage-financing/funding-programs/all-funding-programs/federal-lands/wateridge  
 
@@ -84,6 +90,7 @@ https://www.cmhc-schl.gc.ca/professionals/project-funding-and-mortgage-financing
 #### Proponent-related Requirements 
 - Experience: must have a minimum of 5 years of experience in construction and property management (of projects of similar size and scope as that being proposed). 
 
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf)
 ### BC Builds (Fort St. John example) 
 https://www.bcbuildshomes.ca/100-ave-fort-st-john  
 Property Details 
@@ -94,7 +101,9 @@ Property Details
 - Seeking Builder Developer Only: Building to be owned and operated by the Fort St John Association for Community Living 
 - The lot located on 100 Avenue in Fort St. John, BC, is strategically positioned within a dynamic mixed-use area that features both commercial and residential properties. Its prominent frontage ensures excellent accessibility and high visibility, making it an ideal location for residential development. The Owner/ Operator is interested in proposals that support an inclusive and accessible design to allow for functional housing for both healthcare workers and for people with disabilities. Proposals that include childcare as a co-located service are of interest but not required for submissions. There is a need for more childcare spaces in Fort St. John, and this service would be well-associated with workforce housing.  
 - The lot's proximity to a range of community resources—such as retail shops, dining establishments, parks, medical offices, and public services—fosters a vibrant and supportive environment for residents. The integration of commercial and residential zones within the area promotes a cohesive neighbourhood atmosphere, where residential living and local amenities seamlessly coexist. 
-- Situated within a Major Corridor Development Permit Area, as outlined in the Official Community Plan (OCP), this lot is well-positioned for future residential growth and development. Its strategic location and inclusive environment make it a prime candidate for development initiatives aimed at enhancing community integration and supporting sustainable growth. 
+- Situated within a Major Corridor Development Permit Area, as outlined in the Official Community Plan (OCP), this lot is well-positioned for future residential growth and development. Its strategic location and inclusive environment make it a prime candidate for development initiatives aimed at enhancing community integration and supporting sustainable growth.
+
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf)
 ## Request for Pre-Qualifications 
 ### City of Guelph Baker District Mixed-Use Development
 The City of Guelph (“the City”) is seeking a qualified
@@ -114,7 +123,7 @@ spine, into a compact district nestled in the city’s historic
 core and anchored by a new central library and public open
 space. 
 
-[Link to PDF]([https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Requests%20for%20Expressions%20of%20Interest%20(REOI)/REQUEST%20FOR%20EXPRESSIONS%20OF%20INTEREST%20%20TO%20DEVELOP%20GOVERNMENT-ASSISTED%20RENTAL%20HOUSING%20IN%20HALTON%20REGION.pdf))
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Pre-Qualifications%20(RFPQ)/RFQ%20-%20REQUEST%20FOR%20PRE-QUALIFICATIONS%20BAKER%20DISTRICT%20DEVELOPMENT%202017_sm.pdf)
 ## Request for Proposals 
 ### Development Partner for Regent Park Revitalization
 Invitation to Proponents – Stage 2 of the Regent Park Procurement Process Toronto Community Housing Corporation (“TCHC”) is seeking a Development Partner and
@@ -171,13 +180,26 @@ government-assisted housing;
 housing needs longer-term, in a way that is consistent with Regional key priorities
 and maximizes potential internal and external funding options in 2020 and 2021. 
 
-[Link to PDF]([https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Requests%20for%20Expressions%20of%20Interest%20(REOI)/REQUEST%20FOR%20EXPRESSIONS%20OF%20INTEREST%20%20TO%20DEVELOP%20GOVERNMENT-ASSISTED%20RENTAL%20HOUSING%20IN%20HALTON%20REGION.pdf))
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Requests%20for%20Expressions%20of%20Interest%20(REOI)/REQUEST%20FOR%20EXPRESSIONS%20OF%20INTEREST%20%20TO%20DEVELOP%20GOVERNMENT-ASSISTED%20RENTAL%20HOUSING%20IN%20HALTON%20REGION.pdf)
 
-## Tenancy Opportunities 
-Documents related to examples of tenancy opportunities can be found here: https://drive.google.com/drive/folders/13Pl1c1OBkNGZZRG26x_40iPUmnPUnDLT?dmr=1&ec=wgc-drive-globalnav-goto  
+## Tenancy Opportunity
+### Community Space Tenancy Opportunity at 209 Mavety Street 
+The City of Toronto is inviting one community organization to fill an available space at
+209 Mavety Street ("The Property")The Property provides 25,973ft2 (2,413m2) of spacefor an eligible organization (the "tenant agency") to provide a range of health and social services under the Community Space Tenancy Program. 
 
+Organizations must be:
+- Incorporated, not-for-profit groups or organizations
+- Based in community service, arts and culture, community health development, and/or recreation
+- Based in the City of Toronto
+- In good financial standing
+
+Applicant organizations must also:
+- Serve Toronto residents
+- Provide services that meet a community need (e.g. immigration, youth or seniors’ services)
+- Support City of Toronto initiatives or strategies
+
+[Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Tenancy%20Opportunity/NEW%20Community%20Space%20Tenancy%20Opportunity%20at%20209%20Mavety%20Street.pdf)
 ## Request for Quotes 
-
 ### USE CASE RFQ Design-Build-Finance Bowmanville Redevelopment Project 
 Basic Information 
 
