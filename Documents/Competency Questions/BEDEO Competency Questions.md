@@ -2,59 +2,10 @@
 We present in the following the main competency questions identified during our analysis. They help focus the scope of information that is needed to capture and describe the most important components of partnerships.  
 
 ## Location-related
-- Where is the development site located?  
 - What is the address of the site?  
 - What are the individual address components? (e.g., unit number, street name, street number, city name, etc.)  
 - What is the geospatial representation of the site/location? (e.g., the geospatial polygon)  
 - What are the zoning regulations in place for the site/location?  
-
-## Resources  
-- Are there any additional resources pertaining to the project’s call for proposals (e.g., external websites, files) 
-- Are there any additional resources pertaining to the project’s proposals (e.g., external websites, files)
-
-## Restrictions/Limitations on the Project
-- What are the restrictions/limitations of the project?  
-- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic ?  
- - Examples of characteristics: building size/height, number of units, housing unit rent price, number of accessible housing units, energy efficiency,  emissions, etc.  
- - Examples of atomic clauses: 
-   - Minimum building size/height is 5 stories 
-   - Maximum building size/height 
-   - Minimum number of units is 210 
-   - Maximum rent price (e.g., for affordable housing) is $2000
-   - Minimum accessibility requirements
-   - Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance)
-
-## Restrictions/Limitations on the Project Participants
-- What are the requirements for project participants? For example: 
-  - Minimum amount of experience (e.g., number of years of experience, number of similar past projects) 
-  - Minimum financial viability (e.g., debt coverage ratio)  
-
-## Project-related 
-- What type of development is being proposed for the project?  
-  - What type of land use is being proposed for the project? (e.g., retail, residential, mixed use)
-- What accessibility-related standards does the project meet?
-- What energy/emissions-related standards does the project meet?
-- What affordabillity-related standards does the project meet?
-- What is the size/scale of the project?  
-  - What is the height of the proposed building(s)  
-  - How many units are proposed to be built? (e.g., number of housing units)  
-  - How much floor space will be available for use?  
-- What are the terms of the project?  For example:  
-  - What are the project milestone deadlines?
-  - What is the expected completion date?
-  - What happens to the development after completion?
-  - Who is responsible for operating it?  
-  - Transfer of ownership of the development at a specified time?
-  - Lease of a specified duration?  
-
-## Project Participant-related
-- Who are the participants of the project?
-  - What are the roles/responsibilities/deliverables of each participant?
-- Who owns the assets used for the project?
-  - Who owns the land of the development site?
-  - Who will provide funding?
-    - How much funding?
-    - When will the funding be provided?  
 
 ## Address-related (from use cases)
 - What geographical feature is the location of interest “near of” ?
@@ -92,6 +43,7 @@ We present in the following the main competency questions identified during our 
 
 ## Asset-related
 - Who owns the asset?
+- What type of asset is it?
 - What is the location of this asset?
 - What is the description of this asset?
 - Who has an interest in the asset?
@@ -114,6 +66,7 @@ We present in the following the main competency questions identified during our 
 
 ## Land-related
 - Who owns this “Land”?
+- What type of land/real property?
 - What is the location of this  “Land”?
 - What is the address of this Land?
 - Who has an interest in this “Land”?
@@ -149,8 +102,71 @@ We present in the following the main competency questions identified during our 
 - What parcel is this parcel part of?
 - What are the components of this parcel? 
 
- 
+## Resources  
 
+## Call for Proposals-related
+- Where is the development site located? 
+- What are the terms of the project?  For example:  
+  - What are the project milestone deadlines?
+  - What is the expected completion date?
+  - What happens to the development after completion?
+  - Who is responsible for operating it?  
+  - Is there a transfer of ownership of the development at a specified time?
+  - Is it a lease of a specified duration?
+- When was the call for proposal published?
+- When is the deadline for the call for proposal?
+- What are the restrictions/limitations of the project?
+- What are the restrictions/limitations of the project participants?
+- Are there any additional resources pertaining to the project’s call for proposals (e.g., external websites, files)  
+- What applications have been submitted to this call for proposals
+
+## Application-related
+- Who is the principal applicant for the application?
+- Who is the co-applicant for the application?
+- What is the status of the application?
+- What is the proposal associated with the application?
+  
+## Proposal-related 
+- What type of development is being proposed for the project?  
+  - What type of land use is being proposed for the project? (e.g., retail, residential, mixed use)
+- What accessibility-related standards does the project meet?
+- What energy/emissions-related standards does the project meet?
+- What affordabillity-related standards does the project meet?
+- What is the size/scale of the project?  
+  - What is the height of the proposed building(s)  
+  - How many units are proposed to be built? (e.g., number of housing units)  
+  - How much floor space will be available for use?  
+- Are there any additional resources pertaining to the project’s proposals (e.g., external websites, files)
+
+## Project Participant-related
+- What is the name of the participant?
+- What is the legal status of the participant?
+- Who are the participants of the project?
+  - What are the roles/responsibilities/deliverables of each participant?
+- Who owns the assets used for the project?
+  - Who owns the land of the development site?
+  - Who will provide funding?
+    - How much funding?
+    - When will the funding be provided?
+- How much project-related experience does the participant have?
+- What is the financial viability of each participant?
+
+## Restrictions/Limitations on the Project  
+- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?   
+  - Examples of atomic clauses: 
+   - Minimum building size/height is 5 stories 
+   - Maximum building size/height 
+   - Minimum number of units is 210 
+   - Maximum rent price (e.g., for affordable housing) is $2000
+   - Minimum accessibility requirements
+   - Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance)
+
+## Restrictions/Limitations on the Project Participants
+- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?
+  - Examples of atomic clauses:   
+    - Minimum number of years of experience is 5
+    - Minimum number of similar past projects completed is 2
+    - Minimum debt coverage ratio is 1.10
  
 
  
