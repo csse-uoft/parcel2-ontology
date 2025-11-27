@@ -159,22 +159,20 @@ We present in the following the main competency questions identified during our 
 - What is the financial viability of each participant?
 
 ## Restrictions/Limitations on the Project  
-- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?   
-  - Examples of atomic clauses: 
-    - Minimum building size/height is 5 stories 
-    - Maximum building size/height 
-    - Minimum number of units is 210 
-    - Maximum rent price (e.g., for affordable housing) is $2000
-    - Minimum accessibility requirements
-    - Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance)
+- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?    
+  - Minimum building size/height is 5 stories 
+  - Maximum building size/height 
+  - Minimum number of units is 210 
+  - Maximum rent price (e.g., for affordable housing) is $2000
+  - Minimum accessibility requirements
+  - Restrictions on energy efficiency and emissions (e.g., for environmental / sustainability compliance)
 
 ## Restrictions/Limitations on the Project Participants
-- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?
-  - Examples of atomic clauses:   
-    - Minimum number of years of experience is 5
-    - Minimum number of similar past projects completed is 2
-    - Minimum debt coverage ratio is 1.10
- 
+- What are the atomic restrictions/limitations of the project, i.e., the restrictions that target a specific characteristic?   
+  - Minimum number of years of experience is 5
+  - Minimum number of similar past projects completed is 2
+  - Minimum debt coverage ratio is 1.10
+
 
  
 
