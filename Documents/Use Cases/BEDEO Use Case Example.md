@@ -200,51 +200,29 @@ Applicant organizations must also:
 
 [Link to PDF](https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Tenancy%20Opportunity/NEW%20Community%20Space%20Tenancy%20Opportunity%20at%20209%20Mavety%20Street.pdf)
 ## Request for Quotes 
-### USE CASE RFQ Design-Build-Finance Bowmanville Redevelopment Project 
+### USE CASE RFQ Design-Build-Finance Redevelopment Project (Anonymized) 
 Basic Information 
 
-Reference Number 0000275634 
+Reference Number 0000275634087-PL 
 
 Issuing Organization Infrastructure Ontario 
 
 Project Type: RFQ - Request for Qualifications (Formal) 
 
-Project Number 23-250 
+Project Number 23-250-PG
 
-Title RFQ Design-Build-Finance Bowmanville Redevelopment Project 
+Title RFQ Design-Build-Finance Redevelopment Project 
 
-Source ID PP.CO.ON.591493.C111869 
+Source ID PPPOQ.591493.C111889 
 
 Details 
 Location: Canada, Ontario, Toronto 
 
 Description 
-The Bowmanville Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Lakeridge Health. 
-Lakeridge Health is a healthcare network of 5 community hospitals and several outreach community and residential programs. Lakeridge Health Bowmanville Hospital is an important component of an integrated approach to healthcare for the Durham Region. With the region’s population growing to almost one million over the next 20 years, the Lakeridge Health Bowmanville Hospital redevelopment is the first step in a cohesive plan to evolve into a stronger regional healthcare system, including enhanced scope of services, teaching and research. 
-The Lakeridge Health Bowmanville Hospital was founded in 1913. In 1946 the Memorial Hospital Bowmanville opened as a new facility (North Wing), with an extension constructed in 1960 (South Wing). The East Wing opened in 1990 and the Level 2 Critical Care Unit and Regional Eye Care Centre opened in 2013. 
-In keeping with Lakeridge Health’s vision, Lakeridge Health Bowmanville Hospital will continue to be a full-service community hospital while relying on its sister hospitals for higher-level tertiary care, inpatient mental health services and other regional programs. 
+The Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Anonymized Health. 
+Anonymized Health is a healthcare network of 5 community hospitals and several outreach community and residential programs. Anonymized Health Hospital is an important component of an integrated approach to healthcare. 
 
-Dates 
 
-Publication Date: 2024/08/01 01:30:19 PM EDT 
-
-Bid Intent Deadline: 2024/10/03 05:00:00 PM EDT 
-
-Closing Date: 2024/10/08 02:00:00 PM EDT 
-
-Question Acceptance Deadline: 2024/09/24 11:59:00 PM EDT 
-
-Bid Intent: Optional 
-
-Questions are submitted online: Yes 
-
-Contact Information 
-
-contact person name: Neeharika Latchireddi 
-
-Phone: 647-264-1927 
-
-email : neeharika.latchireddi@infrastructureontario.ca 
 
 
  
