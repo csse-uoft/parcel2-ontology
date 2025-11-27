@@ -103,6 +103,9 @@ We present in the following the main competency questions identified during our 
 - What are the components of this parcel? 
 
 ## Resources  
+- Is the resource physical or digital?
+  - If it is a digital resource, what kind of digital resource is it? (e.g., URL, file)
+  - If it is a physical resource, what kind of physical resource is it?
 
 ## Call for Proposals-related
 - Where is the development site located? 
