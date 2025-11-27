@@ -216,7 +216,7 @@ Title RFQ Design-Build-Finance Redevelopment Project
 Source ID PPPOQ.591493.C111889 
 
 Details 
-Location: Canada, Ontario, Toronto 
+Location: Country, Province, City 
 
 Description 
 The Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Anonymized Health. 
