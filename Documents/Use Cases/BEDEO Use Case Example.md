@@ -216,11 +216,11 @@ Title RFQ Design-Build-Finance Redevelopment Project
 Source ID PPPOQ.591493.C111889 
 
 Details 
-Location: Country, Province, City 
+Location: Canada, Ontario, City 
 
 Description 
-The Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Anonymized Health. 
-Anonymized Health is a healthcare network of 5 community hospitals and several outreach community and residential programs. Anonymized Health Hospital is an important component of an integrated approach to healthcare. 
+The Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Anonymized Health Organization. 
+Anonymized Health Organization is a healthcare network of 5 community hospitals and several outreach community and residential programs. Anonymized Health Hospital is an important component of an integrated approach to healthcare. 
 
 
 
