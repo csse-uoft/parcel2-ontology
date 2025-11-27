@@ -222,7 +222,14 @@ Description
 The Redevelopment Project is to be delivered under the Design-Build-Finance (DBF) delivery model to Anonymized Health Organization. 
 Anonymized Health Organization is a healthcare network of 5 community hospitals and several outreach community and residential programs. Anonymized Health Hospital is an important component of an integrated approach to healthcare. 
 
+Dates 
+Publication Date: 2025/10/01 01:30:00 PM EDT 
+Bid Intent Deadline: 2025/11/03 05:00:00 PM EDT 
 
+Contact Information 
+Contact person name: John Smith
+Phone: 111-111-1111 
+Email : john.smith@example.ca 
 
 
  
