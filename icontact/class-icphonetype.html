@@ -385,13 +385,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_520"><a   href="prop-cclicense.html">cc:license</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_521"><a   href="prop-dc1creator.html">dc1:creator</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_521"><a   href="prop-dctermscreator.html">dcterms:creator</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_522"><a   href="prop-dc1description.html">dc1:description</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_522"><a   href="prop-dctermsdescription.html">dcterms:description</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_523"><a   href="prop-dc1modified.html">dc1:modified</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_523"><a   href="prop-dctermsmodified.html">dcterms:modified</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_524"><a   href="prop-dc1title.html">dc1:title</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_524"><a   href="prop-dctermstitle.html">dcterms:title</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_552"><a   href="prop-icoperatingproperty.html">ic:OperatingProperty</a></li>
           
@@ -767,7 +767,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     
                       <tr>
                         <td class="firsttd">
-                          <a class="propcolor" title="dc1:creator" href="prop-dc1creator.html">dc1:creator</a>
+                          <a class="propcolor" title="dcterms:creator" href="prop-dctermscreator.html">dcterms:creator</a>
                         </td>
                         <td class="secondtd">
                           <i>owl:AnnotationProperty<i>
@@ -784,7 +784,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     
                       <tr>
                         <td class="firsttd">
-                          <a class="propcolor" title="dc1:description" href="prop-dc1description.html">dc1:description</a>
+                          <a class="propcolor" title="dcterms:description" href="prop-dctermsdescription.html">dcterms:description</a>
                         </td>
                         <td class="secondtd">
                           <i>owl:AnnotationProperty<i>
@@ -801,7 +801,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     
                       <tr>
                         <td class="firsttd">
-                          <a class="propcolor" title="dc1:modified" href="prop-dc1modified.html">dc1:modified</a>
+                          <a class="propcolor" title="dcterms:modified" href="prop-dctermsmodified.html">dcterms:modified</a>
                         </td>
                         <td class="secondtd">
                           <i>owl:AnnotationProperty<i>
@@ -818,7 +818,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     
                       <tr>
                         <td class="firsttd">
-                          <a class="propcolor" title="dc1:title" href="prop-dc1title.html">dc1:title</a>
+                          <a class="propcolor" title="dcterms:title" href="prop-dctermstitle.html">dcterms:title</a>
                         </td>
                         <td class="secondtd">
                           <i>owl:AnnotationProperty<i>
@@ -1550,7 +1550,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dc1:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">ic:</span><span class="w"> </span><span class="nv">&lt;http://ontology.eil.utoronto.ca/icontact.owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
@@ -1558,7 +1558,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="nn">ic</span><span class="p">:</span><span class="nt">PhoneType</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Phone Type&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">dc1</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Types of phoned include home, cell, work, etc.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Types of phoned include home, cell, work, etc.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">iContactThing</span> <span class="p">;</span>
     <span class="nn">owl</span><span class="p">:</span><span class="nt">equivalentClass</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
             <span class="nn">owl</span><span class="p">:</span><span class="nt">oneOf</span> <span class="p">(</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">CellPhone</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">FaxPhone</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">HomePhone</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">TollFreePhone</span> <span class="nn">ic</span><span class="p">:</span><span class="nt">WorkPhone</span> <span class="p">)</span> <span class="p">]</span> <span class="p">.</span>
@@ -1591,7 +1591,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Thu, 27 Nov 2025 20:44:24 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 27 Nov 2025 20:45:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
