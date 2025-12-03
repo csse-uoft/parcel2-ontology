@@ -111,6 +111,12 @@ bedeo:governed_by rdf:type owl:ObjectProperty ;
                   rdfs:label "Governed by"@en .
 
 
+###  https://csse.utoronto.ca/hasPreference
+bedeo:hasPreference rdf:type owl:ObjectProperty ;
+                    rdfs:range bedeo:CharacteristicConstraintClause ;
+                    rdfs:label "Has preference"@en .
+
+
 ###  https://csse.utoronto.ca/has_account
 bedeo:has_account rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -555,6 +561,14 @@ bedeo:has_zoning rdf:type owl:ObjectProperty ;
                  rdfs:label "Has zoning"@en .
 
 
+###  https://csse.utoronto.ca/isAKindOf
+bedeo:isAKindOf rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:TransitiveProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:label "Is a kind of"@en .
+
+
 ###  https://csse.utoronto.ca/is_account_of
 bedeo:is_account_of rdf:type owl:ObjectProperty ;
                     rdfs:domain bedeo:Account ;
@@ -634,6 +648,10 @@ bedeo:requires_partnership_role rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:subPropertyOf <http://qudt.org/schema/qudt/conversionMultiplier> .
+
 
 ###  https://csse.utoronto.ca/for_private_use
 bedeo:for_private_use rdf:type owl:DatatypeProperty ;
@@ -1657,6 +1675,25 @@ bedeo:Agent rdf:type owl:Class ;
             rdfs:label "Agent"@en .
 
 
+###  https://csse.utoronto.ca/AirSpaceParcel
+bedeo:AirSpaceParcel rdf:type owl:Class ;
+                     rdfs:subClassOf bedeo:Parcel ;
+                     rdfs:label "Air Space Parcel"@en .
+
+
+###  https://csse.utoronto.ca/AlbertaLand
+bedeo:AlbertaLand rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:Land ;
+                  rdfs:label "Alberta Land"@en .
+
+
+###  https://csse.utoronto.ca/AlbertaParcel
+bedeo:AlbertaParcel rdf:type owl:Class ;
+                    rdfs:subClassOf bedeo:AlbertaLand ,
+                                    bedeo:ParcelOfLand ;
+                    rdfs:label "Alberta Land Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/Application
 bedeo:Application rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -1746,6 +1783,19 @@ bedeo:AtomicClause rdf:type owl:Class ;
                    rdfs:label "Atomic Clause"@en .
 
 
+###  https://csse.utoronto.ca/BritishColumbiaLand
+bedeo:BritishColumbiaLand rdf:type owl:Class ;
+                          rdfs:subClassOf bedeo:Land ;
+                          rdfs:label "British Columbia Land"@en .
+
+
+###  https://csse.utoronto.ca/BritishColumbiaParcel
+bedeo:BritishColumbiaParcel rdf:type owl:Class ;
+                            rdfs:subClassOf bedeo:BritishColumbiaLand ,
+                                            bedeo:ParcelOfLand ;
+                            rdfs:label "British Columbia Land Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/CNFLogicalFormula
 bedeo:CNFLogicalFormula rdf:type owl:Class ;
                         rdfs:subClassOf bedeo:LogicalFormula ,
@@ -1778,9 +1828,7 @@ bedeo:CallForProposals rdf:type owl:Class ;
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty bedeo:has_start_date ;
                                          owl:someValuesFrom xsd:date
-                                       ] ;
-                       rdfs:comment "A call for proposal is a formal solicitation of proposals for a specific project or opportunity"@en ;
-                       rdfs:label "Call for proposals"@en .
+                                       ] .
 
 
 ###  https://csse.utoronto.ca/Characteristic
@@ -1921,6 +1969,19 @@ bedeo:ExemptAsset rdf:type owl:Class ;
 bedeo:Expertise rdf:type owl:Class .
 
 
+###  https://csse.utoronto.ca/FederalLand
+bedeo:FederalLand rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:Land ;
+                  rdfs:label "Federal Land"@en .
+
+
+###  https://csse.utoronto.ca/FederalParcel
+bedeo:FederalParcel rdf:type owl:Class ;
+                    rdfs:subClassOf bedeo:FederalLand ,
+                                    bedeo:ParcelOfLand ;
+                    rdfs:label "Federal Land Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/Land
 bedeo:Land rdf:type owl:Class ;
            rdfs:subClassOf bedeo:RealProperty ,
@@ -1964,7 +2025,7 @@ bedeo:Land rdf:type owl:Class ;
                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onDataRange xsd:string
                            ] ;
-           rdfs:label "Land"@en .
+           rdfs:label "Real Property/Land"@en .
 
 
 ###  https://csse.utoronto.ca/LandUse
@@ -1993,6 +2054,57 @@ bedeo:Location rdf:type owl:Class ;
 ###  https://csse.utoronto.ca/LogicalFormula
 bedeo:LogicalFormula rdf:type owl:Class ;
                      rdfs:label "Logical Formula"@en .
+
+
+###  https://csse.utoronto.ca/ManitobaLand
+bedeo:ManitobaLand rdf:type owl:Class ;
+                   rdfs:subClassOf bedeo:Land ;
+                   rdfs:label "Manitoba Land"@en .
+
+
+###  https://csse.utoronto.ca/ManitobaParcel
+bedeo:ManitobaParcel rdf:type owl:Class ;
+                     rdfs:subClassOf bedeo:ManitobaLand ,
+                                     bedeo:ParcelOfLand ;
+                     rdfs:label "Manitoba Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/MineralParcel
+bedeo:MineralParcel rdf:type owl:Class ;
+                    rdfs:subClassOf bedeo:Parcel ;
+                    rdfs:label "Mineral Parcel"@en .
+
+
+###  https://csse.utoronto.ca/NewBrunswickLand
+bedeo:NewBrunswickLand rdf:type owl:Class ;
+                       rdfs:subClassOf bedeo:Land ;
+                       rdfs:label "New Brunswick Land"@en .
+
+
+###  https://csse.utoronto.ca/NewBrunswickParcel
+bedeo:NewBrunswickParcel rdf:type owl:Class ;
+                         rdfs:subClassOf bedeo:NewBrunswickLand ,
+                                         bedeo:ParcelOfLand ;
+                         rdfs:label "New Brunswick Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/NewfoundlandAndLabradorLand
+bedeo:NewfoundlandAndLabradorLand rdf:type owl:Class ;
+                                  rdfs:subClassOf bedeo:Land ;
+                                  rdfs:label "Newfoundland and Labrador Land"@en .
+
+
+###  https://csse.utoronto.ca/NewfoundlandAndLabradorParcel
+bedeo:NewfoundlandAndLabradorParcel rdf:type owl:Class ;
+                                    rdfs:subClassOf bedeo:NewfoundlandAndLabradorLand ,
+                                                    bedeo:ParcelOfLand ;
+                                    rdfs:label "Newfoundland and Labrador Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/NonProfitOrganization
+bedeo:NonProfitOrganization rdf:type owl:Class ;
+                            rdfs:subClassOf bedeo:Organization ;
+                            rdfs:label "Non Profit Organization"@en .
 
 
 ###  https://csse.utoronto.ca/NonQuantitativeConstraintClause
@@ -2046,12 +2158,64 @@ bedeo:NonQuantityValue rdf:type owl:Class ;
                        rdfs:label "Non Quantity Value"@en .
 
 
+###  https://csse.utoronto.ca/NorthwestTerritoriesLand
+bedeo:NorthwestTerritoriesLand rdf:type owl:Class ;
+                               rdfs:subClassOf bedeo:Land ;
+                               rdfs:label "Northwest Territories Land"@en .
+
+
+###  https://csse.utoronto.ca/NorthwestTerritoriesParcel
+bedeo:NorthwestTerritoriesParcel rdf:type owl:Class ;
+                                 rdfs:subClassOf bedeo:NorthwestTerritoriesLand ,
+                                                 bedeo:ParcelOfLand ;
+                                 rdfs:label "Northwest Territories Land Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/Notification
 bedeo:Notification rdf:type owl:Class .
 
 
 ###  https://csse.utoronto.ca/NotificationOfInterest
 bedeo:NotificationOfInterest rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/NovaScotiaLand
+bedeo:NovaScotiaLand rdf:type owl:Class ;
+                     rdfs:subClassOf bedeo:Land ;
+                     rdfs:label "Nova Scotia Land"@en .
+
+
+###  https://csse.utoronto.ca/NovaScotiaParcel
+bedeo:NovaScotiaParcel rdf:type owl:Class ;
+                       rdfs:subClassOf bedeo:NovaScotiaLand ,
+                                       bedeo:ParcelOfLand ;
+                       rdfs:label "Nova Scotia Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/NunavutLand
+bedeo:NunavutLand rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:Land ;
+                  rdfs:label "Nunavut Land"@en .
+
+
+###  https://csse.utoronto.ca/NunavutParcel
+bedeo:NunavutParcel rdf:type owl:Class ;
+                    rdfs:subClassOf bedeo:NunavutLand ,
+                                    bedeo:ParcelOfLand ;
+                    rdfs:label "Nunavut Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/OntarioLand
+bedeo:OntarioLand rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:Land ;
+                  rdfs:label "Ontario Land"@en .
+
+
+###  https://csse.utoronto.ca/OntarioParcel
+bedeo:OntarioParcel rdf:type owl:Class ;
+                    rdfs:subClassOf bedeo:OntarioLand ,
+                                    bedeo:ParcelOfLand ;
+                    rdfs:label "Ontario Land Parcel"@en .
 
 
 ###  https://csse.utoronto.ca/Operator
@@ -2300,9 +2464,7 @@ bedeo:Organization rdf:type owl:Class ;
                                      owl:onProperty bedeo:has_organization_values_statement ;
                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onDataRange xsd:string
-                                   ] ;
-                   rdfs:comment "A group of people who work together in an organized way for a shared purpose"@en ;
-                   rdfs:label "Organization"@en .
+                                   ] .
 
 
 ###  https://csse.utoronto.ca/OrganizationActivityType
@@ -2417,9 +2579,15 @@ bedeo:OrganizationType rdf:type owl:Class ;
                        rdfs:subClassOf bedeo:Type .
 
 
+###  https://csse.utoronto.ca/Parcel
+bedeo:Parcel rdf:type owl:Class ;
+             rdfs:subClassOf bedeo:RealProperty ;
+             rdfs:label "Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/ParcelOfLand
 bedeo:ParcelOfLand rdf:type owl:Class ;
-                   rdfs:subClassOf bedeo:RealProperty ,
+                   rdfs:subClassOf bedeo:Parcel ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:component_of ;
                                      owl:someValuesFrom bedeo:RealProperty
@@ -2609,6 +2777,19 @@ bedeo:PersonalProperty rdf:type owl:Class ;
                        rdfs:label "Personal Property"@en .
 
 
+###  https://csse.utoronto.ca/PrinceEdwardIslandLand
+bedeo:PrinceEdwardIslandLand rdf:type owl:Class ;
+                             rdfs:subClassOf bedeo:Land ;
+                             rdfs:label "Prince Edward Island Land"@en .
+
+
+###  https://csse.utoronto.ca/PrinceEdwardIslandParcel
+bedeo:PrinceEdwardIslandParcel rdf:type owl:Class ;
+                               rdfs:subClassOf bedeo:ParcelOfLand ,
+                                               bedeo:PrinceEdwardIslandLand ;
+                               rdfs:label "Prince Edward Island Land Parcel"@en .
+
+
 ###  https://csse.utoronto.ca/Project
 bedeo:Project rdf:type owl:Class ;
               rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -2686,8 +2867,7 @@ bedeo:Proposal rdf:type owl:Class ;
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty bedeo:has_title ;
                                  owl:someValuesFrom xsd:string
-                               ] ;
-               rdfs:label "Proposal"@en .
+                               ] .
 
 
 ###  https://csse.utoronto.ca/QuantitativeConstraintClause
@@ -2703,6 +2883,19 @@ bedeo:QuantitativeConstraintClause rdf:type owl:Class ;
                                                      owl:onClass <http://qudt.org/schema/qudt/QuantityKind>
                                                    ] ;
                                    rdfs:label "Quantitative Constraint Clause"@en .
+
+
+###  https://csse.utoronto.ca/QuebecLand
+bedeo:QuebecLand rdf:type owl:Class ;
+                 rdfs:subClassOf bedeo:Land ;
+                 rdfs:label "Quebec Land"@en .
+
+
+###  https://csse.utoronto.ca/QuebecParcel
+bedeo:QuebecParcel rdf:type owl:Class ;
+                   rdfs:subClassOf bedeo:ParcelOfLand ,
+                                   bedeo:QuebecLand ;
+                   rdfs:label "Quebec Land Parcel"@en .
 
 
 ###  https://csse.utoronto.ca/RealProperty
@@ -2740,7 +2933,7 @@ bedeo:RealProperty rdf:type owl:Class ;
                                      owl:onProperty bedeo:has_zoning ;
                                      owl:someValuesFrom bedeo:Zone
                                    ] ;
-                   rdfs:label "Real Property"@en .
+                   rdfs:label "Real Property/Land"@en .
 
 
 ###  https://csse.utoronto.ca/Requirement
@@ -2790,6 +2983,19 @@ bedeo:RoleType rdf:type owl:Class ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onDataRange xsd:string
                                ] .
+
+
+###  https://csse.utoronto.ca/SaskatchewanLand
+bedeo:SaskatchewanLand rdf:type owl:Class ;
+                       rdfs:subClassOf bedeo:Land ;
+                       rdfs:label "Saskatchewan Land"@en .
+
+
+###  https://csse.utoronto.ca/SaskatchewanParcel
+bedeo:SaskatchewanParcel rdf:type owl:Class ;
+                         rdfs:subClassOf bedeo:ParcelOfLand ,
+                                         bedeo:SaskatchewanLand ;
+                         rdfs:label "Saskatchewan Land Parcel"@en .
 
 
 ###  https://csse.utoronto.ca/Service
@@ -2858,6 +3064,19 @@ bedeo:Value rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/Ward
 bedeo:Ward rdf:type owl:Class .
+
+
+###  https://csse.utoronto.ca/YukonLand
+bedeo:YukonLand rdf:type owl:Class ;
+                rdfs:subClassOf bedeo:Land ;
+                rdfs:label "Yukon Land"@en .
+
+
+###  https://csse.utoronto.ca/YukonParcel
+bedeo:YukonParcel rdf:type owl:Class ;
+                  rdfs:subClassOf bedeo:ParcelOfLand ,
+                                  bedeo:YukonLand ;
+                  rdfs:label "Yukon Land Parcel"@en .
 
 
 ###  https://csse.utoronto.ca/Zone
@@ -3311,7 +3530,7 @@ bedeo:social_group rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/social_services_provider
 bedeo:social_services_provider rdf:type owl:Class ;
-                               rdfs:subClassOf bedeo:Organization ;
+                               rdfs:subClassOf bedeo:NonProfitOrganization ;
                                rdfs:label "Social Services Provider" .
 
 
@@ -3360,6 +3579,23 @@ bedeo:tangible_asset rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  https://csse.utoronto.ca/CallForProposals
+bedeo:CallForProposals rdf:type owl:NamedIndividual .
+
+
+###  https://csse.utoronto.ca/Organization
+bedeo:Organization rdf:type owl:NamedIndividual .
+
+
+###  https://csse.utoronto.ca/Proposal
+bedeo:Proposal rdf:type owl:NamedIndividual .
+
+
+###  https://csse.utoronto.ca/available
+bedeo:available rdf:type owl:NamedIndividual ,
+                         bedeo:NonQuantityValue .
+
+
 ###  https://csse.utoronto.ca/average_parking_assignment
 bedeo:average_parking_assignment rdf:type owl:NamedIndividual ,
                                           <http://qudt.org/schema/qudt/QuantityKind> .
@@ -3375,14 +3611,119 @@ bedeo:community_liaison_role_type rdf:type owl:NamedIndividual ,
                                            bedeo:RoleType .
 
 
+###  https://csse.utoronto.ca/debtCoverageCharacteristicKind
+bedeo:debtCoverageCharacteristicKind rdf:type owl:NamedIndividual ,
+                                              <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
+###  https://csse.utoronto.ca/debtCoverageRatio
+bedeo:debtCoverageRatio rdf:type owl:NamedIndividual ,
+                                 <http://qudt.org/schema/qudt/Unit> .
+
+
+###  https://csse.utoronto.ca/developerA
+bedeo:developerA rdf:type owl:NamedIndividual ,
+                          bedeo:building_developer ;
+                 bedeo:hasPreference bedeo:minimum120HousingUnitsConstraint ;
+                 bedeo:has_constraint bedeo:minimum1.1DebtCoverageConstraint ,
+                                      bedeo:minimumProjectSurfaceArea3Constraint .
+
+
+###  https://csse.utoronto.ca/developerB
+bedeo:developerB rdf:type owl:NamedIndividual ,
+                          bedeo:building_developer ;
+                 bedeo:hasPreference bedeo:sudburyLocationConstraint ;
+                 bedeo:has_constraint bedeo:horizontalMixedUseConstraint ,
+                                      bedeo:ontarioLocationConstraint .
+
+
+###  https://csse.utoronto.ca/developerC
+bedeo:developerC rdf:type owl:NamedIndividual ,
+                          bedeo:building_developer ;
+                 bedeo:has_constraint bedeo:maximum80HousingUnitsConstraint ,
+                                      bedeo:partnerNPOConstraint .
+
+
 ###  https://csse.utoronto.ca/developer_role_type
 bedeo:developer_role_type rdf:type owl:NamedIndividual ,
                                    bedeo:RoleType .
 
 
+###  https://csse.utoronto.ca/developmentTypeCharacteristicKind
+bedeo:developmentTypeCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                 bedeo:NonQuantityCharacteristicKind .
+
+
 ###  https://csse.utoronto.ca/equality
 bedeo:equality rdf:type owl:NamedIndividual ,
                         bedeo:Operator .
+
+
+###  https://csse.utoronto.ca/exampleCallForProposals
+bedeo:exampleCallForProposals rdf:type owl:NamedIndividual ,
+                                       bedeo:CallForProposals ;
+                              bedeo:for_partnership_opportunity bedeo:examplePartnershipOpportunity ;
+                              bedeo:has_characteristic bedeo:exampleProjectLocation ,
+                                                       bedeo:exampleProjectSurfaceArea ;
+                              bedeo:has_constraint bedeo:minimum100HousingUnitsConstraint ,
+                                                   bedeo:minimumSocialService6000Constraint ,
+                                                   bedeo:mixedUseConstraint ,
+                                                   bedeo:publicParkingAvailabilityConstraint .
+
+
+###  https://csse.utoronto.ca/exampleDevelopmentType
+bedeo:exampleDevelopmentType rdf:type owl:NamedIndividual ,
+                                      bedeo:NonQuantityCharacteristic ;
+                             bedeo:has_non_quantity_kind bedeo:developmentTypeCharacteristicKind ;
+                             bedeo:non_quantity_value bedeo:mixedUse .
+
+
+###  https://csse.utoronto.ca/examplePartnershipOpportunity
+bedeo:examplePartnershipOpportunity rdf:type owl:NamedIndividual ,
+                                             bedeo:PartnershipOpportunity ;
+                                    bedeo:has_partner bedeo:exampleProvider .
+
+
+###  https://csse.utoronto.ca/exampleProjectLocation
+bedeo:exampleProjectLocation rdf:type owl:NamedIndividual ,
+                                      bedeo:NonQuantityCharacteristic ;
+                             bedeo:has_non_quantity_kind bedeo:projectLocationCharacteristicKind ;
+                             bedeo:non_quantity_value bedeo:torontoLocation .
+
+
+###  https://csse.utoronto.ca/exampleProjectMinimumNumberOfUnits
+bedeo:exampleProjectMinimumNumberOfUnits rdf:type owl:NamedIndividual ,
+                                                  <http://qudt.org/schema/qudt/Quantity> ;
+                                         <http://qudt.org/schema/qudt/hasQuantityKind> bedeo:minimumNumberOfHousingUnitsCharacteristicKind ;
+                                         <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/100HousingUnitValue> .
+
+
+###  https://csse.utoronto.ca/exampleProjectSurfaceArea
+bedeo:exampleProjectSurfaceArea rdf:type owl:NamedIndividual ,
+                                         <http://qudt.org/schema/qudt/Quantity> ;
+                                <http://qudt.org/schema/qudt/hasQuantityKind> bedeo:surfaceArea ;
+                                <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/5AcreValue> .
+
+
+###  https://csse.utoronto.ca/exampleProvider
+bedeo:exampleProvider rdf:type owl:NamedIndividual ,
+                               bedeo:social_services_provider ;
+                      bedeo:has_characteristic bedeo:exampleProviderDebtCoverage ,
+                                               bedeo:exampleProviderOrganizationType .
+
+
+###  https://csse.utoronto.ca/exampleProviderDebtCoverage
+bedeo:exampleProviderDebtCoverage rdf:type owl:NamedIndividual ,
+                                           <http://qudt.org/schema/qudt/Quantity> ;
+                                  <http://qudt.org/schema/qudt/hasQuantityKind> bedeo:debtCoverageCharacteristicKind ;
+                                  <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/1.2DebtCoverageRatioValue> .
+
+
+###  https://csse.utoronto.ca/exampleProviderOrganizationType
+bedeo:exampleProviderOrganizationType rdf:type owl:NamedIndividual ,
+                                               bedeo:NonQuantityCharacteristic ;
+                                      bedeo:has_non_quantity_kind bedeo:organizationTypeCharacteristicKind ;
+                                      bedeo:non_quantity_value bedeo:socialServiceProvider .
 
 
 ###  https://csse.utoronto.ca/experience
@@ -3405,6 +3746,26 @@ bedeo:greater_than_or_equal rdf:type owl:NamedIndividual ,
                                      bedeo:Operator .
 
 
+###  https://csse.utoronto.ca/horizontalMixedUse
+bedeo:horizontalMixedUse rdf:type owl:NamedIndividual ,
+                                  bedeo:NonQuantityValue ;
+                         bedeo:isAKindOf bedeo:mixedUse .
+
+
+###  https://csse.utoronto.ca/horizontalMixedUseConstraint
+bedeo:horizontalMixedUseConstraint rdf:type owl:NamedIndividual ,
+                                            bedeo:NonQuantitativeConstraintClause ;
+                                   bedeo:for_characteristic bedeo:developmentTypeCharacteristicKind ;
+                                   bedeo:for_class bedeo:CallForProposals ;
+                                   bedeo:has_operator bedeo:equality ;
+                                   bedeo:has_value bedeo:horizontalMixedUse .
+
+
+###  https://csse.utoronto.ca/housingUnit
+bedeo:housingUnit rdf:type owl:NamedIndividual ,
+                           <http://qudt.org/schema/qudt/Unit> .
+
+
 ###  https://csse.utoronto.ca/in
 bedeo:in rdf:type owl:NamedIndividual ,
                   bedeo:Operator .
@@ -3420,6 +3781,94 @@ bedeo:less_than_or_equal rdf:type owl:NamedIndividual ,
                                   bedeo:Operator .
 
 
+###  https://csse.utoronto.ca/maximum80HousingUnitsConstraint
+bedeo:maximum80HousingUnitsConstraint rdf:type owl:NamedIndividual ,
+                                               bedeo:QuantitativeConstraintClause ;
+                                      bedeo:for_characteristic bedeo:minimumNumberOfHousingUnitsCharacteristicKind ;
+                                      bedeo:for_class bedeo:CallForProposals ;
+                                      bedeo:has_operator bedeo:less_than_or_equal ;
+                                      bedeo:has_value <https://csse.utoronto.ca/80HousingUnitValue> .
+
+
+###  https://csse.utoronto.ca/maximumNumberOfHousingUnitsCharacteristicKind
+bedeo:maximumNumberOfHousingUnitsCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                             <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
+###  https://csse.utoronto.ca/minimum1.1DebtCoverageConstraint
+bedeo:minimum1.1DebtCoverageConstraint rdf:type owl:NamedIndividual ,
+                                                bedeo:QuantitativeConstraintClause ;
+                                       <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/1.1DebtCoverageRatioValue> ;
+                                       bedeo:for_characteristic bedeo:debtCoverageCharacteristicKind ;
+                                       bedeo:for_class bedeo:Organization ;
+                                       bedeo:has_operator bedeo:greater_than_or_equal .
+
+
+###  https://csse.utoronto.ca/minimum100HousingUnitsConstraint
+bedeo:minimum100HousingUnitsConstraint rdf:type owl:NamedIndividual ,
+                                                bedeo:QuantitativeConstraintClause ;
+                                       <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/100HousingUnitValue> ;
+                                       bedeo:for_characteristic bedeo:numberOfHousingUnitsCharacteristicKind ;
+                                       bedeo:for_class bedeo:Proposal ;
+                                       bedeo:has_operator bedeo:greater_than_or_equal .
+
+
+###  https://csse.utoronto.ca/minimum120HousingUnitsConstraint
+bedeo:minimum120HousingUnitsConstraint rdf:type owl:NamedIndividual ,
+                                                bedeo:QuantitativeConstraintClause ;
+                                       <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/120HousingUnitValue> ;
+                                       bedeo:for_characteristic bedeo:maximumNumberOfHousingUnitsCharacteristicKind ;
+                                       bedeo:for_class bedeo:CallForProposals ;
+                                       bedeo:has_operator bedeo:greater_than_or_equal .
+
+
+###  https://csse.utoronto.ca/minimumNumberOfHousingUnitsCharacteristicKind
+bedeo:minimumNumberOfHousingUnitsCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                             <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
+###  https://csse.utoronto.ca/minimumProjectSurfaceArea3Constraint
+bedeo:minimumProjectSurfaceArea3Constraint rdf:type owl:NamedIndividual ,
+                                                    bedeo:QuantitativeConstraintClause ;
+                                           bedeo:for_characteristic bedeo:surfaceArea ;
+                                           bedeo:for_class bedeo:CallForProposals ;
+                                           bedeo:has_operator bedeo:greater_than_or_equal ;
+                                           bedeo:has_value <https://csse.utoronto.ca/3AcreValue> .
+
+
+###  https://csse.utoronto.ca/minimumSocialService6000Constraint
+bedeo:minimumSocialService6000Constraint rdf:type owl:NamedIndividual ,
+                                                  bedeo:QuantitativeConstraintClause ;
+                                         <http://www.linkedmodel.org/schema/dtype#value> <https://csse.utoronto.ca/6000SqFtValue> ;
+                                         bedeo:for_characteristic bedeo:socialServiceFloorSpaceCharacteristicKind ;
+                                         bedeo:for_class bedeo:Proposal ;
+                                         bedeo:has_operator bedeo:greater_than_or_equal .
+
+
+###  https://csse.utoronto.ca/mixedUse
+bedeo:mixedUse rdf:type owl:NamedIndividual ,
+                        bedeo:NonQuantityValue .
+
+
+###  https://csse.utoronto.ca/mixedUseConstraint
+bedeo:mixedUseConstraint rdf:type owl:NamedIndividual ,
+                                  bedeo:NonQuantitativeConstraintClause ;
+                         bedeo:for_characteristic bedeo:developmentTypeCharacteristicKind ;
+                         bedeo:for_class bedeo:Proposal ;
+                         bedeo:has_operator bedeo:equality ;
+                         bedeo:has_value bedeo:mixedUse .
+
+
+###  https://csse.utoronto.ca/npo
+bedeo:npo rdf:type owl:NamedIndividual ,
+                   bedeo:NonQuantityValue .
+
+
+###  https://csse.utoronto.ca/numberOfHousingUnitsCharacteristicKind
+bedeo:numberOfHousingUnitsCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                      <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
 ###  https://csse.utoronto.ca/number_of_housing_units
 bedeo:number_of_housing_units rdf:type owl:NamedIndividual ,
                                        <http://qudt.org/schema/qudt/QuantityKind> .
@@ -3430,14 +3879,72 @@ bedeo:number_of_storeys rdf:type owl:NamedIndividual ,
                                  <http://qudt.org/schema/qudt/QuantityKind> .
 
 
+###  https://csse.utoronto.ca/ontarioLocation
+bedeo:ontarioLocation rdf:type owl:NamedIndividual ,
+                               bedeo:NonQuantityValue .
+
+
+###  https://csse.utoronto.ca/ontarioLocationConstraint
+bedeo:ontarioLocationConstraint rdf:type owl:NamedIndividual ,
+                                         bedeo:NonQuantitativeConstraintClause ;
+                                bedeo:for_characteristic bedeo:projectLocationCharacteristicKind ;
+                                bedeo:for_class bedeo:CallForProposals ;
+                                bedeo:has_operator bedeo:equality ;
+                                bedeo:has_value bedeo:ontarioLocation .
+
+
+###  https://csse.utoronto.ca/organizationTypeCharacteristicKind
+bedeo:organizationTypeCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                  bedeo:NonQuantityCharacteristicKind .
+
+
 ###  https://csse.utoronto.ca/parking_capacity
 bedeo:parking_capacity rdf:type owl:NamedIndividual ,
                                 <http://qudt.org/schema/qudt/QuantityKind> .
 
 
+###  https://csse.utoronto.ca/partnerNPOConstraint
+bedeo:partnerNPOConstraint rdf:type owl:NamedIndividual ,
+                                    bedeo:NonQuantitativeConstraintClause ;
+                           bedeo:for_characteristic bedeo:organizationTypeCharacteristicKind ;
+                           bedeo:for_class bedeo:Organization ;
+                           bedeo:has_operator bedeo:equality ;
+                           bedeo:has_value bedeo:npo .
+
+
 ###  https://csse.utoronto.ca/post_development_beneficiary_role_type
 bedeo:post_development_beneficiary_role_type rdf:type owl:NamedIndividual ,
                                                       bedeo:RoleType .
+
+
+###  https://csse.utoronto.ca/projectLocationCharacteristicKind
+bedeo:projectLocationCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                 bedeo:NonQuantityCharacteristicKind .
+
+
+###  https://csse.utoronto.ca/publicParkingAvailabilityCharacteristicKind
+bedeo:publicParkingAvailabilityCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                           bedeo:NonQuantityCharacteristicKind .
+
+
+###  https://csse.utoronto.ca/publicParkingAvailabilityConstraint
+bedeo:publicParkingAvailabilityConstraint rdf:type owl:NamedIndividual ,
+                                                   bedeo:NonQuantitativeConstraintClause ;
+                                          bedeo:for_characteristic bedeo:publicParkingAvailabilityCharacteristicKind ;
+                                          bedeo:for_class bedeo:Proposal ;
+                                          bedeo:has_operator bedeo:equality ;
+                                          bedeo:has_value bedeo:available .
+
+
+###  https://csse.utoronto.ca/socialServiceFloorSpaceCharacteristicKind
+bedeo:socialServiceFloorSpaceCharacteristicKind rdf:type owl:NamedIndividual ,
+                                                         <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
+###  https://csse.utoronto.ca/socialServiceProvider
+bedeo:socialServiceProvider rdf:type owl:NamedIndividual ,
+                                     bedeo:NonQuantityValue ;
+                            bedeo:isAKindOf bedeo:npo .
 
 
 ###  https://csse.utoronto.ca/strictly_greater_than
@@ -3450,9 +3957,102 @@ bedeo:strictly_less_than rdf:type owl:NamedIndividual ,
                                   bedeo:Operator .
 
 
+###  https://csse.utoronto.ca/sudburyLocation
+bedeo:sudburyLocation rdf:type owl:NamedIndividual ,
+                               bedeo:NonQuantityValue ;
+                      bedeo:isAKindOf bedeo:ontarioLocation .
+
+
+###  https://csse.utoronto.ca/sudburyLocationConstraint
+bedeo:sudburyLocationConstraint rdf:type owl:NamedIndividual ,
+                                         bedeo:NonQuantitativeConstraintClause ;
+                                bedeo:for_characteristic bedeo:projectLocationCharacteristicKind ;
+                                bedeo:for_class bedeo:CallForProposals ;
+                                bedeo:has_operator bedeo:equality ;
+                                bedeo:has_value bedeo:sudburyLocation .
+
+
+###  https://csse.utoronto.ca/surfaceArea
+bedeo:surfaceArea rdf:type owl:NamedIndividual ,
+                           <http://qudt.org/schema/qudt/AbstractQuantityKind> .
+
+
+###  https://csse.utoronto.ca/torontoLocation
+bedeo:torontoLocation rdf:type owl:NamedIndividual ,
+                               bedeo:NonQuantityValue ;
+                      bedeo:isAKindOf bedeo:ontarioLocation .
+
+
+###  https://csse.utoronto.ca/1.1DebtCoverageRatioValue
+<https://csse.utoronto.ca/1.1DebtCoverageRatioValue> rdf:type owl:NamedIndividual ,
+                                                              <http://qudt.org/schema/qudt/QuantityValue> ;
+                                                     <http://qudt.org/schema/qudt/hasUnit> bedeo:debtCoverageRatio ;
+                                                     <http://qudt.org/schema/qudt/numericValue> 1.2 .
+
+
+###  https://csse.utoronto.ca/1.2DebtCoverageRatioValue
+<https://csse.utoronto.ca/1.2DebtCoverageRatioValue> rdf:type owl:NamedIndividual ,
+                                                              <http://qudt.org/schema/qudt/QuantityValue> ;
+                                                     <http://qudt.org/schema/qudt/hasUnit> bedeo:debtCoverageRatio ;
+                                                     <http://qudt.org/schema/qudt/numericValue> 1.2 .
+
+
+###  https://csse.utoronto.ca/100HousingUnitValue
+<https://csse.utoronto.ca/100HousingUnitValue> rdf:type owl:NamedIndividual ,
+                                                        <http://qudt.org/schema/qudt/QuantityValue> ;
+                                               <http://qudt.org/schema/qudt/hasUnit> bedeo:housingUnit ;
+                                               <http://qudt.org/schema/qudt/numericValue> 100 .
+
+
+###  https://csse.utoronto.ca/120HousingUnitValue
+<https://csse.utoronto.ca/120HousingUnitValue> rdf:type owl:NamedIndividual ,
+                                                        <http://qudt.org/schema/qudt/QuantityValue> ;
+                                               <http://qudt.org/schema/qudt/hasUnit> bedeo:housingUnit ;
+                                               <http://qudt.org/schema/qudt/numericValue> 120 .
+
+
+###  https://csse.utoronto.ca/3AcreValue
+<https://csse.utoronto.ca/3AcreValue> rdf:type owl:NamedIndividual ,
+                                               <http://qudt.org/schema/qudt/QuantityValue> ;
+                                      <http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/AC> ;
+                                      <http://qudt.org/schema/qudt/numericValue> 3 .
+
+
+###  https://csse.utoronto.ca/5AcreValue
+<https://csse.utoronto.ca/5AcreValue> rdf:type owl:NamedIndividual ,
+                                               <http://qudt.org/schema/qudt/QuantityValue> ;
+                                      <http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/AC> ;
+                                      <http://qudt.org/schema/qudt/numericValue> 5 .
+
+
+###  https://csse.utoronto.ca/6000SqFtValue
+<https://csse.utoronto.ca/6000SqFtValue> rdf:type owl:NamedIndividual ,
+                                                  <http://qudt.org/schema/qudt/QuantityValue> ;
+                                         <http://qudt.org/schema/qudt/hasUnit> <http://qudt.org/vocab/unit/FT2> ;
+                                         <http://qudt.org/schema/qudt/numericValue> 6000 .
+
+
+###  https://csse.utoronto.ca/80HousingUnitValue
+<https://csse.utoronto.ca/80HousingUnitValue> rdf:type owl:NamedIndividual ,
+                                                       <http://qudt.org/schema/qudt/QuantityValue> ;
+                                              <http://qudt.org/schema/qudt/hasUnit> bedeo:housingUnit ;
+                                              <http://qudt.org/schema/qudt/numericValue> 80 .
+
+
 #################################################################
 #    Annotations
 #################################################################
+
+bedeo:CallForProposals rdfs:label "Call for proposals"@en ;
+                       rdfs:comment "A call for proposal is a formal solicitation of proposals for a specific project or opportunity"@en .
+
+
+bedeo:Organization rdfs:label "Organization"@en ;
+                   rdfs:comment "A group of people who work together in an organized way for a shared purpose"@en .
+
+
+bedeo:Proposal rdfs:label "Proposal"@en .
+
 
 bedeo:has_acceptance_status rdfs:label "Has acceptance status"@en .
 
@@ -3496,8 +4096,8 @@ bedeo:has_improvements rdfs:comment "Indicates the improvements (i.e. changes/ad
                        rdfs:label "Has improvements"@en .
 
 
-bedeo:has_locality_name rdfs:label "Has locality name"@en ;
-                        rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en .
+bedeo:has_locality_name rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en ;
+                        rdfs:label "Has locality name"@en .
 
 
 bedeo:has_location_description rdfs:comment "A textual description of a location"@en ;
@@ -3669,8 +4269,8 @@ bedeo:has_province_code rdfs:label "Has province code"@en ;
                                                                        "Has state code"@en .
 
 
-bedeo:has_province_name rdfs:comment "The name of the state, province, etc. (e.g. Ontario)"@en ;
-                        rdfs:label "Has province name"@en ;
+bedeo:has_province_name rdfs:label "Has province name"@en ;
+                        rdfs:comment "The name of the state, province, etc. (e.g. Ontario)"@en ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "Has state name"@en ,
                                                                        "Has governorate name"@en .
 
