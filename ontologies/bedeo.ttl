@@ -111,12 +111,6 @@ bedeo:governed_by rdf:type owl:ObjectProperty ;
                   rdfs:label "Governed by"@en .
 
 
-###  https://csse.utoronto.ca/hasPreference
-bedeo:hasPreference rdf:type owl:ObjectProperty ;
-                    rdfs:range bedeo:CharacteristicConstraintClause ;
-                    rdfs:label "Has preference"@en .
-
-
 ###  https://csse.utoronto.ca/has_account
 bedeo:has_account rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf owl:topObjectProperty ;
@@ -400,6 +394,12 @@ bedeo:has_partner rdf:type owl:ObjectProperty ;
                   rdfs:domain bedeo:PartnershipOpportunity ;
                   rdfs:range bedeo:Agent ;
                   rdfs:label "Has partner"@en .
+
+
+###  https://csse.utoronto.ca/has_preference
+bedeo:has_preference rdf:type owl:ObjectProperty ;
+                     rdfs:range bedeo:CharacteristicConstraintClause ;
+                     rdfs:label "Has preference"@en .
 
 
 ###  https://csse.utoronto.ca/has_primary_address
@@ -3624,23 +3624,30 @@ bedeo:debtCoverageRatio rdf:type owl:NamedIndividual ,
 ###  https://csse.utoronto.ca/developerA
 bedeo:developerA rdf:type owl:NamedIndividual ,
                           bedeo:building_developer ;
-                 bedeo:hasPreference bedeo:minimum120HousingUnitsConstraint ;
                  bedeo:has_constraint bedeo:minimum1.1DebtCoverageConstraint ,
-                                      bedeo:minimumProjectSurfaceArea3Constraint .
+                                      bedeo:minimumProjectSurfaceArea3Constraint ;
+                 bedeo:has_preference bedeo:minimum120HousingUnitsConstraint .
 
 
 ###  https://csse.utoronto.ca/developerB
 bedeo:developerB rdf:type owl:NamedIndividual ,
                           bedeo:building_developer ;
-                 bedeo:hasPreference bedeo:sudburyLocationConstraint ;
                  bedeo:has_constraint bedeo:horizontalMixedUseConstraint ,
-                                      bedeo:ontarioLocationConstraint .
+                                      bedeo:ontarioLocationConstraint ;
+                 bedeo:has_preference bedeo:sudburyLocationConstraint .
 
 
 ###  https://csse.utoronto.ca/developerC
 bedeo:developerC rdf:type owl:NamedIndividual ,
                           bedeo:building_developer ;
                  bedeo:has_constraint bedeo:maximum80HousingUnitsConstraint ,
+                                      bedeo:partnerNPOConstraint .
+
+
+###  https://csse.utoronto.ca/developerD
+bedeo:developerD rdf:type owl:NamedIndividual ,
+                          bedeo:building_developer ;
+                 bedeo:has_constraint bedeo:minimumProjectSurfaceArea3Constraint ,
                                       bedeo:partnerNPOConstraint .
 
 
@@ -3663,7 +3670,8 @@ bedeo:equality rdf:type owl:NamedIndividual ,
 bedeo:exampleCallForProposals rdf:type owl:NamedIndividual ,
                                        bedeo:CallForProposals ;
                               bedeo:for_partnership_opportunity bedeo:examplePartnershipOpportunity ;
-                              bedeo:has_characteristic bedeo:exampleProjectLocation ,
+                              bedeo:has_characteristic bedeo:exampleDevelopmentType ,
+                                                       bedeo:exampleProjectLocation ,
                                                        bedeo:exampleProjectSurfaceArea ;
                               bedeo:has_constraint bedeo:minimum100HousingUnitsConstraint ,
                                                    bedeo:minimumSocialService6000Constraint ,
@@ -3784,10 +3792,10 @@ bedeo:less_than_or_equal rdf:type owl:NamedIndividual ,
 ###  https://csse.utoronto.ca/maximum80HousingUnitsConstraint
 bedeo:maximum80HousingUnitsConstraint rdf:type owl:NamedIndividual ,
                                                bedeo:QuantitativeConstraintClause ;
+                                      <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/80HousingUnitValue> ;
                                       bedeo:for_characteristic bedeo:minimumNumberOfHousingUnitsCharacteristicKind ;
                                       bedeo:for_class bedeo:CallForProposals ;
-                                      bedeo:has_operator bedeo:less_than_or_equal ;
-                                      bedeo:has_value <https://csse.utoronto.ca/80HousingUnitValue> .
+                                      bedeo:has_operator bedeo:less_than_or_equal .
 
 
 ###  https://csse.utoronto.ca/maximumNumberOfHousingUnitsCharacteristicKind
@@ -3830,16 +3838,16 @@ bedeo:minimumNumberOfHousingUnitsCharacteristicKind rdf:type owl:NamedIndividual
 ###  https://csse.utoronto.ca/minimumProjectSurfaceArea3Constraint
 bedeo:minimumProjectSurfaceArea3Constraint rdf:type owl:NamedIndividual ,
                                                     bedeo:QuantitativeConstraintClause ;
+                                           <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/3AcreValue> ;
                                            bedeo:for_characteristic bedeo:surfaceArea ;
                                            bedeo:for_class bedeo:CallForProposals ;
-                                           bedeo:has_operator bedeo:greater_than_or_equal ;
-                                           bedeo:has_value <https://csse.utoronto.ca/3AcreValue> .
+                                           bedeo:has_operator bedeo:greater_than_or_equal .
 
 
 ###  https://csse.utoronto.ca/minimumSocialService6000Constraint
 bedeo:minimumSocialService6000Constraint rdf:type owl:NamedIndividual ,
                                                   bedeo:QuantitativeConstraintClause ;
-                                         <http://www.linkedmodel.org/schema/dtype#value> <https://csse.utoronto.ca/6000SqFtValue> ;
+                                         <http://qudt.org/schema/qudt/quantityValue> <https://csse.utoronto.ca/6000SqFtValue> ;
                                          bedeo:for_characteristic bedeo:socialServiceFloorSpaceCharacteristicKind ;
                                          bedeo:for_class bedeo:Proposal ;
                                          bedeo:has_operator bedeo:greater_than_or_equal .
@@ -4096,8 +4104,8 @@ bedeo:has_improvements rdfs:comment "Indicates the improvements (i.e. changes/ad
                        rdfs:label "Has improvements"@en .
 
 
-bedeo:has_locality_name rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en ;
-                        rdfs:label "Has locality name"@en .
+bedeo:has_locality_name rdfs:label "Has locality name"@en ;
+                        rdfs:comment "The name of the municipality, community, Indian reservation, subdivision, regional district, aboriginal lands, natural feature, etc. (e.g. Vancouver)"@en .
 
 
 bedeo:has_location_description rdfs:comment "A textual description of a location"@en ;
@@ -4171,8 +4179,8 @@ bedeo:has_organization_mission_statement rdfs:comment "The core purpose and guid
                                          rdfs:label "Has organization mission statement"@en .
 
 
-bedeo:has_organization_monitoring_capacity_score rdfs:label "Has organization monitoring capacity score"@en ;
-                                                 rdfs:comment "A rating of the organization's ability to oversee and evaluate project implementation and compliance."@en .
+bedeo:has_organization_monitoring_capacity_score rdfs:comment "A rating of the organization's ability to oversee and evaluate project implementation and compliance."@en ;
+                                                 rdfs:label "Has organization monitoring capacity score"@en .
 
 
 bedeo:has_organization_operational_approach rdfs:label "Has organization operational approach"@en ;
@@ -4269,8 +4277,8 @@ bedeo:has_province_code rdfs:label "Has province code"@en ;
                                                                        "Has state code"@en .
 
 
-bedeo:has_province_name rdfs:label "Has province name"@en ;
-                        rdfs:comment "The name of the state, province, etc. (e.g. Ontario)"@en ;
+bedeo:has_province_name rdfs:comment "The name of the state, province, etc. (e.g. Ontario)"@en ;
+                        rdfs:label "Has province name"@en ;
                         <http://www.w3.org/2004/02/skos/core#altLabel> "Has state name"@en ,
                                                                        "Has governorate name"@en .
 
