@@ -1,4 +1,20 @@
 | Competency Question | Ontology class/property | Example Use Case |
-|:----------||:----------||:----------|
+|:--------------------|:----------|:----------|
 | A1) What is the address of the site?   | Address, Has address    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf    |
 | A2) What are the individual address components? (e.g., unit number, street name, street number, city name, etc.)   | Has street name, Has street number, Has unit identifier, Has unit designator, Has locality name    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf     |
+| A3) What is the geospatial representation of the site/location? (e.g., the geospatial polygon)  | Spatial representation, Spatial geometry, Has spatial representation, Has spatial geometry    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf    |
+| A4) What are the zoning regulations in place for the site/location?  | Zoning, Has zoning    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf    |
+| B1) What geographical feature is the location of interest “near of”?  | Has location description    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-100813.pdf   |
+| B2) What landmark is the location of interest “near of”?  | Has location description    |https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-100813.pdf   |
+| B3) What infrastructure “entity” is the location of interest “near of”?  | Has location description | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-100813.pdf   |
+| B4) What is the relative location of the property in relation to another landmark?  | Has location description    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
+| B5) Where is the location of interest “approximately” located?  | Has location description    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
+| B6) What street is the property located on?  | Has street name, Has street type, Has street direction   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf  |
+| B7) What is the street number of the property?  | Has street number    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Property%20Opportunity%20Notice_%209620%20100%20Avenue%2C%20Fort%20St.%20John.pdf  |
+| B8) What is the building name of the property?  | Has site name    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/hQX1ZQoHbF.pdf  |
+| B9) What is the locality of the property?  | Has locality name    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/hQX1ZQoHbF.pdf  |
+| B10) What is the province/state of the property?  | Has province name    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/hQX1ZQoHbF.pdf  |
+| B11) What is the country of the property?  | Has country name    | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/hQX1ZQoHbF.pdf  |
+| B12) What is the subdistrict of the location? |    |  |
+| B13) What is the block number of the location? |    |  |
+| B14) What is the street intersection of the location? |    |  |
