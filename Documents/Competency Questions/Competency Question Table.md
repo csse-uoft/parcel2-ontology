@@ -48,4 +48,25 @@
 | E11) Is the asset a controlled asset? | Is controlled  |  |
 | E12) Is the asset movable or fixed? | Is movable  |  |
 | E13) What is the value of the asset? | Has value  |  |
+| F1) Who owns this “Personal property”? | Has owner  |  |
+| F2) What is the location of this “personal property”? | Has location  |  |
+| F3) What is the value of this “personal property”? | Has value  |  |
+| F4) What is this personal property composed of? |  |  |
+| F5) What is the description of the personal property? | Has description |  |
+| G1) Who owns this “Land”? | Has owner | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| G2) What type of land/real property? | Subclasses of Real property/land | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| G3) What is the location of this “Land”? | Has location | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| G4) What is the address of this Land? | Has address | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| G5) Who has an interest in this “Land”? | Has interest in | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| G6) What is this “Land” used for (e.g., business, personal)? | For personal use, Is commercial character |  |
+| G7) What is this “Land” used for (e.g., residential, mixed use, industrial, commercial,...)? | Has zoning |  |
+| G8) What is the value of this “Land”? | Has value |  |
+| G9) What is this Land composed of? | Has part | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
+| G10) What is the total surface area of this Land? | Has characteristic | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
+| G11) What is the description of the Land? | Has description | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
+| G12) Who is currently leasing the Land? |  |  |
+| G13) What is this Land’s identifier? - there could be multiple identifiers associated with a Land | Has identifier | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
+| G14) What municipal services does the Land have access to? | Has municipal service | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
+| G15) What is the current zoning of this Land? | Has zoning | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
+| G16) What parcels are part of this Land? | Has part | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf  |
 
