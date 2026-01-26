@@ -18,3 +18,19 @@
 | B12) What is the subdistrict of the location? |    |  |
 | B13) What is the block number of the location? |    |  |
 | B14) What is the street intersection of the location? |    |  |
+| C1) What is the unit number of the address? | Has unit identifier   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C2) What is the unit type (e.g., suite, unit, etc.) of the address? | Has unit designator   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C3) What is the street number of the address? | Has street number  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C4) What is the street name of the address? | Has street name  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C5) What is the street type (e.g., drive, street, boulevard, etc.) of the address? | Has street type  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C6) What is the additional/supplemental information of the address? | Has location description  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C7) What is the direction of the street? | Has street direction  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C8) What is the locality of the address? | Has locality name  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C9) What is the province/state of the address? | Has province name  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C10) What is the country of the address? | Has country name  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C11) What is the rural route identifier of the address? | Has rural route identifier  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C12) What is the postal station information of the address? | Has postal station information  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C13) Who is the addressee (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C14) What is the addressee’s military rank (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C15) Which military unit does the addressee belong to (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| C16) What military operation is the addressee involved in (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
