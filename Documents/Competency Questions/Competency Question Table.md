@@ -34,3 +34,18 @@
 | C14) What is the addressee’s military rank (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
 | C15) Which military unit does the addressee belong to (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
 | C16) What military operation is the addressee involved in (military address)? |   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Standards%20and%20Guidelines/addressing-guidelines.pdf |
+| E1) Who owns the asset? | Has owner, Owns   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E2) What type of asset is it? | Subclasses of Asset   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E3) What is the location of this asset? | Has location   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E4) What is the description of this asset? | Has description   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E5) Who has an interest in the asset? | Has interest in   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E6) Who is the beneficiary of the asset? | Is beneficiary of   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
+| E7) Does the asset depreciate? | Is depreciable   |  |
+| E7a) If so, what is the rate of depreciation? |   |  |
+| E8) What is the asset used for (e.g., business, personal)? | For personal use, Is commercial character  |  |
+| E9) Is the asset tangible or intangible? | Is tangible  |  |
+| E10) Is the asset used for scientific research or development? |  |  |
+| E11) Is the asset a controlled asset? | Is controlled  |  |
+| E12) Is the asset movable or fixed? | Is movable  |  |
+| E13) What is the value of the asset? | Has value  |  |
+
