@@ -33,9 +33,9 @@
 | E4) What is the description of this asset? | Has description   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
 | E5) Who has an interest in the asset? | Has interest in   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
 | E6) Who is the beneficiary of the asset? | Is beneficiary of   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Request%20for%20Proposals%20(RFP)/United%20Church%20-%20RFP%20Various%20Locations%20%20Nov%206%202019%20%20FINAL.pdf |
-| E7) Does the asset depreciate? | Is depreciable   |  |
-| E9) Is the asset tangible or intangible? | Is tangible  |  |
-| E12) Is the asset movable or fixed? | Is movable  |  |
+| E7) Does the asset depreciate? | Is depreciable   | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
+| E9) Is the asset tangible or intangible? | Is tangible  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
+| E12) Is the asset movable or fixed? | Is movable  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
 | E13) What is the value of the asset? | Has value  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/backgroundfile-78811.pdf |
 | E14) Who is leasing the asset? |  | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
 | E15) Who is using the asset? | | https://github.com/csse-uoft/parcel2-ontology/blob/main/Documents/Use%20Cases/Partnership%20Opportunities/Federal%20Lands%20Initiative%20Wateridge%20Village%20_%20CMHC.pdf |
