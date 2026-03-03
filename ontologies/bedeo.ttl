@@ -105,6 +105,13 @@ bedeo:for_class rdf:type owl:ObjectProperty ;
                 rdfs:label "For class"@en .
 
 
+###  https://csse.utoronto.ca/for_partnership
+bedeo:for_partnership rdf:type owl:ObjectProperty ;
+                      rdfs:range bedeo:Partnership ;
+                      rdfs:comment "Associates an entity with its corresponding Partnership"@en ;
+                      rdfs:label "For partnership"@en .
+
+
 ###  https://csse.utoronto.ca/for_partnership_opportunity
 bedeo:for_partnership_opportunity rdf:type owl:ObjectProperty ;
                                   rdfs:range bedeo:PartnershipOpportunity ;
@@ -307,9 +314,8 @@ bedeo:has_mailing_address rdf:type owl:ObjectProperty ;
 
 ###  https://csse.utoronto.ca/has_member
 bedeo:has_member rdf:type owl:ObjectProperty ;
-                 rdfs:domain bedeo:Organization ;
                  rdfs:range bedeo:Agent ;
-                 rdfs:comment "Indicates the members who are part of an organization" ;
+                 rdfs:comment "Indicates the members who are part of an association"@en ;
                  rdfs:label "Has member" .
 
 
@@ -433,6 +439,14 @@ bedeo:has_partner rdf:type owl:ObjectProperty ;
                   rdfs:range bedeo:Agent ;
                   rdfs:comment "Identifies a partner of a partnership opportunity"@en ;
                   rdfs:label "Has partner"@en .
+
+
+###  https://csse.utoronto.ca/has_partnership_agreement
+bedeo:has_partnership_agreement rdf:type owl:ObjectProperty ;
+                                rdfs:domain bedeo:Partnership ;
+                                rdfs:range bedeo:Agreement ;
+                                rdfs:comment "Indicates the agreement for a partnership"@en ;
+                                rdfs:label "Has partnership agreement"@en .
 
 
 ###  https://csse.utoronto.ca/has_preference
@@ -900,26 +914,38 @@ bedeo:has_first_name rdf:type owl:DatatypeProperty ;
 
 ###  https://csse.utoronto.ca/has_formal_first_name
 bedeo:has_formal_first_name rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf bedeo:has_name ;
                             rdfs:domain bedeo:Person ;
-                            rdfs:range xsd:string .
+                            rdfs:range xsd:string ;
+                            rdfs:comment "Indicates the formal first name"@en ;
+                            rdfs:label "Has formal first name"@en .
 
 
 ###  https://csse.utoronto.ca/has_formal_full_name
 bedeo:has_formal_full_name rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf bedeo:has_name ;
                            rdfs:domain bedeo:Person ;
-                           rdfs:range xsd:string .
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Indicates the formal full name"@en ;
+                           rdfs:label "Has formal full name"@en .
 
 
 ###  https://csse.utoronto.ca/has_formal_last_name
 bedeo:has_formal_last_name rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf bedeo:has_name ;
                            rdfs:domain bedeo:Person ;
-                           rdfs:range xsd:string .
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Indicates the formal last name"@en ;
+                           rdfs:label "Has formal last name"@en .
 
 
 ###  https://csse.utoronto.ca/has_formal_middle_name
 bedeo:has_formal_middle_name rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf bedeo:has_name ;
                              rdfs:domain bedeo:Person ;
-                             rdfs:range xsd:string .
+                             rdfs:range xsd:string ;
+                             rdfs:comment "Indicates the formal middle name"@en ;
+                             rdfs:label "Has formal middle name"@en .
 
 
 ###  https://csse.utoronto.ca/has_full_first_name
@@ -1729,25 +1755,14 @@ bedeo:Address rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/Agent
 bedeo:Agent rdf:type owl:Class ;
-            rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty bedeo:has_interest_in ;
-                              owl:someValuesFrom bedeo:Asset
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty bedeo:is_beneficiary_of ;
-                              owl:someValuesFrom bedeo:Asset
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty bedeo:is_member_of ;
-                              owl:someValuesFrom bedeo:Organization
-                            ] ,
-                            [ rdf:type owl:Restriction ;
-                              owl:onProperty bedeo:has_role ;
-                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass bedeo:Role
-                            ] ;
             rdfs:comment "Something autonomous that can adapt to and interact with its environment"@en ;
             rdfs:label "Agent"@en .
+
+
+###  https://csse.utoronto.ca/Agreement
+bedeo:Agreement rdf:type owl:Class ;
+                rdfs:comment "Negotiated understanding between two or more parties, reflecting the commitments of each party."@en ;
+                rdfs:label "Agreement"@en .
 
 
 ###  https://csse.utoronto.ca/AirSpaceParcel
@@ -2025,6 +2040,13 @@ bedeo:FederalParcel rdf:type owl:Class ;
                                     bedeo:ParcelOfLand ;
                     rdfs:comment "A land parcel, as legally defined by the federal government of Canada"@en ;
                     rdfs:label "Federal Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/FirstNationsAssignedAddress
+bedeo:FirstNationsAssignedAddress rdf:type owl:Class ;
+                                  rdfs:subClassOf bedeo:CanadianAddress ;
+                                  rdfs:comment "An address assigned by a First Nations authority"@en ;
+                                  rdfs:label "First Nations Assigned Address"@en .
 
 
 ###  https://csse.utoronto.ca/Land
@@ -2329,24 +2351,12 @@ bedeo:OpportunityAdditionalInfo rdf:type owl:Class ;
 bedeo:Organization rdf:type owl:Class ;
                    rdfs:subClassOf bedeo:Agent ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_member ;
-                                     owl:someValuesFrom bedeo:Agent
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_legal_name ;
                                      owl:someValuesFrom bedeo:OrganizationLegalName
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_registration_number ;
                                      owl:someValuesFrom bedeo:OrganizationRegistrationNumber
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_organization_trade_name ;
-                                     owl:someValuesFrom bedeo:OrganizationTradeName
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:owns ;
-                                     owl:someValuesFrom bedeo:real_estate_asset
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_acronym ;
@@ -2357,45 +2367,29 @@ bedeo:Organization rdf:type owl:Class ;
                                      owl:allValuesFrom bedeo:PartnershipOpportunity
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty bedeo:has_organization_trade_name ;
+                                     owl:allValuesFrom bedeo:OrganizationTradeName
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_primary_address ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass bedeo:Address
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_delivery_address ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass bedeo:Address
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_mailing_address ;
-                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass bedeo:Address
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_debt_coverage_ratio ;
-                                     owl:someValuesFrom xsd:decimal
+                                     owl:allValuesFrom xsd:decimal
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_net_worth ;
-                                     owl:someValuesFrom xsd:integer
+                                     owl:allValuesFrom xsd:integer
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_years_of_experience_with_accessible_design_and_construction ;
-                                     owl:someValuesFrom xsd:integer
+                                     owl:allValuesFrom xsd:integer
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_years_of_experience_with_affordable_housing ;
-                                     owl:someValuesFrom xsd:integer
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_current_legal_name ;
-                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onDataRange xsd:string
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty bedeo:has_legal_name ;
-                                     owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                     owl:onDataRange xsd:string
+                                     owl:allValuesFrom xsd:integer
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty bedeo:has_organization_values_statement ;
@@ -2531,9 +2525,31 @@ bedeo:ParcelOfLand rdf:type owl:Class ;
                    rdfs:label "Parcel of Land"@en .
 
 
+###  https://csse.utoronto.ca/Partnership
+bedeo:Partnership rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:for_partnership_opportunity ;
+                                    owl:someValuesFrom bedeo:PartnershipOpportunity
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_member ;
+                                    owl:someValuesFrom bedeo:Agent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty bedeo:has_partnership_agreement ;
+                                    owl:allValuesFrom bedeo:Agreement
+                                  ] ;
+                  rdfs:comment "A partnership is an agreement where parties agree to cooperate to advance their mutual interests (Wikipedia) https://en.wikipedia.org/wiki/Partnership"@en ;
+                  rdfs:label "Partnership"@en .
+
+
 ###  https://csse.utoronto.ca/PartnershipOpportunity
 bedeo:PartnershipOpportunity rdf:type owl:Class ;
                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty bedeo:for_partnership ;
+                                               owl:someValuesFrom bedeo:Partnership
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:has_constraint ;
                                                owl:someValuesFrom bedeo:CharacteristicConstraintClause
                                              ] ,
@@ -2542,16 +2558,16 @@ bedeo:PartnershipOpportunity rdf:type owl:Class ;
                                                owl:someValuesFrom bedeo:PartnershipOpportunityNeed
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty bedeo:has_real_estate_asset ;
-                                               owl:someValuesFrom bedeo:real_estate_asset
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:has_land ;
                                                owl:allValuesFrom bedeo:Land
                                              ] ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:has_partner ;
                                                owl:allValuesFrom bedeo:Agent
+                                             ] ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty bedeo:has_real_estate_asset ;
+                                               owl:allValuesFrom bedeo:real_estate_asset
                                              ] ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty bedeo:requires_partnership_role ;
@@ -2628,30 +2644,9 @@ bedeo:PartnershipType rdf:type owl:Class ;
 bedeo:Person rdf:type owl:Class ;
              rdfs:subClassOf bedeo:Agent ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_formal_first_name ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_formal_full_name ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_formal_last_name ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_formal_middle_name ;
-                               owl:allValuesFrom xsd:string
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty bedeo:has_primary_address ;
                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass bedeo:Address
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty bedeo:has_middle_name ;
-                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange xsd:string
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty bedeo:has_full_name ;
@@ -4058,22 +4053,6 @@ bedeo:has_application_status rdfs:comment "Identifies the application status of 
 
 bedeo:has_description rdfs:comment "Provides a description that describes the entity"@en ;
                       rdfs:label "Has description"@en .
-
-
-bedeo:has_formal_first_name rdfs:comment "Indicates the formal first name"@en ;
-                            rdfs:label "Has formal first name"@en .
-
-
-bedeo:has_formal_full_name rdfs:label "Has formal full name"@en ;
-                           rdfs:comment "Indicates the formal full name"@en .
-
-
-bedeo:has_formal_last_name rdfs:comment "Indicates the formal last name"@en ;
-                           rdfs:label "Has formal last name"@en .
-
-
-bedeo:has_formal_middle_name rdfs:label "Has formal middle name"@en ;
-                             rdfs:comment "Indicates the formal middle name"@en .
 
 
 bedeo:has_identifier rdfs:label "Has identifier"@en ;
