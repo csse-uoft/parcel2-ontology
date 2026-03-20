@@ -1734,7 +1734,8 @@ bedeo:Account rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/Address
 bedeo:Address rdf:type owl:Class ;
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
+              rdfs:subClassOf bedeo:LocationInformationalArtifact ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty bedeo:has_latitude ;
                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onDataRange xsd:string
@@ -1917,6 +1918,13 @@ bedeo:CanadianAddress rdf:type owl:Class ;
                       rdfs:label "Canadian Address"@en .
 
 
+###  https://csse.utoronto.ca/CanadianLegalLandDescription
+bedeo:CanadianLegalLandDescription rdf:type owl:Class ;
+                                   rdfs:subClassOf bedeo:LegalLandDescription ;
+                                   rdfs:comment "A legal land description is a standardized method of identifying land parcels in Canada"@en ;
+                                   rdfs:label "Canadian Legal Land Description"@en .
+
+
 ###  https://csse.utoronto.ca/Characteristic
 bedeo:Characteristic rdf:type owl:Class ;
                      rdfs:comment "A quality, trait or feature of a thing"@en ;
@@ -1991,6 +1999,13 @@ bedeo:ContributionType rdf:type owl:Class ;
                        rdfs:label "Contribution type"@en .
 
 
+###  https://csse.utoronto.ca/CrownCorporationAssignedAddress
+bedeo:CrownCorporationAssignedAddress rdf:type owl:Class ;
+                                      rdfs:subClassOf bedeo:NonGovernmentAssignedAddress ;
+                                      rdfs:comment "Addresses assigned by crown corporations in Canada"@en ;
+                                      rdfs:label "Crown Corporation Assigned Address"@en .
+
+
 ###  https://csse.utoronto.ca/DNFLogicalFormula
 bedeo:DNFLogicalFormula rdf:type owl:Class ;
                         rdfs:subClassOf bedeo:LogicalFormula ,
@@ -2027,6 +2042,13 @@ bedeo:Expertise rdf:type owl:Class ;
                 rdfs:label "Expertise"@en .
 
 
+###  https://csse.utoronto.ca/FederalGovernmentAssignedAddress
+bedeo:FederalGovernmentAssignedAddress rdf:type owl:Class ;
+                                       rdfs:subClassOf bedeo:MunicipalityAssignedAddress ;
+                                       rdfs:comment "Addresses assigned by federal governments in Canada"@en ;
+                                       rdfs:label "Federal Government Assigned Address"@en .
+
+
 ###  https://csse.utoronto.ca/FederalLand
 bedeo:FederalLand rdf:type owl:Class ;
                   rdfs:subClassOf bedeo:Land ;
@@ -2044,7 +2066,7 @@ bedeo:FederalParcel rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/FirstNationsAssignedAddress
 bedeo:FirstNationsAssignedAddress rdf:type owl:Class ;
-                                  rdfs:subClassOf bedeo:CanadianAddress ;
+                                  rdfs:subClassOf bedeo:MunicipalityAssignedAddress ;
                                   rdfs:comment "An address assigned by a First Nations authority"@en ;
                                   rdfs:label "First Nations Assigned Address"@en .
 
@@ -2102,11 +2124,24 @@ bedeo:LandUse rdf:type owl:Class ;
               rdfs:label "Land Use"@en .
 
 
+###  https://csse.utoronto.ca/LegalLandDescription
+bedeo:LegalLandDescription rdf:type owl:Class ;
+                           rdfs:subClassOf bedeo:LocationInformationalArtifact ;
+                           rdfs:comment "A legal land description is a standardized method of identifying land parcels"@en ;
+                           rdfs:label "Legal Land Description"@en .
+
+
 ###  https://csse.utoronto.ca/Location
 bedeo:Location rdf:type owl:Class ;
                rdfs:comment "A particular place or position on Earth"@en ;
                rdfs:label "Location"@en ;
                <http://www.w3.org/2004/02/skos/core#altLabel> "Site"@en .
+
+
+###  https://csse.utoronto.ca/LocationInformationalArtifact
+bedeo:LocationInformationalArtifact rdf:type owl:Class ;
+                                    rdfs:comment "An informational artifact associated with a location."@en ;
+                                    rdfs:label "Location Informational Artifact"@en .
 
 
 ###  https://csse.utoronto.ca/LogicalFormula
@@ -2142,14 +2177,15 @@ bedeo:MunicipalAddress rdf:type owl:Class ;
                        rdfs:subClassOf bedeo:MunicipalityAssignedAddress ;
                        rdfs:comment "Addresses assigned by municipalities in Canada and are considered to be civic addresses.  In some cases, municipal addresses are also intended to be used as emergency services addresses."@en ;
                        rdfs:label "Municipal Address"@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Civic address"@en .
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Civic Address"@en ,
+                                                                      "Municipal Government Assigned Address"@en .
 
 
 ###  https://csse.utoronto.ca/MunicipalityAssignedAddress
 bedeo:MunicipalityAssignedAddress rdf:type owl:Class ;
                                   rdfs:subClassOf bedeo:CanadianAddress ;
-                                  rdfs:comment "Addresses assigned by municipalities in Canada"@en ;
-                                  rdfs:label "Municipality Assigned Address"@en .
+                                  rdfs:comment "Addresses assigned by governments in Canada"@en ;
+                                  rdfs:label "Government Assigned Address"@en .
 
 
 ###  https://csse.utoronto.ca/NewBrunswickLand
@@ -2180,6 +2216,20 @@ bedeo:NewfoundlandAndLabradorParcel rdf:type owl:Class ;
                                                     bedeo:ParcelOfLand ;
                                     rdfs:comment "A land parcel, as legally defined in Newfoundland and Labrador"@en ;
                                     rdfs:label "Newfoundland and Labrador Land Parcel"@en .
+
+
+###  https://csse.utoronto.ca/NonCrownCorporationAssignedAddress
+bedeo:NonCrownCorporationAssignedAddress rdf:type owl:Class ;
+                                         rdfs:subClassOf bedeo:NonGovernmentAssignedAddress ;
+                                         rdfs:comment "Addresses assigned by non-crown corporation, non-government authorities in Canada"@en ;
+                                         rdfs:label "Non-Crown Corporation Assigned Address"@en .
+
+
+###  https://csse.utoronto.ca/NonGovernmentAssignedAddress
+bedeo:NonGovernmentAssignedAddress rdf:type owl:Class ;
+                                   rdfs:subClassOf bedeo:CanadianAddress ;
+                                   rdfs:comment "Addresses assigned by non-government authorities in Canada"@en ;
+                                   rdfs:label "Non-Government Assigned Address"@en .
 
 
 ###  https://csse.utoronto.ca/NonProfitOrganization
@@ -2677,9 +2727,16 @@ bedeo:PersonalProperty rdf:type owl:Class ;
                        rdfs:label "Personal Property"@en .
 
 
+###  https://csse.utoronto.ca/PortAuthorityAssignedAddress
+bedeo:PortAuthorityAssignedAddress rdf:type owl:Class ;
+                                   rdfs:subClassOf bedeo:CrownCorporationAssignedAddress ;
+                                   rdfs:comment "Addresses assigned by port authorities in Canada"@en ;
+                                   rdfs:label "Port Authority Assigned Address"@en .
+
+
 ###  https://csse.utoronto.ca/PostalAddress
 bedeo:PostalAddress rdf:type owl:Class ;
-                    rdfs:subClassOf bedeo:CanadianAddress ;
+                    rdfs:subClassOf bedeo:CrownCorporationAssignedAddress ;
                     rdfs:comment "Addresses assigned by Canada Post for postal services"@en ;
                     rdfs:label "Postal Address"@en ;
                     <http://www.w3.org/2004/02/skos/core#altLabel> "Canada Post Assigned Address"@en .
@@ -2771,6 +2828,13 @@ bedeo:Proposal rdf:type owl:Class ;
                                  owl:onProperty bedeo:has_proposal_status ;
                                  owl:someValuesFrom xsd:string
                                ] .
+
+
+###  https://csse.utoronto.ca/ProvincialGovernmentAssignedAddress
+bedeo:ProvincialGovernmentAssignedAddress rdf:type owl:Class ;
+                                          rdfs:subClassOf bedeo:MunicipalityAssignedAddress ;
+                                          rdfs:comment "Addresses assigned by provincial governments in Canada"@en ;
+                                          rdfs:label "Provincial Government Assigned Address"@en .
 
 
 ###  https://csse.utoronto.ca/QuantitativeConstraintClause
@@ -2915,6 +2979,7 @@ bedeo:Service rdf:type owl:Class ;
 
 ###  https://csse.utoronto.ca/SpatialGeometry
 bedeo:SpatialGeometry rdf:type owl:Class ;
+                      rdfs:subClassOf bedeo:LocationInformationalArtifact ;
                       rdfs:comment "A geometry object that is used to describe the geospatial representation of an entity"@en ;
                       rdfs:label "Spatial geometry"@en .
 
